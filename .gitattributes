@@ -1,0 +1,6 @@
+# Всю текстовую кодовую базу храним с LF
+* text=auto eol=lf
+
+# Если нужны чисто виндовые скрипты — им можно CRLF:
+# *.bat text eol=crlf
+# *.cmd text eol=crlf

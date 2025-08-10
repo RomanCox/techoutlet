@@ -1,0 +1,31 @@
+@use "./variables" as *;
+
+@mixin root-container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($direction: null, $align: null, $justify: null, $gap: null) {
+  display: flex;
+
+  @if $direction != null and $direction != row {
+    flex-direction: $direction;
+  }
+
+  @if $align != null and $align != stretch {
+    align-items: $align;
+  }
+
+  @if $justify != null and $justify != flex-start {
+    justify-content: $justify;
+  }
+
+  @if $gap != null and $gap != 0 {
+    gap: $gap;
+  }
+}
