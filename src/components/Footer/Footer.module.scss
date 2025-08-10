@@ -1,0 +1,8 @@
+@use "@/styles/mixins";
+
+.footer {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  @include mixins.root-container;
+}

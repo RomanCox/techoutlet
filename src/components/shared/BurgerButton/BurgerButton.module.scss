@@ -1,0 +1,57 @@
+@use "@/styles/mixins";
+
+.burgerButton {
+  @include mixins.size(40px);
+  padding: 4px;
+
+  .strip {
+    width: 100%;
+    height: 3px;
+    background: black;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 100%;
+      height: 3px;
+      background-color: black;
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      transition:
+        top 150ms ease 250ms,
+        transform 150ms ease;
+    }
+
+    &::before {
+      top: -10px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    &::after {
+      top: 10px;
+      border-radius: 0 0 3px 3px;
+    }
+
+    &.open {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        top: 0;
+        transition:
+          top 150ms ease,
+          transform 150ms ease 250ms;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
