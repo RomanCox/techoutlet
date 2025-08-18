@@ -1,0 +1,38 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.companyDescriptionContainer {
+  width: 100%;
+  padding-inline: 40px;
+  @include mixins.flex($direction: column);
+
+  .title {
+    text-align: left;
+    color: variables.$dark-text;
+
+    span {
+      color: variables.$black;
+    }
+  }
+
+  & > p {
+    text-align: left;
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .listItem {
+      padding-left: 10px;
+      @include mixins.flex($align: center, $gap: 10px);
+
+      .listMarker {
+        @include mixins.size(5px);
+        border-radius: 50%;
+        background: variables.$black;
+      }
+    }
+  }
+}

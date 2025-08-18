@@ -1,5 +1,5 @@
-@use "./variables";
-@use "./reset";
+@use './variables';
+@use './reset';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
@@ -11,7 +11,7 @@
   --font-main: #{variables.$font-main};
   --font-weight-base: #{variables.$font-weight-base};
   --line-height-base: #{variables.$line-height-base};
-  --color-text: #{variables.$color-text};
+  --color-text: #{variables.$black};
   --white-color: #{variables.$white-color};
   --max-width: #{variables.$max-width};
 }

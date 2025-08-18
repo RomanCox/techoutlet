@@ -1,10 +1,12 @@
-import Head from "next/head"
+import Head from 'next/head'
 
-import {Header} from "@/components/Header/Header"
-import {Footer} from "@/components/Footer/Footer"
+import { Header } from '@/components/Header/Header'
+import { HeroSlider} from '@/components/HeroSlider/HeroSlider'
+import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescription'
+import { MarketingCards } from '@/components/MarketingCards/MarketingCards'
+import { Footer } from '@/components/Footer/Footer'
 
-import styles from "@/styles/Page.module.scss"
-import {HeroSlider} from "@/components/HeroSlider/HeroSlider";
+import styles from '@/styles/Page.module.scss'
 
 export default function Home() {
   return (
@@ -21,9 +23,11 @@ export default function Home() {
         <Header />
         <main className={styles.main}>
           <HeroSlider />
+          <CompanyDescription />
+          <MarketingCards />
         </main>
         <Footer />
       </div>
     </>
-  );
+  )
 }

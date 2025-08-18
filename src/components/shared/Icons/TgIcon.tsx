@@ -1,6 +1,6 @@
-import { memo, SVGProps } from "react"
+import { memo, SVGProps } from 'react'
 
-import cls from "./TgIcon.module.scss"
+import cls from './TgIcon.module.scss'
 
 export const TgIcon = memo((props: SVGProps<SVGSVGElement>) => {
   return (

@@ -1,4 +1,4 @@
-@use "@/styles/mixins";
+@use '@/styles/mixins';
 
 .burgerButton {
   @include mixins.size(40px);

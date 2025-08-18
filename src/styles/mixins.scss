@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 @mixin root-container {
   max-width: $max-width;

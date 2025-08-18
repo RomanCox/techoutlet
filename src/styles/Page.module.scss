@@ -1,11 +1,11 @@
-@use "@/styles/mixins";
+@use '@/styles/mixins';
 
 .page {
   min-height: 100svh;
   max-width: 1440px;
   margin-top: 80px;
   padding-inline: 40px;
-  @include mixins.flex($direction: column, $align: center);
+  @include mixins.flex($direction: column, $align: center, $gap: 40px);
 
   .main {
     width: 100%;

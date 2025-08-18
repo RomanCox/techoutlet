@@ -57,7 +57,7 @@ export const Picture = (props: PictureProps) => {
 	const dim =
 		width && height
 			? { width, height }
-			: {};
+			: {}
 
   return (
 		<div className={classNames(cls.picture, {}, [className])}>

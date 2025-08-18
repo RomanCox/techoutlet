@@ -6,10 +6,10 @@ import {
 	ComponentRef,
 	ReactElement,
 	forwardRef,
-} from "react";
-import {classNames} from "@/helpers/classNames";
+} from 'react'
+import { classNames } from '@/helpers/classNames'
 
-import cls from "./Button.module.scss"
+import cls from './Button.module.scss'
 
 type PolymorphicRef<T extends ElementType> = ComponentRef<T>
 
