@@ -21,6 +21,7 @@ export const MarketingCards = () => {
             webp={card.imageWEBP}
             alt={'not important image'}
             className={cls.cardImage}
+            isCover
           />
         </div>
       ))}

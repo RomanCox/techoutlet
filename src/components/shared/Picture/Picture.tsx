@@ -60,7 +60,7 @@ export const Picture = (props: PictureProps) => {
 			: {}
 
   return (
-		<div className={classNames(cls.picture, {}, [className])}>
+		<div className={classNames(cls.picture, { [cls.cover]: isCover }, [className])}>
 			<picture>
 				{avif && (
 					<source srcSet={toSrc(avif)} type="image/avif" sizes={sizes} />

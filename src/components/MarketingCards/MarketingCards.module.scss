@@ -38,10 +38,14 @@
     }
 
     .cardImage {
-      height: 200%;
+      height: 150%;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      img {
+        width: auto;
+      }
     }
   }
 

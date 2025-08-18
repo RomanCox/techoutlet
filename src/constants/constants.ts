@@ -74,8 +74,8 @@ export const marketingCards: IMarketingCards[] = [
   {
     id: 6,
     text: 'Доставка по всей\nБеларуси ',
-    imagePNG: ManyIphonesPNG,
-    imageWEBP: ManyIphonesWEBP,
+    imagePNG: NoteBookTransformerPNG,
+    imageWEBP: NoteBookTransformerWEBP,
     imagePosition: PositionType.LEFT,
   },
 ]
