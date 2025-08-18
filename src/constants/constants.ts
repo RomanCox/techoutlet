@@ -21,10 +21,15 @@ export const companyDescription: string[] = [
   'Open Box (новые товары в открытых или поврежденных коробках)',
 ]
 
-export enum PositionType {
+export enum ImagePositionType {
   CENTER = 'center',
   LEFT = 'left',
   RIGHT = 'right'
+}
+
+export enum CardPositionType {
+  TOP = 'top',
+  BOTTOM = 'bottom',
 }
 
 interface IMarketingCards {
@@ -32,7 +37,8 @@ interface IMarketingCards {
   text: string
   imagePNG: StaticImageData
   imageWEBP: StaticImageData
-  imagePosition: PositionType
+  imagePosition: ImagePositionType
+  cardPosition: CardPositionType
 }
 
 export const marketingCards: IMarketingCards[] = [
@@ -41,41 +47,47 @@ export const marketingCards: IMarketingCards[] = [
     text: 'Работаем с 2018 года',
     imagePNG: ManyIphonesPNG,
     imageWEBP: ManyIphonesWEBP,
-    imagePosition: PositionType.CENTER,
+    imagePosition: ImagePositionType.CENTER,
+    cardPosition: CardPositionType.TOP,
   },
   {
     id: 2,
     text: 'Прямые поставки с\nаукционов США/ЕС ОАЭ',
     imagePNG: PhoneBoxPNG,
     imageWEBP: PhoneBoxWEBP,
-    imagePosition: PositionType.RIGHT,
+    imagePosition: ImagePositionType.RIGHT,
+    cardPosition: CardPositionType.TOP,
   },
   {
     id: 3,
     text: 'Только оригинальная\nтехника',
     imagePNG: IphonePNG,
     imageWEBP: IphoneWEBP,
-    imagePosition: PositionType.RIGHT,
+    imagePosition: ImagePositionType.RIGHT,
+    cardPosition: CardPositionType.TOP,
   },
   {
     id: 4,
     text: 'Гарантия до 12 мес',
     imagePNG: ActionCameraPNG,
     imageWEBP: ActionCameraWEBP,
-    imagePosition: PositionType.RIGHT,
+    imagePosition: ImagePositionType.RIGHT,
+    cardPosition: CardPositionType.BOTTOM,
   },
   {
     id: 5,
     text: 'Самовывоз в\nцентре Минска',
     imagePNG: HeadphonesPNG,
     imageWEBP: HeadphonesWEBP,
-    imagePosition: PositionType.RIGHT,
+    imagePosition: ImagePositionType.RIGHT,
+    cardPosition: CardPositionType.BOTTOM,
   },
   {
     id: 6,
     text: 'Доставка по всей\nБеларуси ',
     imagePNG: NoteBookTransformerPNG,
     imageWEBP: NoteBookTransformerWEBP,
-    imagePosition: PositionType.LEFT,
+    imagePosition: ImagePositionType.LEFT,
+    cardPosition: CardPositionType.BOTTOM,
   },
 ]
