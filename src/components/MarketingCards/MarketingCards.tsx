@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { classNames } from '@/helpers/classNames'
 
 import { Picture } from '@/components/shared/Picture/Picture'
@@ -7,18 +8,14 @@ import { CardPositionType, marketingCards } from '@/constants/constants'
 
 import cls from './MarketingCards.module.scss'
 
-
-export const MarketingCards = () => {
-
-
-
+export const MarketingCards = memo(() => {
   return (
     <div className={cls.marketingCardsWrapper}>
       <div className={cls.marketingCardsContainer}>
         {marketingCards
           .filter(({ cardPosition }) => cardPosition === CardPositionType.TOP)
           .map(card => (
-            <div className={classNames(cls.card, {}, [cls[`card${card.id}`]])}>
+            <div key={card.id} className={classNames(cls.card, {}, [cls[`card${card.id}`]])}>
               <Text className={cls.cardText}>{card.text}</Text>
               <Picture
                 png={card.imagePNG}
@@ -35,7 +32,7 @@ export const MarketingCards = () => {
         {marketingCards
           .filter(({ cardPosition }) => cardPosition === CardPositionType.BOTTOM)
           .map(card => (
-            <div className={classNames(cls.card, {}, [cls[`card${card.id}`]])}>
+            <div key={card.id} className={classNames(cls.card, {}, [cls[`card${card.id}`]])}>
               <Text className={cls.cardText}>{card.text}</Text>
               <Picture
                 png={card.imagePNG}
@@ -50,4 +47,4 @@ export const MarketingCards = () => {
       </div>
     </div>
   )
-}
+})

@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-
+import { memo } from 'react'
 import { classNames } from '@/helpers/classNames'
 
 import cls from './Picture.module.scss'
@@ -27,7 +27,7 @@ export type PictureProps = WithJpg | WithPng
 
 const toSrc = (v: ImgLike) => (typeof v === 'string' ? v : v.src)
 
-export const Picture = (props: PictureProps) => {
+export const Picture = memo((props: PictureProps) => {
 	const {
 		jpg,
 		png,
@@ -80,4 +80,4 @@ export const Picture = (props: PictureProps) => {
 			</picture>
 		</div>
   )
-}
+})

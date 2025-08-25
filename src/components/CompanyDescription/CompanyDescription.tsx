@@ -1,10 +1,12 @@
+import { memo } from 'react'
+
 import { Text } from '@/components/shared/Text/Text'
 
 import { companyDescription } from '@/constants/constants'
 
 import cls from './CompanyDescription.module.scss'
 
-export const CompanyDescription = () => {
+export const CompanyDescription = memo(() => {
   return (
     <div className={cls.companyDescriptionContainer}>
       <Text as={'h2'} className={cls.title}><span>TechOutlet</span> - надёжный поставщик уценённой техники с 2018 года</Text>
@@ -22,4 +24,4 @@ export const CompanyDescription = () => {
       <Text as={'p'}>Только топовые гаджеты Apple, Microsoft, DJI, Sony, Google и.т.д, Отличная возможность сэкономить до 50% от цены нового! </Text>
     </div>
   )
-}
+})

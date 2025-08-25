@@ -40,6 +40,6 @@ const _Text = forwardRef(
   ) => ReturnType<typeof TypographyPolymorph>
 )
 
-export const Text = _Text as <T extends ElementType = 'p'>(
+export const Text = memo(_Text as <T extends ElementType = 'p'>(
   props: TextPropsType<T> & { ref?: ForwardedRef<PolymorphicRef<T>> }
-) => ReturnType<typeof TypographyPolymorph>
+) => ReturnType<typeof TypographyPolymorph>)

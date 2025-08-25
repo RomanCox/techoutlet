@@ -91,3 +91,40 @@ export const marketingCards: IMarketingCards[] = [
     cardPosition: CardPositionType.BOTTOM,
   },
 ]
+
+export const directions = [
+  'Товары из США с\nзакрытых аукционов электроники',
+  'Товары из Европы с\nсудебных складов и аукционов',
+  'Товары из Dubai с\nоптовых складов в Deira',
+] as const
+
+export const typeOfGoods = [
+  'Телефоны',
+  'Ноутбуки',
+  'Игровые консоли',
+  'Планшеты',
+  'Смарт часы',
+  'Камеры',
+  'Наушники',
+  'Инструменты',
+  'Кофемашины',
+  'Wi-Fi системы',
+] as const
+
+export const catalog = [
+  'iPhone',
+  'iPad',
+  'MacBook',
+  'Apple Watch',
+  'Mac',
+  'Аксессуары',
+  'DJI',
+  'Sony',
+  'Samsung',
+  'Ноутбуки',
+  'Периферия',
+] as const
+
+type FooterSection = 'Каталог техники' | 'Магазин' | 'Контакты' | 'Logo'
+
+

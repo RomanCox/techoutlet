@@ -4,6 +4,7 @@ import { Header } from '@/components/Header/Header'
 import { HeroSlider} from '@/components/HeroSlider/HeroSlider'
 import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescription'
 import { MarketingCards } from '@/components/MarketingCards/MarketingCards'
+import { ProductTrip } from '@/components/ProductTrip/ProductTrip'
 import { Footer } from '@/components/Footer/Footer'
 
 import styles from '@/styles/Page.module.scss'
@@ -25,6 +26,7 @@ export default function Home() {
           <HeroSlider />
           <CompanyDescription />
           <MarketingCards />
+          <ProductTrip />
         </main>
         <Footer />
       </div>

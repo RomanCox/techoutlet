@@ -1,0 +1,77 @@
+@use '@/styles/mixins';
+@use '@/styles/variables';
+
+.productTripContainer {
+  width: 100%;
+  padding-inline: 40px;
+  @include mixins.flex($gap: 20px);
+
+  .directionsContainer {
+    width: calc((100% - 196px) / 3);
+    @include mixins.flex($direction: column, $justify: space-between, $gap: 20px);
+
+    .direction {
+      padding: 12px;
+      border-radius: 12px;
+      background: variables.$dark-grey;
+      white-space: pre-line;
+      color: variables.$white-color;
+    }
+  }
+
+  .leftArrows,
+  .rightArrows {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .leftArrows {
+    svg:nth-of-type(2) {
+      transform: rotate(180deg) scaleX(-1);
+      transform-origin: center;
+    }
+  }
+
+  .rightArrows {
+    svg:nth-of-type(1) {
+      transform: rotate(-60deg);
+    }
+    svg:nth-of-type(2) {
+      transform: rotate(-120deg) scaleX(-1);
+      transform-origin: center;
+    }
+  }
+
+  .centerBlock {
+    width: calc((100% - 196px) / 3);
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+
+    .logoContainer {
+      flex: 0 1;
+      padding: 10px;
+      background:  variables.$blue;
+      border-radius: 12px;
+
+      //.logo {
+      //  height: 36px;
+      //}
+    }
+  }
+
+  .typeOfGoodsContainer {
+    width: calc((100% - 196px) / 3);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .typeOfGood {
+      padding: 12px;
+      border-radius: 12px;
+      background: variables.$dark-grey;
+      white-space: pre-line;
+      color: variables.$white-color;
+    }
+  }
+}

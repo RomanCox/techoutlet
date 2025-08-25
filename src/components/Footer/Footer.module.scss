@@ -2,7 +2,21 @@
 
 .footer {
   width: 100%;
-  height: 50px;
-  margin-top: 20px;
+  padding-bottom: 20px;
   @include mixins.root-container;
+  @include mixins.flex($justify: space-between, $gap: 40px);
+
+  .catalog {
+    @include mixins.flex($direction: column);
+
+    & > h4 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .shop {}
+
+  .contacts {}
+
+  .info {}
 }

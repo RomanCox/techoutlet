@@ -1,9 +1,21 @@
-import cls from './Footer.module.scss'
+import { memo } from 'react'
 
-export const Footer = () => {
+import cls from './Footer.module.scss'
+import {catalog} from "@/constants/constants";
+import {Text} from "@/components/shared/Text/Text";
+
+export const Footer = memo(() => {
   return (
     <footer className={cls.footer}>
-      <a href={'/'}>FOOTER</a>
+      <div className={cls.catalog}>
+        <Text as='h4'>Каталог техники</Text>
+        {catalog.map(item => (
+          <Text key={item} as='p'>{item}</Text>
+        ))}
+      </div>
+      <div className={cls.shop}></div>
+      <div className={cls.contacts}></div>
+      <div className={cls.info}></div>
     </footer>
   )
-}
+})

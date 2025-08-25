@@ -1,4 +1,5 @@
 import {
+  memo,
 	ComponentPropsWithoutRef,
 	ComponentPropsWithRef,
 	ElementType,
@@ -37,7 +38,7 @@ const ButtonInner = (
 }
 
 
-export const Button = forwardRef(ButtonInner) as
+export const Button = memo(forwardRef(ButtonInner) as
 	<T extends ElementType = 'button'>(
 		props: ButtonProps<T> & { ref?: ForwardedRef<PolymorphicRef<T>> }
-	) => ReactElement | null
+	) => ReactElement | null)

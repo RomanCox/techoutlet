@@ -1,14 +1,13 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { classNames } from '@/helpers/classNames'
 
 import cls from './BurgerButton.module.scss'
-
 
 interface IBurgerButtonProps {
   onClick?: () => void
 }
 
-export const BurgerButton = (props: IBurgerButtonProps) => {
+export const BurgerButton = memo((props: IBurgerButtonProps) => {
   const { onClick } = props
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -23,4 +22,4 @@ export const BurgerButton = (props: IBurgerButtonProps) => {
       <div className={classNames(cls.strip, { [cls.open]: isOpen }, [])}/>
     </button>
   )
-}
+})
