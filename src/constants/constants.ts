@@ -55,7 +55,7 @@ export const marketingCards: IMarketingCards[] = [
   },
   {
     id: 5,
-    text: 'Самовывоз в\nцентре Минска',
+    text: 'Самовывоз в центре Минска',
     imagePNG: HeadphonesPNG,
     imageWEBP: HeadphonesWEBP,
   },
