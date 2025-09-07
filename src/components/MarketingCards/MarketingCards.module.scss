@@ -7,9 +7,11 @@
 
   .marketingCardsContainer {
     width: 100%;
-    @include mixins.flex($gap: 10px);
+    @include mixins.flex($gap: 20px);
+    flex-wrap: wrap;
 
     .card {
+      height: 160px;
       flex: 0 0 auto;
       padding: 24px 20px;
       border-radius: 24px;
@@ -36,6 +38,8 @@
     }
 
     .card1 {
+      width: calc(60% - 10px);
+      padding-right: 200px;
       background: variables.$black;
 
       .cardText {
@@ -44,9 +48,9 @@
 
       .cardImage {
         height: 150%;
-        left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        right: 0;
+        transform: translateY(-50%);
 
         img {
           width: auto;
@@ -55,13 +59,29 @@
     }
 
     .card2 {
+      width: calc(40% - 10px);
+      border: 1px solid variables.$light-border;
+
       .cardImage {
+        height: 70%;
         right: 0;
       }
     }
 
     .card3 {
-      flex: 1;
+      width: calc(45% - 10px);
+      border: 1px solid variables.$light-border;
+
+      .cardImage {
+        height: 150%;
+        right: -70px;
+        bottom: -70px;
+        transform: rotate(30deg);
+      }
+    }
+
+    .card4 {
+      width: calc(55% - 10px);
       background: variables.$black;
 
       .cardText {
@@ -73,16 +93,8 @@
       }
     }
 
-    .card4 {
-      .cardImage {
-        height: 150%;
-        right: -50px;
-        bottom: -55px;
-        transform: rotate(30deg);
-      }
-    }
-
     .card5 {
+      width: calc(60% - 10px);
       padding-right: 100px;
       background: variables.$black;
 
@@ -91,16 +103,18 @@
       }
 
       .cardImage {
-        right: 0;
+        height: calc(100% - 10px);
+        right: 20px;
       }
     }
 
     .card6 {
-      flex: 1;
-      padding-left: 132px;
+      width: calc(40% - 10px);
+      border: 1px solid variables.$light-border;
 
       .cardImage {
-        left: 10px;
+        height: calc(100% - 20px);
+        right: 20px;
       }
     }
   }
