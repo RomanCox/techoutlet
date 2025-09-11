@@ -13,7 +13,6 @@ import HeadphonesWEBP from '@/assets/images/devices/headphones.webp'
 import NoteBookTransformerPNG from '@/assets/images/devices/notebook_transformer.png'
 import NoteBookTransformerWEBP from '@/assets/images/devices/notebook_transformer.webp'
 
-
 export const companyDescription: string[] = [
   'Витринные (товары с витрин магазинов)',
   'Выставочные (товары после выставки)',
