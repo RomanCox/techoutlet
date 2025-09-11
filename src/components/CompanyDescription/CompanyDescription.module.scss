@@ -4,7 +4,7 @@
 .companyDescriptionContainer {
   width: 100%;
   padding-inline: 40px;
-  @include mixins.flex($direction: column);
+  @include mixins.flex($direction: column, $gap: 10px);
 
   .title {
     text-align: left;
@@ -20,7 +20,7 @@
   }
 
   .list {
-    margin: 10px 0;
+    //margin: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
