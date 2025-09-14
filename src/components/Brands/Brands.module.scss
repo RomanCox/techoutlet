@@ -3,9 +3,21 @@
 .brandsContainer {
   @include mixins.flex($direction: column, $gap: 20px);
 
+  & > h2 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: pre-line;
+  }
+
   .brandsWrapper {
-    @include mixins.flex($gap: 20px);
-    flex-wrap: wrap;
+    width: 100%;
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 40px 0;
 
     .brandImage {
       @include mixins.size(128px);
