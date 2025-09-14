@@ -4,74 +4,95 @@
 .productTripContainer {
   width: 100%;
   padding-inline: 40px;
-  @include mixins.flex($gap: 20px);
+  @include mixins.flex($items: center, $gap: 20px);
+  color: variables.$yellow;
 
-  .directionsContainer {
-    width: calc((100% - 196px) / 3);
-    @include mixins.flex($direction: column, $justify: space-between, $gap: 20px);
+  .contentContainer {
+    @include mixins.flex($direction: column, $self: stretch, $gap: 20px);
 
-    .direction {
-      padding: 12px;
-      border-radius: 12px;
-      background: variables.$dark-grey;
-      white-space: pre-line;
-      color: variables.$white-color;
+    &:nth-child(odd of .contentContainer) {
+      width: calc((100% - 176px - 255px) / 2);
     }
-  }
 
-  .leftArrows,
-  .rightArrows {
-    padding-block: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .leftArrows {
-    svg:nth-of-type(2) {
-      transform: rotate(180deg) scaleX(-1);
-      transform-origin: center;
+    .title {
+      color: variables.$dark-grey;
+      font-size: 44px;
+      font-weight: 700;
     }
-  }
 
-  .rightArrows {
-    svg:nth-of-type(1) {
-      transform: rotate(-60deg);
-    }
-    svg:nth-of-type(2) {
-      transform: rotate(-120deg) scaleX(-1);
-      transform-origin: center;
-    }
-  }
+    .directionContainer {
+      @include mixins.flex($direction: column, $gap: 20px);
 
-  .centerBlock {
-    width: calc((100% - 196px) / 3);
-    @include mixins.flex($direction: column, $align: center, $justify: center);
+      .direction {
+        height: 120px;
+        padding: 12px;
+        border-radius: 12px;
+        background: variables.$dark-grey;
+        @include mixins.flex($items: center);
+        color: variables.$white-color;
+        position: relative;
+        overflow: hidden;
+
+        & > p {
+          position: relative;
+          z-index: 1;
+          white-space: pre-line;
+          text-align: left;
+        }
+
+        .flag {
+          height: 80%;
+          width: auto;
+          position: absolute;
+          top: -16px;
+          right: 0;
+          transform: scaleX(-1);
+        }
+      }
+    }
 
     .logoContainer {
-      flex: 0 1;
-      padding: 10px;
-      background:  variables.$blue;
-      border-radius: 12px;
+      width: 255px;
+      flex: 1;
+      @include mixins.flex($items: center);
+      position: relative;
 
-      //.logo {
-      //  height: 36px;
-      //}
+      .checkman {
+        width: 64%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .logo {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        background:  variables.$blue;
+        border-radius: 12px;
+      }
+    }
+
+    .typesOfGoodsContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 16px;
+
+      .typeOfGood {
+        padding: 20px 12px;
+        border-radius: 12px;
+        background: variables.$dark-grey;
+        white-space: pre-line;
+        color: variables.$white-color;
+      }
     }
   }
 
-  .typeOfGoodsContainer {
-    width: calc((100% - 196px) / 3);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-
-    .typeOfGood {
-      padding: 12px;
-      border-radius: 12px;
-      background: variables.$dark-grey;
-      white-space: pre-line;
-      color: variables.$white-color;
-    }
+  .arrowContainer {
+    align-self: stretch;
+    padding-top: 86px;
+    @include mixins.flex($items: center);
   }
 }

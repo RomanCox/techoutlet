@@ -4,7 +4,7 @@
 .tgIconContainer {
   @include mixins.size(32px);
   border-radius: 50%;
-  @include mixins.flex($align: center, $justify: center);
+  @include mixins.flex($items: center, $content: center);
   background: variables.$blue;
 
   & > svg {top: 50%;

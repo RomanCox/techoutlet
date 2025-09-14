@@ -37,7 +37,7 @@
 
       .catalogButton {
         width: fit-content;
-        @include mixins.flex($align: center, $gap: 4px);
+        @include mixins.flex($items: center, $gap: 4px);
       }
     }
 

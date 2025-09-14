@@ -20,7 +20,6 @@
   }
 
   .list {
-    //margin: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -29,7 +28,7 @@
 
     .listItem {
       padding-left: 10px;
-      @include mixins.flex($align: center, $gap: 10px);
+      @include mixins.flex($items: center, $gap: 10px);
 
       .listMarker {
         @include mixins.size(5px);

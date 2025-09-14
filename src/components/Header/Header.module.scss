@@ -5,7 +5,7 @@
   width: 100%;
   @include mixins.root-container;
   padding: 20px 40px;
-  @include mixins.flex($justify: space-between);
+  @include mixins.flex($content: space-between);
   background-color: variables.$header-bg;
   backdrop-filter: blur(16px);
   position: fixed;
@@ -15,7 +15,7 @@
   z-index: variables.$header-z;
 
   .logoContainer {
-    @include mixins.flex($align: center, $gap: 20px);
+    @include mixins.flex($items: center, $gap: 20px);
 
     .title,
     .logo {
@@ -30,7 +30,7 @@
   }
 
   .contactsContainer {
-    @include mixins.flex($align: center, $gap: 20px);
+    @include mixins.flex($items: center, $gap: 20px);
     color: white;
 
     & > p {

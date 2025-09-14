@@ -10,22 +10,26 @@
   height: $height;
 }
 
-@mixin flex($direction: null, $align: null, $justify: null, $gap: null) {
+@mixin flex($direction: null, $items: null, $content: null, $self: null, $gap: null) {
   display: flex;
 
-  @if $direction != null and $direction != row {
+  @if $direction != null {
     flex-direction: $direction;
   }
 
-  @if $align != null and $align != stretch {
-    align-items: $align;
+  @if $items != null {
+    align-items: $items;
   }
 
-  @if $justify != null and $justify != flex-start {
-    justify-content: $justify;
+  @if $content != null {
+    justify-content: $content;
   }
 
-  @if $gap != null and $gap != 0 {
+  @if $self != null {
+    align-self: $self;
+  }
+
+  @if $gap != null {
     gap: $gap;
   }
 }

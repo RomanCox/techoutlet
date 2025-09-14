@@ -2,38 +2,51 @@ import { memo } from 'react'
 
 import { Arrow } from '@/components/shared/Icons/Arrow/Arrow'
 import { Picture } from '@/components/shared/Picture/Picture'
+import { Text } from '@/components/shared/Text/Text'
 
 import LogoPNG from '@/assets/images/logo/title_white.png'
 import LogoWEBP from '@/assets/images/logo/title_white.webp'
-import {directions, typeOfGoods} from '@/constants/constants'
+import CheckManPNG from '@/assets/images/other/checkman.png'
+import CheckManWEBP from '@/assets/images/other/checkman.webp'
+
+import { directions, typeOfGoods } from '@/constants/constants'
 
 import cls from './ProductTrip.module.scss'
 
 export const ProductTrip = memo(() => {
   return (
     <div className={cls.productTripContainer}>
-      <div className={cls.directionsContainer}>
-        {directions.map(item => (
-          <div key={item} className={cls.direction}>{item}</div>
-        ))}
+      <div className={cls.contentContainer}>
+        <Text as='h4' className={cls.title}>Покупаем</Text>
+        <div className={cls.directionContainer}>
+          {directions.map(item => (
+            <div key={item.title} className={cls.direction}>
+              <Text>{item.title}</Text>
+              <Picture className={cls.flag} png={item.imagePNG} webp={item.imageWEBP} alt={item.alt}/>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className={cls.leftArrows}>
-        <Arrow />
+      <div className={cls.arrowContainer}>
         <Arrow />
       </div>
-      <div className={cls.centerBlock}>
+      <div className={cls.contentContainer}>
+        <Text as='h4' className={cls.title}>Проверяем</Text>
         <div className={cls.logoContainer}>
+          <Picture className={cls.checkman} png={CheckManPNG} webp={CheckManWEBP} alt="TechOutlet"/>
           <Picture className={cls.logo} png={LogoPNG} webp={LogoWEBP} alt="TechOutlet"/>
         </div>
       </div>
-      <div className={cls.rightArrows}>
-        <Arrow />
+      <div className={cls.arrowContainer}>
         <Arrow />
       </div>
-      <div className={cls.typeOfGoodsContainer}>
-        {typeOfGoods.map(item => (
-          <div key={item} className={cls.typeOfGood}>{item}</div>
-        ))}
+      <div className={cls.contentContainer}>
+        <Text as='h4' className={cls.title}>Продаем</Text>
+        <div className={cls.typesOfGoodsContainer}>
+          {typeOfGoods.map(item => (
+            <div key={item} className={cls.typeOfGood}>{item}</div>
+          ))}
+        </div>
       </div>
     </div>
   )

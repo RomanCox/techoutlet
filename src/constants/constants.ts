@@ -12,6 +12,12 @@ import HeadphonesPNG from '@/assets/images/devices/headphones.png'
 import HeadphonesWEBP from '@/assets/images/devices/headphones.webp'
 import NoteBookTransformerPNG from '@/assets/images/devices/notebook_transformer.png'
 import NoteBookTransformerWEBP from '@/assets/images/devices/notebook_transformer.webp'
+import USAFlagPNG from '@/assets/images/flags/usa-flag.png'
+import USAFlagWEBP from '@/assets/images/flags/usa-flag.webp'
+import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
+import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
+import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
+import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
 
 export const companyDescription: string[] = [
   'Витринные (товары с витрин магазинов)',
@@ -67,9 +73,24 @@ export const marketingCards: IMarketingCards[] = [
 ]
 
 export const directions = [
-  'Товары из США с\nзакрытых аукционов электроники',
-  'Товары из Европы с\nсудебных складов и аукционов',
-  'Товары из Dubai с\nоптовых складов в Deira',
+  {
+    title: 'Товары из США с\nзакрытых аукционов электроники',
+    imagePNG: USAFlagPNG,
+    imageWEBP: USAFlagWEBP,
+    alt: 'USA Flag',
+  },
+  {
+    title: 'Товары из Европы с\nсудебных складов и аукционов',
+    imagePNG: EuropeFlagPNG,
+    imageWEBP: EuropeFlagWEBP,
+    alt: 'Europe Flag',
+  },
+  {
+    title: 'Товары из Dubai с\nоптовых складов в Deira',
+    imagePNG: UAEFlagPNG,
+    imageWEBP: UAEFlagWEBP,
+    alt: 'UAE Flag',
+  },
 ] as const
 
 export const typeOfGoods = [

@@ -4,7 +4,7 @@
   width: 100%;
   padding-bottom: 20px;
   @include mixins.root-container;
-  @include mixins.flex($justify: space-between, $gap: 40px);
+  @include mixins.flex($content: space-between, $gap: 40px);
 
   .catalog {
     @include mixins.flex($direction: column);
