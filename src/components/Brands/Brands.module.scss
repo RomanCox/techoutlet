@@ -1,1 +1,14 @@
-.brandsContainer {}
+@use '@/styles/mixins';
+
+.brandsContainer {
+  @include mixins.flex($direction: column, $gap: 20px);
+
+  .brandsWrapper {
+    @include mixins.flex($gap: 20px);
+    flex-wrap: wrap;
+
+    .brandImage {
+      @include mixins.size(128px);
+    }
+  }
+}

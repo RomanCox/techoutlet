@@ -18,6 +18,30 @@ import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
 import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
 import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
 import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
+import ApplePNG from '@/assets/images/brands/apple.png'
+import AppleWEBP from '@/assets/images/brands/apple.webp'
+import GooglePNG from '@/assets/images/brands/google.png'
+import GoogleWEBP from '@/assets/images/brands/google.webp'
+import BosePNG from '@/assets/images/brands/bose.png'
+import BoseWEBP from '@/assets/images/brands/bose.webp'
+import XBoxPNG from '@/assets/images/brands/xbox.png'
+import XBoxWEBP from '@/assets/images/brands/xbox.webp'
+import JblPNG from '@/assets/images/brands/jbl.png'
+import JblWEBP from '@/assets/images/brands/jbl.webp'
+import PixelPNG from '@/assets/images/brands/pixel.png'
+import PixelWEBP from '@/assets/images/brands/pixel.webp'
+import DysonPNG from '@/assets/images/brands/dyson.png'
+import DysonWEBP from '@/assets/images/brands/dyson.webp'
+import GarminPNG from '@/assets/images/brands/garmin.png'
+import GarminWEBP from '@/assets/images/brands/google.webp'
+import MicrosoftPNG from '@/assets/images/brands/microsoft.png'
+import MicrosoftWEBP from '@/assets/images/brands/microsoft.webp'
+import NintendoPNG from '@/assets/images/brands/nintendo.png'
+import NintendoWEBP from '@/assets/images/brands/nintendo.webp'
+import SamsungPNG from '@/assets/images/brands/samsung.png'
+import SamsungWEBP from '@/assets/images/brands/samsung.webp'
+import SonyPNG from '@/assets/images/brands/sony.png'
+import SonyWEBP from '@/assets/images/brands/sony.webp'
 
 export const companyDescription: string[] = [
   'Витринные (товары с витрин магазинов)',
@@ -121,5 +145,80 @@ export const catalog = [
 ] as const
 
 type FooterSection = 'Каталог техники' | 'Магазин' | 'Контакты' | 'Logo'
+
+export const brands = [
+  {
+    id: 0,
+    imagePNG: ApplePNG,
+    imageWEBP: AppleWEBP,
+    alt: ''
+  },
+  {
+    id: 1,
+    imagePNG: GooglePNG,
+    imageWEBP: GoogleWEBP,
+    alt: ''
+  },
+  {
+    id: 2,
+    imagePNG: BosePNG,
+    imageWEBP: BoseWEBP,
+    alt: ''
+  },
+  {
+    id: 3,
+    imagePNG: XBoxPNG,
+    imageWEBP: XBoxWEBP,
+    alt: ''
+  },
+  {
+    id: 4,
+    imagePNG: JblPNG,
+    imageWEBP: JblWEBP,
+    alt: ''
+  },
+  {
+    id: 5,
+    imagePNG: PixelPNG,
+    imageWEBP: PixelWEBP,
+    alt: ''
+  },
+  {
+    id: 6,
+    imagePNG: DysonPNG,
+    imageWEBP: DysonWEBP,
+    alt: ''
+  },
+  {
+    id: 7,
+    imagePNG: GarminPNG,
+    imageWEBP: GarminWEBP,
+    alt: ''
+  },
+  {
+    id: 8,
+    imagePNG: MicrosoftPNG,
+    imageWEBP: MicrosoftWEBP,
+    alt: ''
+  },
+  {
+    id: 9,
+    imagePNG: NintendoPNG,
+    imageWEBP: NintendoWEBP,
+    alt: ''
+  },
+  {
+    id: 10,
+    imagePNG: SamsungPNG,
+    imageWEBP: SamsungWEBP,
+    alt: ''
+  },
+  {
+    id: 11,
+    imagePNG: SonyPNG,
+    imageWEBP: SonyWEBP,
+    alt: ''
+  },
+]
 
 

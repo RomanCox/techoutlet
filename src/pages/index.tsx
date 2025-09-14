@@ -5,9 +5,11 @@ import { HeroSlider} from '@/components/HeroSlider/HeroSlider'
 import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescription'
 import { MarketingCards } from '@/components/MarketingCards/MarketingCards'
 import { ProductTrip } from '@/components/ProductTrip/ProductTrip'
+import { Brands } from '@/components/Brands/Brands'
 import { Footer } from '@/components/Footer/Footer'
 
 import styles from '@/styles/Page.module.scss'
+
 
 export default function Home() {
   return (
@@ -27,6 +29,7 @@ export default function Home() {
           <CompanyDescription />
           <MarketingCards />
           <ProductTrip />
+          <Brands />
         </main>
         <Footer />
       </div>
