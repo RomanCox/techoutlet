@@ -3,7 +3,7 @@ import { memo } from 'react'
 import { BurgerButton } from '@/components/shared/BurgerButton/BurgerButton'
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
-import { TgIcon } from '@/components/shared/Icons/TgIcon/TgIcon'
+import { TgIcon } from '@/components/shared/Icon/TgIcon/TgIcon'
 
 import TitlePNG from '@/assets/images/logo/title_blue.png'
 import TitleWEBP from '@/assets/images/logo/title_blue.webp'
@@ -22,7 +22,9 @@ export const Header = memo(() => {
       </div>
       <div className={cls.contactsContainer}>
         <Text>+375 29 6663083</Text>
-        <TgIcon />
+        <div>
+          <TgIcon className={cls.tgIcon}/>
+        </div>
       </div>
     </header>
   )

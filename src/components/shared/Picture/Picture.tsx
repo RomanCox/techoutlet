@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image'
 import { memo } from 'react'
-import { classNames } from '@/helpers/classNames'
+import { classNames } from '@/helpers'
 
 import cls from './Picture.module.scss'
 

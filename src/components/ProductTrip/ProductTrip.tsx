@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { Arrow } from '@/components/shared/Icons/Arrow/Arrow'
+import { Arrow } from '@/components/shared/Icon/Arrow/Arrow'
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
 
@@ -9,7 +9,7 @@ import LogoWEBP from '@/assets/images/logo/title_white.webp'
 import CheckManPNG from '@/assets/images/other/checkman.png'
 import CheckManWEBP from '@/assets/images/other/checkman.webp'
 
-import { directions, typeOfGoods } from '@/constants/constants'
+import { directions, typeOfGoods } from '@/constants'
 
 import cls from './ProductTrip.module.scss'
 

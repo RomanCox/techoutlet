@@ -1,3 +1,4 @@
+@use '@/styles/variables';
 @use '@/styles/mixins';
 
 .brandsContainer {
@@ -18,9 +19,6 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 40px 0;
-
-    .brandImage {
-      @include mixins.size(128px);
-    }
+    color: variables.$grey-color;
   }
 }

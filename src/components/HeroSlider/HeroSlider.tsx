@@ -5,7 +5,7 @@ import { useViewportParallax } from '@/hooks/useViewportParallax'
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
 import { Button } from '@/components/shared/Button/Button'
-import { TgIcon } from '@/components/shared/Icons/TgIcon/TgIcon'
+import { TgIcon } from '@/components/shared/Icon/TgIcon/TgIcon'
 
 
 import NotebookPNG from '@/assets/images/devices/notebook.png'

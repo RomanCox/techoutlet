@@ -1,22 +1,61 @@
+@use '@/styles/variables';
 @use '@/styles/mixins';
 
 .footer {
   width: 100%;
-  padding-bottom: 20px;
+  padding: 20px 80px 40px 80px;
   @include mixins.root-container;
   @include mixins.flex($content: space-between, $gap: 40px);
 
   .catalog {
-    @include mixins.flex($direction: column);
+
 
     & > h4 {
       margin-bottom: 20px;
     }
   }
 
-  .shop {}
+  .shop,
+  .contacts,
+  .shopInfo {
+    @include mixins.flex($direction: column);
 
-  .contacts {}
+    & > h4 {
+      text-align: left;
+    }
 
-  .info {}
+    & > p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+
+  .shopInfo {
+    gap: 10px;
+
+    & > button:first-of-type {
+      margin-top: 10px;
+    }
+  }
+}
+
+.text,
+.link {
+  margin-top: 20px;
+  white-space: pre-line;
+}
+
+.text {
+  color: variables.$black;
+}
+
+.link {
+  color: variables.$blue;
+  text-align: left;
+}
+
+.postText {
+  color: variables.$black-50;
 }

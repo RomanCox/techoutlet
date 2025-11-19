@@ -6,10 +6,10 @@ import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescr
 import { MarketingCards } from '@/components/MarketingCards/MarketingCards'
 import { ProductTrip } from '@/components/ProductTrip/ProductTrip'
 import { Brands } from '@/components/Brands/Brands'
+import { FollowUs } from '@/components/FollowUs/FollowUs'
 import { Footer } from '@/components/Footer/Footer'
 
 import styles from '@/styles/Page.module.scss'
-
 
 export default function Home() {
   return (
@@ -30,6 +30,7 @@ export default function Home() {
           <MarketingCards />
           <ProductTrip />
           <Brands />
+          <FollowUs />
         </main>
         <Footer />
       </div>

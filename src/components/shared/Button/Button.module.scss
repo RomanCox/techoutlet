@@ -2,10 +2,24 @@
 
 .button {
   border-radius: 20px;
-  padding: 2px 20px;
+  padding: 2px 30px;
   color: variables.$white-color;
   background: variables.$blue;
   font-size: 20px;
   font-weight: 700;
   line-height: 120%;
+
+  & > p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+}
+
+.clear {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: variables.$black;
 }

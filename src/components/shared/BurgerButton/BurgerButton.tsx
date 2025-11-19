@@ -1,5 +1,5 @@
 import { memo, useState } from 'react'
-import { classNames } from '@/helpers/classNames'
+import { classNames } from '@/helpers'
 
 import cls from './BurgerButton.module.scss'
 

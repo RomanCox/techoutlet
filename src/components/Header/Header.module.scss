@@ -37,5 +37,9 @@
       color: variables.$color-text;
       font-weight: bold;
     }
+
+    .tgIcon {
+      @include mixins.size(32px)
+    }
   }
 }

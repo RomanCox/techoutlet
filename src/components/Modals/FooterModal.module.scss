@@ -1,0 +1,19 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.footerModal {
+  @include mixins.flex($direction: column, $items: flex-start, $gap: 20px);
+
+  & > h4 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  & > p {
+    white-space: pre-wrap;
+
+    & > a {
+      color: variables.$blue;
+    }
+  }
+}

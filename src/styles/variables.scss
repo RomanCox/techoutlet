@@ -12,7 +12,11 @@ $line-height-base: 1.5;
 $color-text: #213547;
 $dark-grey: #363636;
 $black: #000000;
+$black-40: #00000040;
+$black-50: #00000050;
 $white-color: #F5F5F5;
+$white-modal: #F9FAFA;
+$grey-color: #B3B3B1;
 $yellow: #ECBD01;
 $header-bg: #F5FF5B3;
 $blue: #017AF6;
@@ -22,3 +26,4 @@ $dark-border: #2B2B2B;
 
 // z-indexes:
 $header-z: 100;
+$modal-z: 1000;

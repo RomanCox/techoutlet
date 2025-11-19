@@ -10,11 +10,27 @@
   height: $height;
 }
 
-@mixin flex($direction: null, $items: null, $content: null, $self: null, $gap: null) {
-  display: flex;
+@mixin flex(
+  $inline: false,
+  $direction: null,
+  $wrap: null,
+  $items: null,
+  $content: null,
+  $self: null,
+  $gap: null,
+  $grow: null,
+  $shrink: null,
+  $basis: null,
+  $order: null,
+) {
+  display: if($inline, inline-flex, flex);
 
   @if $direction != null {
     flex-direction: $direction;
+  }
+
+  @if $wrap != null {
+    flex-wrap: $wrap;
   }
 
   @if $items != null {
@@ -31,5 +47,21 @@
 
   @if $gap != null {
     gap: $gap;
+  }
+
+  @if $grow != null {
+    flex-grow: $grow;
+  }
+
+  @if $shrink != null {
+    flex-shrink: $shrink;
+  }
+
+  @if $basis != null {
+    flex-basis: $basis;
+  }
+
+  @if $order != null {
+    order: $order;
   }
 }

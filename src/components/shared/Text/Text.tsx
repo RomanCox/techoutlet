@@ -9,7 +9,7 @@ import {
   createElement,
 } from 'react'
 
-import { classNames } from '@/helpers/classNames'
+import { classNames } from '@/helpers'
 
 import cls from './Text.module.scss'
 

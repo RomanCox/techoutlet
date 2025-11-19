@@ -8,14 +8,20 @@ import {
 	ReactElement,
 	forwardRef,
 } from 'react'
-import { classNames } from '@/helpers/classNames'
+import {classNames, Mods} from '@/helpers'
 
 import cls from './Button.module.scss'
+
+export enum ButtonTheme {
+  MAIN = 'main',
+  CLEAR = 'clear',
+}
 
 type PolymorphicRef<T extends ElementType> = ComponentRef<T>
 
 export type ButtonOwnProps<T extends ElementType = 'button'> = {
 	as?: T,
+  theme?: ButtonTheme,
 	className?: string,
 }
 
@@ -24,14 +30,19 @@ type ButtonProps<T extends ElementType = 'button'> =
 	Omit<ComponentPropsWithRef<T>, keyof ButtonOwnProps<T>>
 
 const ButtonInner = (
-	{ as, className, ...rest }: ButtonProps<any>,
+	{ as, className, theme = ButtonTheme.MAIN, ...rest }: ButtonProps<any>,
 	ref: ForwardedRef<PolymorphicRef<any>>
 ) => {
 	const Component = (as || 'button') as ElementType
+
+  const btnMods: Mods = {
+    [cls[theme]]: true,
+  }
+
 	return (
 		<Component
 			ref={ref}
-			className={classNames(cls.button, {}, [className])}
+			className={classNames(cls.button, btnMods, [className])}
 			{...rest}
 		/>
 	)

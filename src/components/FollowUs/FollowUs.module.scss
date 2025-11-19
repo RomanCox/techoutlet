@@ -1,0 +1,39 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.followUsContainer {
+  width: 100%;
+  padding: 40px;
+  border-radius: 24px;
+  @include mixins.flex($content: space-between);
+  box-shadow: 0 4px 4px 0 variables.$black-40;
+
+  .followUsTextContainer {
+    @include mixins.flex($direction: column, $gap: 32px);
+
+    .followUsTitle {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1;
+      text-align: left;
+      white-space: pre-line;
+    }
+
+    .followUsDescription {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: left;
+      white-space: pre-line;
+    }
+
+    .catalogButton {
+      width: fit-content;
+      @include mixins.flex($items: center, $gap: 10px);
+    }
+  }
+
+  .followUsImage {
+    height: 256px;
+    width: auto;
+  }
+}

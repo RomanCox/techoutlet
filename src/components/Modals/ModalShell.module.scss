@@ -1,0 +1,48 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  @include mixins.flex($content: center, $items: center);
+  z-index: variables.$modal-z;
+
+  .window {
+    max-width: 60%;
+    max-height: 60%;
+    padding-block: 36px 10px;
+    background: variables.$white-modal;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+
+    .closeButton {
+      @include mixins.size(30px);
+      @include mixins.flex($inline: true, $content: center, $items: center);
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover .closeIcon {
+        transform: rotate(90deg);
+      }
+
+      .closeIcon {
+        transform: rotate(0);
+        transition: transform .2s;
+      }
+    }
+
+    .windowContent {
+      height: 100%;
+      max-height: calc(60vh - 46px);
+      padding-inline: 24px;
+      overflow-y: auto;
+    }
+  }
+}

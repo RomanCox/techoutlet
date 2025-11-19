@@ -1,4 +1,5 @@
-import { StaticImageData } from 'next/image'
+import { FC } from 'react'
+import * as Icon from '@/components/shared/Icon'
 
 import ManyIphonesPNG from '@/assets/images/devices/many_iphones.png'
 import ManyIphonesWEBP from '@/assets/images/devices/many_iphones.webp'
@@ -18,30 +19,8 @@ import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
 import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
 import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
 import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
-import ApplePNG from '@/assets/images/brands/apple.png'
-import AppleWEBP from '@/assets/images/brands/apple.webp'
-import GooglePNG from '@/assets/images/brands/google.png'
-import GoogleWEBP from '@/assets/images/brands/google.webp'
-import BosePNG from '@/assets/images/brands/bose.png'
-import BoseWEBP from '@/assets/images/brands/bose.webp'
-import XBoxPNG from '@/assets/images/brands/xbox.png'
-import XBoxWEBP from '@/assets/images/brands/xbox.webp'
-import JblPNG from '@/assets/images/brands/jbl.png'
-import JblWEBP from '@/assets/images/brands/jbl.webp'
-import PixelPNG from '@/assets/images/brands/pixel.png'
-import PixelWEBP from '@/assets/images/brands/pixel.webp'
-import DysonPNG from '@/assets/images/brands/dyson.png'
-import DysonWEBP from '@/assets/images/brands/dyson.webp'
-import GarminPNG from '@/assets/images/brands/garmin.png'
-import GarminWEBP from '@/assets/images/brands/google.webp'
-import MicrosoftPNG from '@/assets/images/brands/microsoft.png'
-import MicrosoftWEBP from '@/assets/images/brands/microsoft.webp'
-import NintendoPNG from '@/assets/images/brands/nintendo.png'
-import NintendoWEBP from '@/assets/images/brands/nintendo.webp'
-import SamsungPNG from '@/assets/images/brands/samsung.png'
-import SamsungWEBP from '@/assets/images/brands/samsung.webp'
-import SonyPNG from '@/assets/images/brands/sony.png'
-import SonyWEBP from '@/assets/images/brands/sony.webp'
+import { FooterType, IBrand, IDirection, IMarketingCards } from '@/constants'
+import { MODAL } from '@/constants/modal'
 
 export const companyDescription: string[] = [
   'Витринные (товары с витрин магазинов)',
@@ -49,13 +28,6 @@ export const companyDescription: string[] = [
   'Trade in (б/у товары по системе обмена старого на новый)',
   'Open Box (новые товары в открытых или поврежденных коробках)',
 ]
-
-interface IMarketingCards {
-  id: number
-  text: string
-  imagePNG: StaticImageData
-  imageWEBP: StaticImageData
-}
 
 export const marketingCards: IMarketingCards[] = [
   {
@@ -96,7 +68,7 @@ export const marketingCards: IMarketingCards[] = [
   },
 ]
 
-export const directions = [
+export const directions: IDirection[] = [
   {
     title: 'Товары из США с\nзакрытых аукционов электроники',
     imagePNG: USAFlagPNG,
@@ -117,7 +89,7 @@ export const directions = [
   },
 ] as const
 
-export const typeOfGoods = [
+export const typeOfGoods: string[] = [
   'Телефоны',
   'Ноутбуки',
   'Игровые консоли',
@@ -130,95 +102,139 @@ export const typeOfGoods = [
   'Wi-Fi системы',
 ] as const
 
-export const catalog = [
-  'iPhone',
-  'iPad',
-  'MacBook',
-  'Apple Watch',
-  'Mac',
-  'Аксессуары',
-  'DJI',
-  'Sony',
-  'Samsung',
-  'Ноутбуки',
-  'Периферия',
-] as const
+export const iconComponents: Record<string, FC<any>> = {
+  apple: Icon.Apple,
+  google: Icon.Google,
+  bose: Icon.Bose,
+  xbox: Icon.Xbox,
+  jbl: Icon.JBL,
+  pixel: Icon.Pixel,
+  dyson: Icon.Dyson,
+  garmin: Icon.Garmin,
+  microsoft: Icon.Microsoft,
+  nintendo: Icon.Nintendo,
+  samsung: Icon.Samsung,
+  sony: Icon.Sony,
+}
 
-type FooterSection = 'Каталог техники' | 'Магазин' | 'Контакты' | 'Logo'
-
-export const brands = [
+export const brands: IBrand[] = [
   {
     id: 0,
-    imagePNG: ApplePNG,
-    imageWEBP: AppleWEBP,
-    alt: ''
+    iconName: 'apple',
+    alt: 'apple icon'
   },
   {
     id: 1,
-    imagePNG: GooglePNG,
-    imageWEBP: GoogleWEBP,
-    alt: ''
+    iconName: 'google',
+    alt: 'google icon'
   },
   {
     id: 2,
-    imagePNG: BosePNG,
-    imageWEBP: BoseWEBP,
-    alt: ''
+    iconName: 'bose',
+    alt: 'bose icon'
   },
   {
     id: 3,
-    imagePNG: XBoxPNG,
-    imageWEBP: XBoxWEBP,
-    alt: ''
+    iconName: 'xbox',
+    alt: 'xbox icon'
   },
   {
     id: 4,
-    imagePNG: JblPNG,
-    imageWEBP: JblWEBP,
-    alt: ''
+    iconName: 'jbl',
+    alt: 'jbl icon'
   },
   {
     id: 5,
-    imagePNG: PixelPNG,
-    imageWEBP: PixelWEBP,
-    alt: ''
+    iconName: 'pixel',
+    alt: 'pixel icon'
   },
   {
     id: 6,
-    imagePNG: DysonPNG,
-    imageWEBP: DysonWEBP,
-    alt: ''
+    iconName: 'dyson',
+    alt: 'dyson icon'
   },
   {
     id: 7,
-    imagePNG: GarminPNG,
-    imageWEBP: GarminWEBP,
-    alt: ''
+    iconName: 'garmin',
+    alt: 'garmin icon'
   },
   {
     id: 8,
-    imagePNG: MicrosoftPNG,
-    imageWEBP: MicrosoftWEBP,
-    alt: ''
+    iconName: 'microsoft',
+    alt: 'microsoft icon'
   },
   {
     id: 9,
-    imagePNG: NintendoPNG,
-    imageWEBP: NintendoWEBP,
-    alt: ''
+    iconName: 'nintendo',
+    alt: 'nintendo icon'
   },
   {
     id: 10,
-    imagePNG: SamsungPNG,
-    imageWEBP: SamsungWEBP,
-    alt: ''
+    iconName: 'samsung',
+    alt: 'samsung icon'
   },
   {
     id: 11,
-    imagePNG: SonyPNG,
-    imageWEBP: SonyWEBP,
-    alt: ''
+    iconName: 'sony',
+    alt: 'sony icon'
   },
 ]
 
-
+export const footerData: FooterType = {
+  shop: {
+    label: 'Магазин',
+    address: {
+      text: 'г. Минск\nул. Хоружей д.32а/4, оф.12',
+      postText: 'магазин',
+    },
+    workingTime: {
+      text: 'Время работы:\n10:00 — 21:00',
+      postText: 'ежедневно',
+    },
+  },
+  contacts: {
+    label: 'Контакты',
+    phoneNumber: {
+      text: '+375 29 6663083',
+      link: '+375296663083',
+    },
+    telegram: {
+      text: 'https://t.me/techoutlet_by',
+      postText: 'Telegram',
+    },
+  },
+  services: {
+    label: 'Услуги',
+    servicesList: [
+      {
+        id: MODAL.TRADE_IN,
+        label: 'Трейд-ин',
+        text: 'Trade-in — программа обмена старых устройств на скидку при покупке нового. При сдаче устройства в Trade-in, оно оценивается исходя из актуальности модели, его технического и внешнего состояния. Сумма, на которую было оценено устройство, предоставляется пользователю в качестве скидки на приобретение нового.\n\nПроще говоря, Вы приносите свой старый телефон нам при самовывозе, сдаете его и тут же получаете скидку на покупку нового устройства!\n\nКакими преимуществами обладает Trade-in?\n\n– Вам не нужно тратить время на создание объявлений и продажу телефона. Мы просто заберем его у вас :)\n\n– Наша компания берет на себя все риски, связанные с продажей Вашего старого устройства. У вас нет повода для беспокойства;\n\n– Вы получаете дополнительную скидку на покупку нового устройства.\n\nМожно ли сдать в Trade-in более одного устройства?\nДа, конечно. Вы можете принести нам хоть целый мешок телефонов :)\n\nКак узнать размер дополнительной скидки?\nРазмер скидки рассчитывается индивидуально и зависит от приобретаемого устройства. Вы можете позвонить нам для получения более точной информации.\n\nГде можно произвести замену устройства?\nЗамену устройства можно произвести в шоуруме по адресу:  Минск, ул. Хоружей д.32а/4, оф.12, заезд под шлагбаум с улица Хоружей.\n\nКакие устройства принимаются в Trade-in?\nВ настоящий момент мы принимаем в Trade-in технику Apple и отдельные модели смартфонов Samsung Galaxy.\n\nКак воспользоваться услугой Trade-in?\n– Оформите заказ на нашем сайте, в боковом меню выбрав отметку «Trade-in». В комментариях к заказу укажите, какой аппарат хотите сдать по данной программе;\n\n– Приезжайте к нам в пункт самовывоза, захватив с собой устройство, которое хотите обменять.\n\nПринимаем ли мы в Trade-in заблокированные на Apple ID телефоны?\nУвы, нет. Если Вы нашли телефон на улице – проявите сознательность и лучше отнесите его в полицию. А если вы забыли свой Apple ID, то попробуйте обратиться в техподдержку Apple.\n\nЕсли у Вас остались вопросы, мы с радостью ответим на них по телефону - ',
+        link: {
+          url: 'tel:+375296663083',
+          text: '+375 29 666-30-83'
+        },
+      },
+      {
+        id: MODAL.REPAIR,
+        label: 'Гарантия',
+        text: 'Гарантийное обслуживание — это бесплатный ремонт или замена устройства в течение всего гарантийного срока, при соблюдении условий гарантии.\n\nМы предоставляем гарантию на устройства до 12 месяцев.\nСрок предоставляемой гарантии на конкретное устройство уточняйте у менеджера.\n\nГарантийное обслуживание не осуществляется в следующих случаях:\n1. Наличие исправлений в гарантийном документе, повреждений или следов переклеивания гарантийных наклеек, несоответствие серийного номера изделия номеру в талоне.\n2. Наличие механических, электрических и термических повреждений, возникших в результате нарушения правил эксплуатации или транспортировки изделия, следов самостоятельного ремонта или ремонта в неуполномоченном сервисном центре.\n3. Использование зарядных устройств, а также питающих, телекоммуникационных и кабельных сетей с параметрами, не соответствующими ТУ и ГОСТ, действующими в Республике Беларусь.\n4. Невозможность считывания IMEI или серийного номера изделия.\n5. Повреждение, вызванное попаданием внутрь изделия посторонних предметов, загрязнений, веществ, жидкостей.\n6. В иных случая нарушения Покупателем установленных правил эксплуатации изделий, действие третьих лиц и непреодолимой силы.\n7. Eсли дефект (недостаток) возник вследствие естественного износа при эксплуатации изделия. При этом под естественным износом понимаются последствия эксплуатации изделия, вызвавшие ухудшение их технического состояния, изменение физических свойств материалов использованных при изготовлении, а также внешнего вида изделия из-за длительного использования данного изделия.\n\nГарантия не распространяется:\n1. На ущерб, причиненный другому оборудованию, работающему в сопряжении с данным изделием.\n2. На совместимость данного изделия с изделиями и программными продуктами третьих сторон в части их совместимости и конфигурирования систем.\n3. На установленное и предустановленное программное обеспечение, некорректное обновление, воздействие вредоносных программ (вирусов).',
+      },
+      {
+        id: MODAL.DELIVERY_PAYING,
+        label: 'Доставка и оплата',
+        text: 'Оплата\n\nНаличный расчет\nОплата осуществляется наличными денежными средствами при доставке товара курьером или в физическом магазине.\n\nОплата банковской картой\nОплата осуществляется банковской картой при доставке товара курьером или в физическом магазине посредством терминала.\n\nБанковской карточкой через интернет\nОплата осуществляется онлайн после оформления заказа на сайте с использованием банковских карт VISA, VISA Electron, MasterCard, Maestro, БЕЛКАРТ.\n\nКарты рассрочек\n«Халва» на 2 месяца\n«Карта покупок» на 3 месяца\n«КартаFUN» на 6 месяца\n«Черепаха» на 8 месяцев\n\n*Все цены указаны со скидкой за наличный расчет, при оплате картами рассрочек или покупке в кредит скидка не распространяется, цену уточняйте у менеджера.\n\nДоставка\nКурьерской службой по Беларуси\nКурьер выполняет только доставку до подъезда.\nСтоимость: от 20р\nСроки доставки: 2-3 дня после оформления заказа.\n\nСамовывоз из ПВЗ Европочты\nВы можете забрать товар в одном из ПВЗ Европочты по всей Беларуси.\nСтоимость: 3% наложенный платеж, 5р доставка.\nСроки доставки: 2-3 дня после оформления заказа.\n\nСамовывоз из магазина\nВы можете оформить самовывоз и забрать товар в одном из наших магазинов.',
+      },
+      {
+        id: MODAL.MAP,
+        label: 'Схема проезда',
+        text: '',
+      },
+      {
+        id: MODAL.ABOUT,
+        label: 'О нас',
+        text: 'TechOutlet – это первый фирменный магазин уценённых устройств в Беларуси.\n\nРеквизиты\nООО "Техно онли"\nРБ, 220013, г. Минск, ул. Хоружей д.32а/4, оф.12\nУНП 192952889 ОКПО 500968675000\n\nр/с BY62TECN30128030800000000010\nв ОАО "Технобанк" РКЦ №7 г. Минск, ул. Кульман, 21Б\nBIC TECNBY22',
+      },
+    ],
+  },
+}

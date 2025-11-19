@@ -1,0 +1,6 @@
+export { ModalShell } from './ModalShell'
+export { FooterModal } from './FooterModal'
+export { GuaranteeModal } from './GuaranteeModal'
+export { AboutModal } from './AboutModal'
+export { DeliveryPayingModal } from './DeliveryPayingModal'
+export { MapModal } from './MapModal'

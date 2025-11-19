@@ -1,10 +1,10 @@
 import { memo } from 'react'
-import { classNames } from '@/helpers/classNames'
+import { classNames } from '@/helpers'
 
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
 
-import { marketingCards } from '@/constants/constants'
+import { marketingCards } from '@/constants'
 
 import cls from './MarketingCards.module.scss'
 

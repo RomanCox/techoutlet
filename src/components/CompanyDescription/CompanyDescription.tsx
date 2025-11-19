@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import { Text } from '@/components/shared/Text/Text'
 
-import { companyDescription } from '@/constants/constants'
+import { companyDescription } from '@/constants'
 
 import cls from './CompanyDescription.module.scss'
 
