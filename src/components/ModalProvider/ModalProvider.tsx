@@ -60,8 +60,6 @@ const ModalRoot: FC = () => {
     case MODAL.MAP:
       content = <FooterModal id={MODAL.MAP}/>
       break
-    default:
-      content = null
   }
 
   if (!content) return null

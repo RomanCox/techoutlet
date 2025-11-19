@@ -196,7 +196,7 @@ export const footerData: FooterType = {
     label: 'Контакты',
     phoneNumber: {
       text: '+375 29 6663083',
-      link: '+375296663083',
+      link: 'tel:+375296663083',
     },
     telegram: {
       text: 'https://t.me/techoutlet_by',
