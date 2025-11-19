@@ -1,6 +1,6 @@
 import { createContext, type FC, type ReactNode, useContext, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ModalShell, FooterModal, GuaranteeModal, AboutModal, DeliveryPayingModal, MapModal } from '@/components/Modals'
+import { ModalShell, FooterModal } from '@/components/Modals'
 import { MODAL } from '@/constants/modal'
 import { lockScroll, unlockScroll } from '@/utils/lockScroll'
 

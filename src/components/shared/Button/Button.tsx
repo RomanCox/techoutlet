@@ -1,6 +1,5 @@
 import {
   memo,
-	ComponentPropsWithoutRef,
 	ComponentPropsWithRef,
 	ElementType,
 	ForwardedRef,
