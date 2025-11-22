@@ -2,7 +2,7 @@ import { memo, SVGProps } from 'react'
 
 export const Microsoft = memo((props: SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M10 52.141H21.585V63.7261H10V52.141Z" fill="currentColor"/>
       <path d="M22.1329 52.141H33.7179V63.7261H22.1329V52.141Z" fill="currentColor"/>
       <path d="M10 64.2739H21.585V75.859H10V64.2739Z" fill="currentColor"/>

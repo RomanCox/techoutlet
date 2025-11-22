@@ -1,3 +1,5 @@
+export { Icon } from './Icon'
+export { TgIcon } from './TgIcon/TgIcon'
 export { Apple } from './Apple/Apple'
 export { Google } from './Google/Google'
 export { Bose } from './Bose/Bose'

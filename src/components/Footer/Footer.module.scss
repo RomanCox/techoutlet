@@ -17,7 +17,8 @@
 
   .shop,
   .contacts,
-  .shopInfo {
+  .shopInfo,
+  .companyInfo {
     @include mixins.flex($direction: column);
 
     & > h4 {
@@ -26,9 +27,18 @@
 
     & > p {
       font-weight: 400;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 24px;
       text-align: left;
+    }
+  }
+
+  .contacts {
+    .payments {
+      height: 20px;
+      margin-top: 20px;
+      @include mixins.flex($gap: 4px);
+      color: variables.$visa-blue;
     }
   }
 
@@ -37,6 +47,42 @@
 
     & > button:first-of-type {
       margin-top: 10px;
+    }
+  }
+
+  .companyInfo {
+    gap: 20px;
+
+    .title {
+      height: 32px;
+      display: flex;
+    }
+
+    .socialContainer {
+
+      .title {
+        font-size: 16px;
+        font-weight: 400;
+        color: variables.$black-50;
+        text-align: left;
+      }
+
+      .socials {
+        height: 56px;
+      }
+    }
+
+    .siteInfo {
+      @include mixins.flex($direction: column,$gap: 4px);
+
+      .text {
+        text-align: left;
+      }
+
+      .postText {
+        text-align: left;
+        white-space: pre;
+      }
     }
   }
 }

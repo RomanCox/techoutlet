@@ -2,7 +2,7 @@ import { memo, SVGProps } from 'react'
 
 export const Xbox = memo((props: SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g clipPath="url(#clip0_328_203)">
         <path d="M63.99 13.2979C58.523 13.1916 52.1532 15.2643 48.915 17.656C53.8518 17.2308 57.6205 18.5595 63.9371 21.8016C70.1692 18.4455 74.0227 17.2309 78.8529 17.656C74.872 14.8392 69.1922 13.2979 63.99 13.2979Z" fill="currentColor"/>
         <path d="M56.1341 29.136C51.0917 24.2995 46.9349 20.9878 43.9785 21.4827C35.2202 28.8171 31.0271 46.8875 41.2715 59.3774C39.52 52.4681 47.6412 39.8188 56.1341 29.136Z" fill="currentColor"/>
