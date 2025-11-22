@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-import {MODAL} from "@/constants/modal";
+import { MODAL } from '@/constants/modal'
 
 export interface IMarketingCards {
   id: number

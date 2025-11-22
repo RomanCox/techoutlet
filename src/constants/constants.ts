@@ -1,6 +1,3 @@
-import { FC } from 'react'
-import * as Icon from '@/components/shared/Icon'
-
 import ManyIphonesPNG from '@/assets/images/devices/many_iphones.png'
 import ManyIphonesWEBP from '@/assets/images/devices/many_iphones.webp'
 import PhoneBoxPNG from '@/assets/images/devices/phone_box.png'
@@ -101,23 +98,6 @@ export const typeOfGoods: string[] = [
   'Кофемашины',
   'Wi-Fi системы',
 ] as const
-
-export const iconComponents: Record<string, FC<any>> = {
-  tg: Icon.TgIcon,
-  apple: Icon.Apple,
-  google: Icon.Google,
-  bose: Icon.Bose,
-  xbox: Icon.Xbox,
-  jbl: Icon.JBL,
-  pixel: Icon.Pixel,
-  dyson: Icon.Dyson,
-  garmin: Icon.Garmin,
-  microsoft: Icon.Microsoft,
-  nintendo: Icon.Nintendo,
-  samsung: Icon.Samsung,
-  sony: Icon.Sony,
-  close: Icon.CloseIcon,
-}
 
 export const brands: IBrand[] = [
   {

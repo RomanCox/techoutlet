@@ -2,7 +2,7 @@
 
 import { memo } from 'react'
 import { classNames } from '@/helpers'
-import { iconComponents } from '@/constants'
+import { iconComponents } from './map'
 
 interface IIcon {
   name?: string

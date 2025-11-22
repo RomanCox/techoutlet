@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
 import { Text } from '@/components/shared/Text/Text'
-import { Icon } from '@/components/shared/Icon'
+import { Icon } from '@/components/shared/Icon/Icon'
 
 import { brands } from '@/constants'
 
