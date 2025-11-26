@@ -9,6 +9,6 @@
 
   .main {
     width: 100%;
-    @include mixins.flex($direction: column, $gap: 60px);
+    @include mixins.flex($direction: column, $gap: 100px);
   }
 }

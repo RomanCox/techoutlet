@@ -1,6 +1,14 @@
 import { StaticImageData } from 'next/image'
 import { MODAL } from '@/constants/modal'
 
+export interface IHeaderDataType {
+  phoneNumber: {
+    label: string
+    link: string
+  }
+  telegramLink: string
+}
+
 export interface IMarketingCards {
   id: number
   text: string
@@ -9,16 +17,16 @@ export interface IMarketingCards {
 }
 
 export interface IDirection {
-  title: string,
-  imagePNG: StaticImageData,
-  imageWEBP: StaticImageData,
-  alt: string,
+  title: string
+  imagePNG: StaticImageData
+  imageWEBP: StaticImageData
+  alt: string
 }
 
 export interface IBrand {
-  id: number,
-  iconName: string,
-  alt: string,
+  id: number
+  iconName: string
+  alt: string
 }
 
 export type FooterSection = 'Магазин' | 'Контакты' | 'Услуги' | 'Logo'
@@ -38,11 +46,11 @@ export interface FooterShopType {
 export interface FooterContactType {
   label: FooterSection
   phoneNumber: {
-    text: string
+    label: string
     link: string
   }
   telegram: {
-    text: string
+    link: string
     postText: string
   }
 }
@@ -51,9 +59,9 @@ export interface FooterServiceType {
   id: MODAL
   label: string
   text: string
-  link?: {
-    url: string
-    text: string
+  url?: {
+    link: string
+    label: string
   }
 }
 
@@ -62,8 +70,16 @@ export interface FooterServicesType {
   servicesList: FooterServiceType[]
 }
 
-export interface FooterType {
+export interface FooterSiteInfoType {
+  socialsLabel: string
+  socials: { iconName: string, link: string }[]
+  copyright: string
+  text: string
+}
+
+export interface IFooterDataType {
   shop: FooterShopType
   contacts: FooterContactType
   services: FooterServicesType
+  siteInfo: FooterSiteInfoType
 }

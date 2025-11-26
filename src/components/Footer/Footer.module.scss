@@ -68,12 +68,32 @@
       }
 
       .socials {
-        height: 56px;
+        @include mixins.flex($gap: 8px);
+
+        .social {
+          @include mixins.size(56px);
+          @include mixins.flex($items: center, $content: center);
+          border-radius: 16px;
+          background: variables.$white;
+
+          .tgIconContainer {
+            @include mixins.size(40px);
+            @include mixins.flex($items: center, $content: center);
+            border-radius: 50%;
+            background: variables.$blue;
+
+            .tgIcon {
+              @include mixins.size(24px);
+              transform: translateX(-1px);
+              color: variables.$white;
+            }
+          }
+        }
       }
     }
 
     .siteInfo {
-      @include mixins.flex($direction: column,$gap: 4px);
+      @include mixins.flex($direction: column, $gap: 4px);
 
       .text {
         text-align: left;
@@ -88,18 +108,27 @@
 }
 
 .text,
-.link {
+.phoneLink,
+.tgLink {
   margin-top: 20px;
   white-space: pre-line;
+  text-align: left;
 }
 
 .text {
   color: variables.$black;
 }
 
-.link {
-  color: variables.$blue;
-  text-align: left;
+.phoneLink {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.tgLink {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .postText {

@@ -5,7 +5,7 @@
   width: 100%;
   padding-inline: 40px;
   @include mixins.flex($items: center, $gap: 20px);
-  color: variables.$yellow;
+  color: variables.$grey-color;
 
   .contentContainer {
     @include mixins.flex($direction: column, $self: stretch, $gap: 20px);
@@ -29,7 +29,7 @@
         border-radius: 12px;
         background: variables.$dark-grey;
         @include mixins.flex($items: center);
-        color: variables.$white-color;
+        color: variables.$white-bg;
         position: relative;
         overflow: hidden;
 
@@ -85,7 +85,7 @@
         border-radius: 12px;
         background: variables.$dark-grey;
         white-space: pre-line;
-        color: variables.$white-color;
+        color: variables.$white-bg;
       }
     }
   }

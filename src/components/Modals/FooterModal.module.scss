@@ -2,9 +2,11 @@
 @use '@/styles/mixins';
 
 .footerModal {
-  @include mixins.flex($direction: column, $items: flex-start, $gap: 20px);
+  @include mixins.flex($direction: column, $items: center, $gap: 20px);
 
   & > h4 {
+    width: 100%;
+    text-align: left;
     font-size: 28px;
     font-weight: 700;
   }
@@ -15,5 +17,53 @@
     & > a {
       color: variables.$blue;
     }
+  }
+
+  .iconContainer {
+    @include mixins.size(100px);
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: -1px -2px 2px 0 variables.$black-50 inset, 1px 2px 2px 0 variables.$white-50 inset;
+    position: relative;
+
+    .smallIcon {
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      @include mixins.size(40px);
+      padding: 4px;
+      border-radius: 50%;
+      box-shadow: -0.2px -0.2px 1px 0 variables.$black inset, 0.2px 0.2px 1px 0 variables.$white inset;
+      background: variables.$green-icon;
+      @include mixins.flex($items: center, $content: center);
+      color: variables.$white;
+      font-size: 24px;
+      font-weight: 400;
+
+      & > svg {
+        @include mixins.size(100%);
+        transform: translateY(2px);
+      }
+    }
+
+    .icon_location {
+      top: 36px;
+      right: 0;
+      left: 16px;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    & > svg {
+      @include mixins.size(100%);
+    }
+  }
+
+  .iconContainer_tradeIn {
+    padding: 20px 20px 10px 10px;
+  }
+
+  .iconContainer_delivery {
+    padding: 20px 10px 0 10px;
   }
 }

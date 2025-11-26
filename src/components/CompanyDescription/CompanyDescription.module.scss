@@ -4,36 +4,86 @@
 .companyDescriptionContainer {
   width: 100%;
   padding-inline: 40px;
-  @include mixins.flex($direction: column, $gap: 10px);
+  @include mixins.flex($gap: 10px);
+  position: relative;
 
-  .title {
-    text-align: left;
-    color: variables.$dark-grey;
+  .textContainer {
+    @include mixins.flex($direction: column, $gap: 10px);
 
-    span {
-      color: variables.$black;
+    .title {
+      text-align: left;
+      color: variables.$dark-grey;
+      font-size: 32px;
+      font-weight: 700;
+
+      span {
+        color: variables.$blue;
+        font: variables.$font-second;
+        font-size: 42px;
+        font-weight: 700;
+      }
+    }
+
+    & > p {
+      text-align: left;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+
+      .listItem {
+        padding-left: 10px;
+        @include mixins.flex($items: center, $gap: 10px);
+
+        .listMarker {
+          @include mixins.size(5px);
+          border-radius: 50%;
+          background: variables.$black;
+        }
+
+        .strongText,
+        .text {
+          font-size: 20px;
+          line-height: 1;
+        }
+
+        .strongText {
+          font-weight: 700;
+        }
+
+        .text {
+          font-weight: 400;
+        }
+      }
+    }
+
+    .lastText {
+      & > span {
+        font-weight: 700;
+      }
     }
   }
 
-  & > p {
-    text-align: left;
-  }
+  .originalImage {
+    width: 300px;
+    @include mixins.flex($items: flex-end);
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
 
-  .list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
+    & > picture {
+      width: 100%;
+      height: auto;
 
-    .listItem {
-      padding-left: 10px;
-      @include mixins.flex($items: center, $gap: 10px);
-
-      .listMarker {
-        @include mixins.size(5px);
-        border-radius: 50%;
-        background: variables.$black;
+      & > img {
+        width: 100%;
+        height: auto;
       }
     }
   }

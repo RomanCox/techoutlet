@@ -48,8 +48,8 @@ const ModalRoot: FC = () => {
     case MODAL.TRADE_IN:
       content = <FooterModal id={MODAL.TRADE_IN}/>
       break
-    case MODAL.REPAIR:
-      content = <FooterModal id={MODAL.REPAIR}/>
+    case MODAL.GUARANTEE:
+      content = <FooterModal id={MODAL.GUARANTEE}/>
       break
     case MODAL.DELIVERY_PAYING:
       content = <FooterModal id={MODAL.DELIVERY_PAYING}/>

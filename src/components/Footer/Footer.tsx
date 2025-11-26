@@ -15,6 +15,7 @@ import cls from './Footer.module.scss'
 import TitlePNG from "@/assets/images/logo/title_blue.png";
 import TitleWEBP from "@/assets/images/logo/title_blue.webp";
 import {Picture} from "@/components/shared/Picture/Picture";
+import {TgIcon} from "@/components/shared/Icon";
 
 export const Footer = memo(() => {
   const { openModal } = useModal()
@@ -30,8 +31,8 @@ export const Footer = memo(() => {
       </div>
       <div className={cls.contacts}>
         <Text as='h4'>{footerData.contacts.label}</Text>
-        <a href={footerData.contacts.phoneNumber.link} className={cls.link}>{footerData.contacts.phoneNumber.text}</a>
-        <a href={footerData.contacts.telegram.text} className={cls.link}>{extractTelegramUsername(footerData.contacts.telegram.text)}</a>
+        <a href={footerData.contacts.phoneNumber.link} className={cls.phoneLink}>{footerData.contacts.phoneNumber.label}</a>
+        <a href={footerData.contacts.telegram.link} className={cls.tgLink}>{extractTelegramUsername(footerData.contacts.telegram.link)}</a>
         <Text className={cls.postText}>{footerData.contacts.telegram.postText}</Text>
         <div className={cls.payments}>
           <Visa />
@@ -51,12 +52,22 @@ export const Footer = memo(() => {
       <div className={cls.companyInfo}>
         <Picture className={cls.title} png={TitlePNG} webp={TitleWEBP} alt="TechOutlet"/>
         <div className={cls.socialContainer}>
-          <Text className={cls.title}>В социальных сетях</Text>
-          <div className={cls.socials}></div>
+          <Text className={cls.title}>{footerData.siteInfo.socialsLabel}</Text>
+          <div className={cls.socials}>
+            {footerData.siteInfo.socials.map(social => (
+              <a key={social.link} href={social.link} className={cls.social}>
+                {social.iconName === 'telegram' && (
+                  <div className={cls.tgIconContainer}>
+                    <TgIcon className={cls.tgIcon}/>
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
         </div>
         <div className={cls.siteInfo}>
-          <Text className={cls.text}>© TechOutlet 2025</Text>
-          <Text className={cls.postText}>{'Сайт носит сугубо информационный характер и\nне является публичной офертой.'}</Text>
+          <Text className={cls.text}>{footerData.siteInfo.copyright}</Text>
+          <Text className={cls.postText}>{footerData.siteInfo.text}</Text>
         </div>
       </div>
     </footer>

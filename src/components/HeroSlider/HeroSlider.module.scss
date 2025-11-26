@@ -27,7 +27,7 @@
       }
 
       & > p {
-        color: variables.$white-color;
+        color: variables.$white-bg;
         font-size: 24px;
         font-weight: 700;
         line-height: 120%;
@@ -55,7 +55,7 @@
         --tx: 0px;
         --ty: 0px;
         will-change: transform;
-        transition: transform 80ms linear; // можно убрать, если хотите совсем “живую” реакцию без инерции
+        transition: transform 80ms linear;
       }
 
       .notebookImage {
