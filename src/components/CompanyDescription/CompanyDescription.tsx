@@ -14,10 +14,10 @@ export const CompanyDescription = memo(() => {
   return (
     <div className={cls.companyDescriptionContainer}>
       <div className={cls.textContainer}>
-        <Text as={'h2'} className={cls.title}><span>TechOutlet</span> - надёжный поставщик уценённой техники с 2018 года</Text>
-        <Text as={'p'}>Наша компания  занимается продажей уценённой техники из США и Европы различных категорий:</Text>
+        <Text as={'h2'} className={cls.title}><span>{companyDescription.highlightTitle}</span>{companyDescription.restTitle}</Text>
+        <Text as={'p'}>{companyDescription.subTitle}</Text>
         <ul className={cls.list}>
-          {companyDescription.map(item => {
+          {companyDescription.variants.map(item => {
             const [title, rest] = item.split(' (');
             return (
               <li key={item} className={cls.listItem}>
@@ -28,15 +28,12 @@ export const CompanyDescription = memo(() => {
             )
           })}
         </ul>
-        <Text as={'p'}>Все товары 100% оригинальные, никаких копий, подделок и фейков.
-        </Text>
+        <Text as={'p'}>{companyDescription.productsDescription}</Text>
         <Text as={'p'} className={cls.lastText}>
-          <>
-            Только топовые гаджеты {' '}
-            <span>Apple, Microsoft, DJI, Sony, Google</span> и.т.д.
-            <br />
-            Отличная возможность сэкономить до 50% от цены нового!
-          </>
+          {companyDescription.topGadgets.beforeBrands}
+          <span>{companyDescription.topGadgets.brands}</span>
+          {companyDescription.topGadgets.afterBrands}
+          {companyDescription.topGadgets.secondLine}
         </Text>
       </div>
       <Picture png={OriginalPNG} webp={OriginalWEBP} alt={'image with text original'} className={cls.originalImage}/>

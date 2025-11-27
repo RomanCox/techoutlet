@@ -16,7 +16,15 @@ import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
 import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
 import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
 import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
-import { IHeaderDataType, IHeroSlide, IFooterDataType, IBrand, IDirection, IMarketingCards } from '@/constants'
+import {
+  IHeaderDataType,
+  IHeroSlide,
+  IFooterDataType,
+  IBrand,
+  IDirection,
+  IMarketingCards,
+  ICompanyDescription, ITopGadgetsText
+} from '@/constants'
 import { MODAL } from '@/constants/modal'
 
 export const headerData: IHeaderDataType = {
@@ -34,12 +42,24 @@ export const heroSlide: IHeroSlide = {
   brandsMobile: 'APPLE, DJI, MICROSOFT,\nSONY, GOPRO и другие.\nДо 50% дешевле.',
 }
 
-export const companyDescription: string[] = [
-  'Витринные (товары с витрин магазинов)',
-  'Выставочные (товары после выставки)',
-  'Trade in (б/у товары по системе обмена старого на новый)',
-  'Open Box (новые товары в открытых или поврежденных коробках)',
-]
+export const companyDescription: ICompanyDescription = {
+  highlightTitle: 'TechOutlet',
+  restTitle: ' - надёжный поставщик уценённой техники с 2018 года',
+  subTitle: 'Наша компания  занимается продажей уценённой техники из США и Европы различных категорий:',
+  variants: [
+    'Витринные (товары с витрин магазинов)',
+    'Выставочные (товары после выставки)',
+    'Trade in (б/у товары по системе обмена старого на новый)',
+    'Open Box (новые товары в открытых или поврежденных коробках)',
+  ],
+  productsDescription: 'Все товары 100% оригинальные, никаких копий, подделок и фейков.',
+  topGadgets: {
+    beforeBrands: 'Только топовые гаджеты ',
+    brands: 'Apple, Microsoft, DJI, Sony, Google',
+    afterBrands: ' и.т.д.',
+    secondLine: '\nОтличная возможность сэкономить до 50% от цены нового!',
+  }
+}
 
 export const marketingCards: IMarketingCards[] = [
   {

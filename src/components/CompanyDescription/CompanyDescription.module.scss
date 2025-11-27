@@ -64,6 +64,8 @@
     }
 
     .lastText {
+      white-space: pre-wrap;
+
       & > span {
         font-weight: 700;
       }

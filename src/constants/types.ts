@@ -16,6 +16,22 @@ export interface IHeroSlide {
   brandsMobile: string
 }
 
+export interface ITopGadgetsText {
+  beforeBrands: string
+  brands: string
+  afterBrands: string
+  secondLine: string
+}
+
+export interface ICompanyDescription {
+  highlightTitle: string
+  restTitle: string
+  subTitle: string
+  variants: string[]
+  productsDescription: string
+  topGadgets: ITopGadgetsText
+}
+
 export interface IMarketingCards {
   id: number
   text: string
