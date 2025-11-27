@@ -23,7 +23,7 @@ import {
   IBrand,
   IDirection,
   IMarketingCards,
-  ICompanyDescription, ITopGadgetsText
+  ICompanyDescription
 } from '@/constants'
 import { MODAL } from '@/constants/modal'
 
