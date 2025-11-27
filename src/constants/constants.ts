@@ -16,7 +16,7 @@ import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
 import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
 import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
 import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
-import { IHeaderDataType, IFooterDataType, IBrand, IDirection, IMarketingCards } from '@/constants'
+import { IHeaderDataType, IHeroSlide, IFooterDataType, IBrand, IDirection, IMarketingCards } from '@/constants'
 import { MODAL } from '@/constants/modal'
 
 export const headerData: IHeaderDataType = {
@@ -25,6 +25,13 @@ export const headerData: IHeaderDataType = {
     link: 'tel:+375296663083',
   },
   telegramLink: 'https://t.me/techoutlet',
+}
+
+export const heroSlide: IHeroSlide = {
+  label: 'Оригинальная техника из\nСША, Европы и ОАЭ',
+  labelMobile: 'Оригинальная\nтехника из США,\nЕвропы и ОАЭ',
+  brands: 'APPLE, DJI, MICROSOFT, SONY, GOPRO и другие.\nДо 50% дешевле.',
+  brandsMobile: 'APPLE, DJI, MICROSOFT,\nSONY, GOPRO и другие.\nДо 50% дешевле.',
 }
 
 export const companyDescription: string[] = [

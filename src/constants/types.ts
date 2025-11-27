@@ -9,6 +9,13 @@ export interface IHeaderDataType {
   telegramLink: string
 }
 
+export interface IHeroSlide {
+  label: string
+  labelMobile: string
+  brands: string
+  brandsMobile: string
+}
+
 export interface IMarketingCards {
   id: number
   text: string

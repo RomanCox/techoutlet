@@ -14,6 +14,12 @@
   transform: translateX(-50%);
   z-index: variables.$header-z;
 
+  @media (max-width: 705px) {
+    @include mixins.flex($direction: column, $items: center, $gap: 20px);
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+  }
+
   .logoContainer {
     @include mixins.flex($items: center, $gap: 20px);
 
@@ -22,9 +28,17 @@
       height: 32px;
       width: fit-content;
 
+      @media (max-width: 705px) {
+        height: 36px;
+      }
+
       img {
         height: 32px;
         width: auto;
+
+        @media (max-width: 705px) {
+          height: 36px;
+        }
       }
     }
   }
@@ -35,6 +49,10 @@
     & > a {
       color: variables.$color-text;
       font-weight: bold;
+
+      @media (max-width: 705px) {
+        font-size: 20px;
+      }
     }
 
     .tgIconContainer {

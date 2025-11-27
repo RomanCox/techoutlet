@@ -1,6 +1,9 @@
-import { memo } from 'react'
+"use client";
+
+import { memo, useState, useEffect } from 'react'
 
 import { useViewportParallax } from '@/hooks/useViewportParallax'
+import { MAX_MOBILE_WIDTH, useWindowSize } from '@/hooks/useWindowSize'
 
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
@@ -19,9 +22,13 @@ import HeadphonesWEBP from '@/assets/images/devices/headphones.webp'
 import ActionCameraPNG from '@/assets/images/devices/action_camera.png'
 import ActionCameraWEBP from '@/assets/images/devices/action_camera.webp'
 
+import { heroSlide } from '@/constants'
+
 import cls from './HeroSlider.module.scss'
 
 export const HeroSlider = memo(() => {
+  const { width } = useWindowSize()
+
 	const { register } = useViewportParallax(
 		{
 			notebook: 36,   // ближе — больше коэффициент
@@ -36,15 +43,22 @@ export const HeroSlider = memo(() => {
 		}
 	)
 
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const isMobile = mounted ? width <= MAX_MOBILE_WIDTH : false
+
   return (
     <div className={cls.heroSliderContainer}>
       <div className={cls.slide}>
         <div className={cls.textContainer}>
           <Text as="h1">
-						{'Оригинальная техника из\nСША, Европы и ОАЭ'}
+						{isMobile  ? heroSlide.labelMobile : heroSlide.label}
           </Text>
 					<Text as="p">
-						{'APPLE, DJI, MICROSOFT, SONY, GOPRO и другие.\nДо 50% дешевле.'}
+						{isMobile  ? heroSlide.brandsMobile : heroSlide.brands}
 					</Text>
 					<Button
 						as="a"

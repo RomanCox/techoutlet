@@ -3,19 +3,33 @@
 
 .heroSliderContainer {
   width: 100%;
-  height: 420px;
   padding-top: 20px;
 
   .slide {
-    @include mixins.size(100%);
+    @include mixins.size(100%, 420px);
     border-radius: 40px;
     padding: 20px 20px;
     @include mixins.flex($gap: 80px);
     background: variables.$dark-bg;
 
+    @media (max-width: 1380px) {
+      height: calc(100vh - 240px);
+      margin: 0 auto;
+      @include mixins.flex($direction: column, $gap: 20px);
+    }
+
+    @media (max-width: 705px) {
+      height: calc(100vw + 325px);
+      max-height: calc(100vh - 240px);
+    }
+
     .textContainer {
       padding: 60px 20px;
-      @include mixins.flex($direction: column, $gap: 30px);
+      @include mixins.flex($direction: column, $items: center, $gap: 30px);
+
+      @media (max-width: 1380px) {
+        padding-bottom: 0;
+      }
 
       & > h1 {
         color: variables.$blue;
@@ -24,6 +38,14 @@
         line-height: 120%;
         text-align: left;
         white-space: pre-line;
+
+        @media (max-width: 1380px) {
+          text-align: center;
+        }
+
+        @media (max-width: 705px) {
+          font-size: 28px;
+        }
       }
 
       & > p {
@@ -33,11 +55,19 @@
         line-height: 120%;
         text-align: left;
         white-space: pre-line;
+
+        @media (max-width: 1380px) {
+          text-align: center;
+        }
+
+        @media (max-width: 705px) {
+          font-size: 20px;
+        }
       }
 
       .catalogButton {
         width: fit-content;
-        @include mixins.flex($items: center, $gap: 4px);
+        @include mixins.flex($items: center, $gap: 10px);
       }
     }
 
@@ -65,6 +95,15 @@
         left: 0;
         transform: rotate(15deg) translate3d(var(--tx), var(--ty), 0);
 
+        @media (max-width: 1380px) and (min-width: 981px) {
+          left: 10%;
+        }
+
+        @media (max-width: 705px) {
+          width: 35%;
+          left: 5%;
+        }
+
         img {
           height: auto;
         }
@@ -76,6 +115,15 @@
         top: 0;
         right: -40px;
         transform: rotate(-30deg) translate3d(var(--tx), var(--ty), 0);
+
+        @media (max-width: 1380px) and (min-width: 981px) {
+          right: 10%;
+        }
+
+        @media (max-width: 705px) {
+          width: 35vw;
+          right: 7%;
+        }
 
         img {
           height: auto;
@@ -89,6 +137,15 @@
         left: 0;
         transform: translate3d(var(--tx), var(--ty), 0);
 
+        @media (max-width: 1380px) and (min-width: 981px) {
+          left: 10%;
+        }
+
+        @media (max-width: 705px) {
+          height: 35vw;
+          left: 5%;
+        }
+
         picture, img {
           width: auto;
         }
@@ -101,6 +158,16 @@
         left: 50%;
         transform: translateX(-50%) translate3d(var(--tx), var(--ty), 0);
 
+        @media (max-width: 1380px) {
+          bottom: 20%;
+          left: 55%;
+        }
+
+        @media (max-width: 705px) {
+          @include mixins.size(30vw);
+          bottom: 35%;
+        }
+
         picture, img {
           width: auto;
         }
@@ -112,6 +179,17 @@
         bottom: -20px;
         right: -20px;
         transform: rotate(30deg) translate3d(var(--tx), var(--ty), 0);
+
+        @media (max-width: 1380px) {
+          @include mixins.size(30vw);
+          right: 0;
+          bottom: -20px;
+        }
+
+        @media (max-width: 900px) {
+          @include mixins.size(40vw);
+          right: -5%;
+        }
       }
     }
   }
