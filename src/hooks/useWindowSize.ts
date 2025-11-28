@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
 export const MAX_MOBILE_WIDTH = 705
+export const MAX_TABLET_WIDTH = 980
 
 export interface ISize {
   width: number

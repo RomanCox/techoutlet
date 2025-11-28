@@ -15,6 +15,7 @@
       color: variables.$dark-grey;
       font-size: 32px;
       font-weight: 700;
+      white-space: pre-line;
 
       span {
         color: variables.$blue;
@@ -64,7 +65,7 @@
     }
 
     .lastText {
-      white-space: pre-wrap;
+      white-space: pre-line;
 
       & > span {
         font-weight: 700;

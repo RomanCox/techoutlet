@@ -34,6 +34,7 @@ export interface ICompanyDescription {
 
 export interface IMarketingCards {
   id: number
+  mobileId: number
   text: string
   imagePNG: StaticImageData
   imageWEBP: StaticImageData

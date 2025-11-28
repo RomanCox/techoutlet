@@ -13,7 +13,7 @@ export const Brands = memo(() => {
       <Text as="h2">{"В наличии все\nизвестные бренды"}</Text>
       <div className={cls.brandsWrapper}>
         {brands.map(brand => (
-          <div className={cls.brandContainer}>
+          <div key={brand.id} className={cls.brandContainer}>
             <Icon
               key={brand.id}
               name={brand.iconName}

@@ -12,7 +12,7 @@
   }
 
   & > p {
-    white-space: pre-wrap;
+    white-space: pre-line;
 
     & > a {
       color: variables.$blue;

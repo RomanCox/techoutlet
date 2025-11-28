@@ -76,16 +76,20 @@
           border-radius: 16px;
           background: variables.$white;
 
+          .instagramIconContainer,
           .tgIconContainer {
             @include mixins.size(40px);
             @include mixins.flex($items: center, $content: center);
+            color: variables.$white;
+          }
+
+          .tgIconContainer {
             border-radius: 50%;
             background: variables.$blue;
 
             .tgIcon {
               @include mixins.size(24px);
               transform: translateX(-1px);
-              color: variables.$white;
             }
           }
         }

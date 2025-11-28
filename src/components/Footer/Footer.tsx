@@ -16,6 +16,7 @@ import TitlePNG from "@/assets/images/logo/title_blue.png";
 import TitleWEBP from "@/assets/images/logo/title_blue.webp";
 import {Picture} from "@/components/shared/Picture/Picture";
 import {TgIcon} from "@/components/shared/Icon";
+import {Instagram} from "@/components/shared/Icon/Instagram/Instagram";
 
 export const Footer = memo(() => {
   const { openModal } = useModal()
@@ -56,6 +57,11 @@ export const Footer = memo(() => {
           <div className={cls.socials}>
             {footerData.siteInfo.socials.map(social => (
               <a key={social.link} href={social.link} className={cls.social}>
+                {social.iconName === 'instagram' && (
+                  <div className={cls.instagramIconContainer}>
+                    <Instagram />
+                  </div>
+                )}
                 {social.iconName === 'telegram' && (
                   <div className={cls.tgIconContainer}>
                     <TgIcon className={cls.tgIcon}/>
