@@ -10,12 +10,12 @@ import HeadphonesPNG from '@/assets/images/devices/headphones.png'
 import HeadphonesWEBP from '@/assets/images/devices/headphones.webp'
 import NoteBookTransformerPNG from '@/assets/images/devices/notebook_transformer.png'
 import NoteBookTransformerWEBP from '@/assets/images/devices/notebook_transformer.webp'
-import USAFlagPNG from '@/assets/images/flags/usa-flag.png'
-import USAFlagWEBP from '@/assets/images/flags/usa-flag.webp'
-import EuropeFlagPNG from '@/assets/images/flags/europe-flag.png'
-import EuropeFlagWEBP from '@/assets/images/flags/europe-flag.webp'
-import UAEFlagPNG from '@/assets/images/flags/uae-flag.png'
-import UAEFlagWEBP from '@/assets/images/flags/uae-flag.webp'
+import USAFlagJPG from '@/assets/images/flags/usa.jpg'
+import USAFlagWEBP from '@/assets/images/flags/usa.webp'
+import EuropeFlagJPG from '@/assets/images/flags/eu.jpg'
+import EuropeFlagWEBP from '@/assets/images/flags/eu.webp'
+import UAEFlagJPG from '@/assets/images/flags/uae.jpg'
+import UAEFlagWEBP from '@/assets/images/flags/uae.webp'
 import {
   IHeaderDataType,
   IHeroSlide,
@@ -109,19 +109,22 @@ export const marketingCards: IMarketingCards[] = [
 export const directions: IDirection[] = [
   {
     title: 'Товары из США с\nзакрытых аукционов электроники',
-    imagePNG: USAFlagPNG,
+    // imagePNG: USAFlagPNG,
+    imageJPG: USAFlagJPG,
     imageWEBP: USAFlagWEBP,
     alt: 'USA Flag',
   },
   {
     title: 'Товары из Европы с\nсудебных складов и аукционов',
-    imagePNG: EuropeFlagPNG,
+    // imagePNG: EuropeFlagPNG,
+    imageJPG: EuropeFlagJPG,
     imageWEBP: EuropeFlagWEBP,
     alt: 'Europe Flag',
   },
   {
     title: 'Товары из Dubai с\nоптовых складов в Deira',
-    imagePNG: UAEFlagPNG,
+    // imagePNG: UAEFlagPNG,
+    imageJPG: UAEFlagJPG,
     imageWEBP: UAEFlagWEBP,
     alt: 'UAE Flag',
   },

@@ -7,11 +7,50 @@
   @include mixins.flex($items: center, $gap: 20px);
   color: variables.$grey-color;
 
+  @media (max-width: 1145px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 705px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 540px) {
+    padding-inline: 10px;
+  }
+
   .contentContainer {
     @include mixins.flex($direction: column, $self: stretch, $gap: 20px);
 
-    &:nth-child(odd of .contentContainer) {
+    &:nth-of-type(1),
+    &:nth-of-type(3),
+    &:nth-of-type(5) {
       width: calc((100% - 176px - 255px) / 2);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1145px) {
+      flex: 0 0 auto;
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        flex: 0 0 calc((100% - 49px - 40px) / 2);
+        width: calc((100% - 49px - 40px) / 2);
+      }
+
+      &:nth-of-type(5) {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 705px) {
+      flex: 1;
+
+      &:nth-of-type(1),
+      &:nth-of-type(3),
+      &:nth-of-type(5) {
+        width: 100%;
+      }
     }
 
     .title {
@@ -41,12 +80,11 @@
         }
 
         .flag {
-          height: 80%;
-          width: auto;
+          width: 100%;
           position: absolute;
-          top: -16px;
+          top: 0;
           right: 0;
-          transform: scaleX(-1);
+          filter: brightness(0.4);
         }
       }
     }
@@ -56,6 +94,11 @@
       flex: 1;
       @include mixins.flex($items: center);
       position: relative;
+
+      @media (max-width: 705px) {
+        width: 100%;
+        padding-top: 67%;
+      }
 
       .checkman {
         width: 64%;
@@ -80,12 +123,18 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px 16px;
 
+      @media (max-width: 540px) {
+        gap: 6px;
+      }
+
       .typeOfGood {
-        padding: 20px 12px;
+        height: 64px;
+        padding-inline: 12px;
         border-radius: 12px;
         background: variables.$dark-grey;
         white-space: pre-line;
         color: variables.$white-bg;
+        @include mixins.flex($content: center, $items: center);
       }
     }
   }
@@ -94,5 +143,32 @@
     align-self: stretch;
     padding-top: 86px;
     @include mixins.flex($items: center);
+
+    @media (max-width: 1145px) {
+      &:nth-of-type(4) {
+        height: 49px;
+        width: 100%;
+        padding-top: 0;
+        justify-content: center;
+
+        & > svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    @media (max-width: 705px) {
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        height: 49px;
+        width: 100%;
+        padding-top: 0;
+        justify-content: center;
+
+        & > svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 }

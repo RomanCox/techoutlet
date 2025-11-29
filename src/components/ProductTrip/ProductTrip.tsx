@@ -22,7 +22,7 @@ export const ProductTrip = memo(() => {
           {directions.map(item => (
             <div key={item.title} className={cls.direction}>
               <Text>{item.title}</Text>
-              <Picture className={cls.flag} png={item.imagePNG} webp={item.imageWEBP} alt={item.alt}/>
+              <Picture className={cls.flag} png={item.imageJPG} webp={item.imageWEBP} alt={item.alt} isCover/>
             </div>
           ))}
         </div>
