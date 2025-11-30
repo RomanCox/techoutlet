@@ -9,6 +9,10 @@ export interface IHeaderDataType {
   telegramLink: string
 }
 
+export interface IMounted {
+  mounted?: boolean
+}
+
 export interface IHeroSlide {
   label: string
   labelMobile: string
@@ -26,6 +30,8 @@ export interface ITopGadgetsText {
 export interface ICompanyDescription {
   highlightTitle: string
   restTitle: string
+  restTitleTablet: string
+  restTitleMobile: string
   subTitle: string
   variants: string[]
   productsDescription: string

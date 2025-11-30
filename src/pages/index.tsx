@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import Head from 'next/head'
 
 import { Header } from '@/components/Header/Header'
@@ -12,6 +13,11 @@ import { Footer } from '@/components/Footer/Footer'
 import styles from '@/styles/Page.module.scss'
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <>
       <Head>
@@ -25,8 +31,8 @@ export default function Home() {
       >
         <Header />
         <main className={styles.main}>
-          <HeroSlider />
-          <CompanyDescription />
+          <HeroSlider mounted={mounted}/>
+          <CompanyDescription mounted={mounted}/>
           <MarketingCards />
           <ProductTrip />
           <Brands />

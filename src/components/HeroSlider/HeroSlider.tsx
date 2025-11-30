@@ -22,12 +22,14 @@ import HeadphonesWEBP from '@/assets/images/devices/headphones.webp'
 import ActionCameraPNG from '@/assets/images/devices/action_camera.png'
 import ActionCameraWEBP from '@/assets/images/devices/action_camera.webp'
 
-import { heroSlide } from '@/constants'
+import { heroSlide, IMounted } from '@/constants'
 
 import cls from './HeroSlider.module.scss'
 
-export const HeroSlider = memo(() => {
+export const HeroSlider = memo(({ mounted }: IMounted) => {
   const { width } = useWindowSize()
+
+  const isMobile = mounted ? width <= MAX_MOBILE_WIDTH : false
 
 	const { register } = useViewportParallax(
 		{
@@ -42,13 +44,6 @@ export const HeroSlider = memo(() => {
 			lerp: 0.12,       // плавность
 		}
 	)
-
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const isMobile = mounted ? width <= MAX_MOBILE_WIDTH : false
 
   return (
     <div className={cls.heroSliderContainer}>

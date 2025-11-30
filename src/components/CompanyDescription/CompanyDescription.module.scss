@@ -7,8 +7,19 @@
   @include mixins.flex($gap: 10px);
   position: relative;
 
+  @media (max-width: 1300px) {
+    padding-inline: 0;
+  }
+
   .textContainer {
+    width: 100%;
     @include mixins.flex($direction: column, $gap: 10px);
+
+    @media (max-width: 1300px) {
+      & > p {
+        padding-inline: 40px;
+      }
+    }
 
     .title {
       text-align: left;
@@ -16,6 +27,11 @@
       font-size: 32px;
       font-weight: 700;
       white-space: pre-line;
+
+      @media (max-width: 1300px) {
+        margin-bottom: 240px;
+        text-align: center;
+      }
 
       span {
         color: variables.$blue;
@@ -38,28 +54,30 @@
       list-style: none;
       padding: 0;
 
+      @media (max-width: 1300px) {
+        padding-inline: 40px;
+      }
+
       .listItem {
         padding-left: 10px;
-        @include mixins.flex($items: center, $gap: 10px);
+        @include mixins.flex($items: flex-start, $gap: 10px);
 
         .listMarker {
+          margin-top: 8px;
           @include mixins.size(5px);
           border-radius: 50%;
           background: variables.$black;
         }
 
-        .strongText,
         .text {
+          text-align: left;
           font-size: 20px;
           line-height: 1;
-        }
-
-        .strongText {
-          font-weight: 700;
-        }
-
-        .text {
           font-weight: 400;
+
+          & > span {
+            font-weight: 700;
+          }
         }
       }
     }
@@ -79,6 +97,19 @@
     position: absolute;
     right: 40px;
     bottom: 20px;
+
+    @media (max-width: 1300px) {
+      align-items: flex-start;
+      bottom: auto;
+      top: 130px;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 705px) {
+      top: 177px;
+    }
 
     & > picture {
       width: 100%;
