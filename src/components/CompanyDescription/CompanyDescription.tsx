@@ -6,7 +6,7 @@ import { Picture } from '@/components/shared/Picture/Picture'
 import OriginalPNG from '@/assets/images/other/original.png'
 import OriginalWEBP from '@/assets/images/other/original.webp'
 
-import {companyDescription, IMounted} from '@/constants'
+import { companyDescription, IMounted } from '@/constants'
 
 import cls from './CompanyDescription.module.scss'
 
@@ -14,15 +14,19 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
   const { width } = useWindowSize()
 
   const isDesktop = mounted ? width > 1300 : false
-  const isMobile = mounted ? width <= 705 : false
+  const isBigTablet = mounted ? (width > 705 && width <= 1300) : false
+  const isSmallTablet = mounted ? (width > 460 && width <= 705) : false
 
   return (
     <div className={cls.companyDescriptionContainer}>
       <div className={cls.textContainer}>
-        {/*<Text as={'h2'} className={cls.title}><span>{companyDescription.highlightTitle}</span>{companyDescription.restTitle}</Text>*/}
         <Text as={'h2'} className={cls.title}>
           <span>{companyDescription.highlightTitle}</span>
-          {isDesktop ? companyDescription.restTitle : isMobile ? companyDescription.restTitleMobile : companyDescription.restTitleTablet}
+          {
+            isDesktop ? companyDescription.restTitle :
+            isBigTablet ? companyDescription.restTitleBigTablet :
+            isSmallTablet ? companyDescription.restTitleSmallTablet : companyDescription.restTitleMobile
+          }
         </Text>
         <Text as={'p'}>{companyDescription.subTitle}</Text>
         <ul className={cls.list}>

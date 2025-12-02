@@ -45,7 +45,7 @@ export const MarketingCards = memo(() => {
                 webp={card.imageWEBP}
                 alt={'not important image'}
                 className={cls.cardImage}
-                isCover
+                isCover={width > 600}
               />
             </div>
           ))

@@ -91,6 +91,7 @@
 
     .logoContainer {
       width: 255px;
+      margin: 0 auto;
       flex: 1;
       @include mixins.flex($items: center);
       position: relative;

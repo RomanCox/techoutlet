@@ -43,7 +43,18 @@
 
       .cardImage {
         width: auto;
+        height: 100%;
         position: absolute;
+
+        picture {
+          width: auto;
+          height: 100%;
+
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
       }
     }
 

@@ -30,7 +30,8 @@ export interface ITopGadgetsText {
 export interface ICompanyDescription {
   highlightTitle: string
   restTitle: string
-  restTitleTablet: string
+  restTitleBigTablet: string
+  restTitleSmallTablet: string
   restTitleMobile: string
   subTitle: string
   variants: string[]

@@ -14,13 +14,19 @@
 
     @media (max-width: 1380px) {
       height: calc(100vh - 240px);
+      min-height: 840px;
       margin: 0 auto;
       @include mixins.flex($direction: column, $gap: 20px);
     }
 
     @media (max-width: 705px) {
       height: calc(100vw + 325px);
+      min-height: 770px;
       max-height: calc(100vh - 240px);
+    }
+
+    @media (max-width: 475px) {
+
     }
 
     .textContainer {
@@ -95,6 +101,16 @@
         left: 0;
         transform: rotate(15deg) translate3d(var(--tx), var(--ty), 0);
 
+        picture {
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
         @media (max-width: 1380px) and (min-width: 981px) {
           left: 10%;
         }
@@ -102,10 +118,6 @@
         @media (max-width: 705px) {
           width: 35%;
           left: 5%;
-        }
-
-        img {
-          height: auto;
         }
       }
 
@@ -116,17 +128,23 @@
         right: -40px;
         transform: rotate(-30deg) translate3d(var(--tx), var(--ty), 0);
 
+        picture {
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
         @media (max-width: 1380px) and (min-width: 981px) {
           right: 10%;
         }
 
         @media (max-width: 705px) {
           width: 35vw;
-          right: 7%;
-        }
-
-        img {
-          height: auto;
+          right: -5%;
         }
       }
 
@@ -137,6 +155,16 @@
         left: 0;
         transform: translate3d(var(--tx), var(--ty), 0);
 
+        picture {
+          width: auto;
+          height: 100%;
+
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+
         @media (max-width: 1380px) and (min-width: 981px) {
           left: 10%;
         }
@@ -144,10 +172,6 @@
         @media (max-width: 705px) {
           height: 35vw;
           left: 5%;
-        }
-
-        picture, img {
-          width: auto;
         }
       }
 
@@ -158,6 +182,16 @@
         left: 50%;
         transform: translateX(-50%) translate3d(var(--tx), var(--ty), 0);
 
+        picture {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
         @media (max-width: 1380px) {
           bottom: 20%;
           left: 55%;
@@ -166,10 +200,6 @@
         @media (max-width: 705px) {
           @include mixins.size(30vw);
           bottom: 35%;
-        }
-
-        picture, img {
-          width: auto;
         }
       }
 
@@ -180,6 +210,16 @@
         right: -20px;
         transform: rotate(30deg) translate3d(var(--tx), var(--ty), 0);
 
+        picture {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
         @media (max-width: 1380px) {
           @include mixins.size(30vw);
           right: 0;
@@ -188,7 +228,7 @@
 
         @media (max-width: 900px) {
           @include mixins.size(40vw);
-          right: -5%;
+          right: -7%;
         }
       }
     }

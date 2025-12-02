@@ -111,6 +111,10 @@
       top: 177px;
     }
 
+    @media (max-width: 460px) {
+      top: 222px;
+    }
+
     & > picture {
       width: 100%;
       height: auto;
