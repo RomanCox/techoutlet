@@ -280,6 +280,7 @@ export const footerData: IFooterDataType = {
       { iconName: 'google', link: 'https://www.google.com/search?q=techoutlet&oq=tec&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhMIARAuGIMBGMcBGLEDGNEDGIAEMgYIAhBFGDwyBggDEEUYPDIGCAQQRRg8MgYIBRBFGEEyBggGEEUYQTIGCAcQRRg80gEIMzA2M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x46dbcfc31247d371:0xa5256b47101ebffb,1' },
     ],
     kufarLabel: 'мы на Kufar',
+    kufarLink: 'https://www.kufar.by/user/Os_SbSjAABIj3qpy2Qtp_cg',
   },
   copyright: {
     label: `© TechOutlet ${new Date().getFullYear()}`,

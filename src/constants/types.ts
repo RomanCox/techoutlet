@@ -108,6 +108,7 @@ export interface FooterSiteInfoType {
   reviewsLabel: string
   reviews: { iconName: string, link: string }[]
   kufarLabel: string
+  kufarLink: string
 }
 
 export interface FooterCopyrightType {

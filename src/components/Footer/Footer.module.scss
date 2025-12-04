@@ -73,16 +73,16 @@
     }
 
     .companyInfo {
-      gap: 20px;
+      gap: 8px;
 
       .title {
         height: 32px;
         display: flex;
       }
 
-      .socialContainer {
+      .socialsContainer {
 
-        .title {
+        .socialsLabel {
           font-size: 16px;
           font-weight: 400;
           color: variables.$black-50;
@@ -122,6 +122,72 @@
                 @include mixins.size(24px);
                 transform: translateX(-1px);
               }
+            }
+          }
+        }
+      }
+
+      .reviewsContainer {
+        @include mixins.flex($gap: 20px);
+
+        .reviewsSites {
+          @include mixins.flex($direction: column, $gap: 8px);
+
+          .reviewsLabel {
+            font-size: 16px;
+            font-weight: 400;
+            color: variables.$black-50;
+            text-align: left;
+          }
+
+          .sites {
+            @include mixins.flex($gap: 8px);
+
+            .site {
+              @include mixins.size(56px);
+              @include mixins.flex($items: center, $content: center);
+              border-radius: 16px;
+              background: variables.$white;
+              filter: grayscale(100%) contrast(95%);
+              transition: filter 300ms ease;
+              will-change: filter;
+
+              &:hover {
+                filter: none;
+              }
+
+              .yandexIconContainer,
+              .googleIconContainer {
+                @include mixins.size(40px);
+                @include mixins.flex($items: center, $content: center);
+                color: variables.$white;
+              }
+            }
+          }
+        }
+
+        .kufarContainer {
+          @include mixins.flex($direction: column, $gap: 8px);
+
+          .kufarLabel {
+            font-size: 16px;
+            font-weight: 400;
+            color: variables.$black-50;
+            text-align: left;
+          }
+
+          .link {
+            height: 56px;
+            padding-inline: 8px;
+            @include mixins.flex($items: center, $content: center);
+            border-radius: 16px;
+            background: variables.$white;
+            filter: grayscale(100%) contrast(95%);
+            transition: filter 300ms ease;
+            will-change: filter;
+
+            &:hover {
+              filter: none;
             }
           }
         }

@@ -14,9 +14,13 @@ import { TgIcon } from '@/components/shared/Icon'
 import { Instagram } from '@/components/shared/Icon/Instagram/Instagram'
 import { VK } from '@/components/shared/Icon/VK/VK'
 import { TikTok } from '@/components/shared/Icon/TikTok/TikTok'
+import { GoogleColor } from '@/components/shared/Icon/GoogleColor/GoogleColor'
+import { Yandex } from '@/components/shared/Icon/Yandex/Yandex'
 
 import TitlePNG from '@/assets/images/logo/title_blue.png'
 import TitleWEBP from '@/assets/images/logo/title_blue.webp'
+import KufarPNG from '@/assets/images/other/kufar.png'
+import KufarWEBP from '@/assets/images/other/kufar.webp'
 
 import { footerData } from '@/constants'
 import cls from './Footer.module.scss'
@@ -70,8 +74,8 @@ export const Footer = memo(() => {
         </div>
         <div className={cls.companyInfo}>
           <Picture className={cls.title} png={TitlePNG} webp={TitleWEBP} alt="TechOutlet"/>
-          <div className={cls.socialContainer}>
-            <Text className={cls.title}>{footerData.siteInfo.socialsLabel}</Text>
+          <div className={cls.socialsContainer}>
+            <Text className={cls.socialsLabel}>{footerData.siteInfo.socialsLabel}</Text>
             <div className={cls.socials}>
               {footerData.siteInfo.socials.map(social => (
                 <a
@@ -106,7 +110,42 @@ export const Footer = memo(() => {
             </div>
           </div>
           <div className={cls.reviewsContainer}>
-            <Text className={cls.title}>{footerData.siteInfo.reviewsLabel}</Text>
+            <div className={cls.reviewsSites}>
+              <Text className={cls.reviewsLabel}>{footerData.siteInfo.reviewsLabel}</Text>
+              <div className={cls.sites}>
+                {footerData.siteInfo.reviews.map(social => (
+                  <a
+                    key={social.link}
+                    href={social.link}
+                    className={cls.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.iconName === 'yandex' && (
+                      <div className={cls.yandexIconContainer}>
+                        <Yandex />
+                      </div>
+                    )}
+                    {social.iconName === 'google' && (
+                      <div className={cls.googleIconContainer}>
+                        <GoogleColor />
+                      </div>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className={cls.kufarContainer}>
+              <Text className={cls.kufarLabel}>{footerData.siteInfo.kufarLabel}</Text>
+              <a
+                href={footerData.siteInfo.kufarLabel}
+                className={cls.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Picture png={KufarPNG} webp={KufarWEBP} alt={'kufar logo'} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
