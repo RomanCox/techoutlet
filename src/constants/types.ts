@@ -105,7 +105,13 @@ export interface FooterServicesType {
 export interface FooterSiteInfoType {
   socialsLabel: string
   socials: { iconName: string, link: string }[]
-  copyright: string
+  reviewsLabel: string
+  reviews: { iconName: string, link: string }[]
+  kufarLabel: string
+}
+
+export interface FooterCopyrightType {
+  label: string
   text: string
 }
 
@@ -114,4 +120,5 @@ export interface IFooterDataType {
   contacts: FooterContactType
   services: FooterServicesType
   siteInfo: FooterSiteInfoType
+  copyright: FooterCopyrightType
 }

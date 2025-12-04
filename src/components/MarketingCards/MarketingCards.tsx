@@ -5,16 +5,19 @@ import {MAX_TABLET_WIDTH, useWindowSize} from '@/hooks/useWindowSize'
 import { Picture } from '@/components/shared/Picture/Picture'
 import { Text } from '@/components/shared/Text/Text'
 
-import { IMarketingCards, marketingCards } from '@/constants'
-
+import { IMarketingCards, IMounted, marketingCards } from '@/constants'
 import cls from './MarketingCards.module.scss'
 
-export const MarketingCards = memo(() => {
+export const MarketingCards = memo(({ mounted }: IMounted) => {
   const { width } = useWindowSize()
 
   const [cards, setCards] = useState<IMarketingCards[]>(marketingCards)
 
   useEffect(() => {
+    if (!mounted) {
+      return
+    }
+
     if (width > MAX_TABLET_WIDTH) {
       setCards(marketingCards)
       return
@@ -31,7 +34,7 @@ export const MarketingCards = memo(() => {
 
     ;[reordered[index3], reordered[index4]] = [reordered[index4], reordered[index3]]
     setCards(reordered)
-  }, [width])
+  }, [mounted, width])
 
   return (
     <div className={cls.marketingCardsWrapper}>
@@ -45,7 +48,7 @@ export const MarketingCards = memo(() => {
                 webp={card.imageWEBP}
                 alt={'not important image'}
                 className={cls.cardImage}
-                isCover={width > 600}
+                isCover={mounted && width > 600}
               />
             </div>
           ))

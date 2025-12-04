@@ -22,10 +22,19 @@ export const Header = memo(() => {
         <Picture className={cls.logo} png={LogoPNG} webp={LogoWEBP} alt="Logo"/>
       </div>
       <div className={cls.contactsContainer}>
-        <a href={headerData.phoneNumber.link}>
+        <a
+          href={headerData.phoneNumber.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Text>{headerData.phoneNumber.label}</Text>
         </a>
-        <a href={headerData.telegramLink} className={cls.tgIconContainer}>
+        <a
+          href={headerData.telegramLink}
+          className={cls.tgIconContainer}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <TgIcon className={cls.tgIcon}/>
         </a>
       </div>

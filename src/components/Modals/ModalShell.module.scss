@@ -18,6 +18,15 @@
     position: relative;
     overflow: hidden;
 
+    @media (max-width: 1024px) {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    @media (max-width: 460px) {
+      max-width: 90%;
+    }
+
     .closeButton {
       @include mixins.size(30px);
       @include mixins.flex($inline: true, $content: center, $items: center);
@@ -43,6 +52,10 @@
       max-height: calc(60vh - 46px);
       padding-inline: 24px;
       overflow-y: auto;
+
+      @media (max-width: 1024px) {
+        max-height: calc(80vh - 46px);
+      }
     }
   }
 }

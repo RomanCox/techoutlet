@@ -5,108 +5,145 @@
   width: 100%;
   padding: 20px 80px 40px 80px;
   @include mixins.root-container;
-  @include mixins.flex($content: space-between, $gap: 40px);
+  @include mixins.flex($direction: column, $gap: 20px);
 
-  .catalog {
-
-
-    & > h4 {
-      margin-bottom: 20px;
-    }
+  @media (max-width: 460px) {
+    padding-inline: 20px;
   }
 
-  .shop,
-  .contacts,
-  .shopInfo,
-  .companyInfo {
-    @include mixins.flex($direction: column);
+  .footerContent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
 
-    & > h4 {
-      text-align: left;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    & > p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      text-align: left;
-    }
-  }
-
-  .contacts {
-    .payments {
-      height: 20px;
-      margin-top: 20px;
-      @include mixins.flex($gap: 4px);
-      color: variables.$visa-blue;
-    }
-  }
-
-  .shopInfo {
-    gap: 10px;
-
-    & > button:first-of-type {
-      margin-top: 10px;
-    }
-  }
-
-  .companyInfo {
-    gap: 20px;
-
-    .title {
-      height: 32px;
-      display: flex;
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr;
     }
 
-    .socialContainer {
 
-      .title {
-        font-size: 16px;
-        font-weight: 400;
-        color: variables.$black-50;
+
+    .shop,
+    .contacts,
+    .shopInfo,
+    .companyInfo {
+      max-width: 270px;
+      @include mixins.flex($direction: column);
+
+      & > h4 {
         text-align: left;
       }
 
-      .socials {
-        @include mixins.flex($gap: 8px);
+      & > p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+      }
+    }
 
-        .social {
-          @include mixins.size(56px);
-          @include mixins.flex($items: center, $content: center);
-          border-radius: 16px;
-          background: variables.$white;
+    .contacts {
+      .payments {
+        height: 20px;
+        margin-top: 20px;
+        display: flex;
+        color: variables.$visa-blue;
 
-          .instagramIconContainer,
-          .tgIconContainer {
-            @include mixins.size(40px);
-            @include mixins.flex($items: center, $content: center);
-            color: variables.$white;
-          }
+        & > svg {
+          filter: grayscale(100%) contrast(95%);
+          transition: filter 300ms ease;
+          will-change: filter;
 
-          .tgIconContainer {
-            border-radius: 50%;
-            background: variables.$blue;
-
-            .tgIcon {
-              @include mixins.size(24px);
-              transform: translateX(-1px);
-            }
+          &:hover {
+            filter: none;
           }
         }
       }
     }
 
-    .siteInfo {
-      @include mixins.flex($direction: column, $gap: 4px);
+    .shopInfo {
+      gap: 10px;
 
-      .text {
-        text-align: left;
+      & > button:first-of-type {
+        margin-top: 10px;
+      }
+    }
+
+    .companyInfo {
+      gap: 20px;
+
+      .title {
+        height: 32px;
+        display: flex;
       }
 
-      .postText {
-        text-align: left;
-        white-space: pre;
+      .socialContainer {
+
+        .title {
+          font-size: 16px;
+          font-weight: 400;
+          color: variables.$black-50;
+          text-align: left;
+        }
+
+        .socials {
+          @include mixins.flex($gap: 8px);
+
+          .social {
+            @include mixins.size(56px);
+            @include mixins.flex($items: center, $content: center);
+            border-radius: 16px;
+            background: variables.$white;
+            filter: grayscale(100%) contrast(95%);
+            transition: filter 300ms ease;
+            will-change: filter;
+
+            &:hover {
+              filter: none;
+            }
+
+            .instagramIconContainer,
+            .tgIconContainer,
+            .vkIconContainer,
+            .tiktokIconContainer {
+              @include mixins.size(40px);
+              @include mixins.flex($items: center, $content: center);
+              color: variables.$white;
+            }
+
+            .tgIconContainer {
+              border-radius: 50%;
+              background: variables.$blue;
+
+              .tgIcon {
+                @include mixins.size(24px);
+                transform: translateX(-1px);
+              }
+            }
+          }
+        }
       }
+    }
+  }
+
+  .siteInfo {
+    @include mixins.flex($gap: 10px);
+
+    @media (max-width: 740px) {
+      flex-direction: column;
+    }
+
+    .text {
+      margin-top: 0;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .postText {
+      text-align: left;
     }
   }
 }

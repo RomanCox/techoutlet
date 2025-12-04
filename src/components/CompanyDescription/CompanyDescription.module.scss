@@ -15,16 +15,10 @@
     width: 100%;
     @include mixins.flex($direction: column, $gap: 10px);
 
-    @media (max-width: 1300px) {
-      & > p {
-        padding-inline: 40px;
-      }
-    }
-
     .title {
       text-align: left;
       color: variables.$dark-grey;
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 700;
       white-space: pre-line;
 
@@ -33,11 +27,17 @@
         text-align: center;
       }
 
+      @media (max-width: 460px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 370px) {
+        font-size: 30px;
+      }
+
       span {
         color: variables.$blue;
-        font: variables.$font-second;
-        font-size: 42px;
-        font-weight: 700;
+        font-family: variables.$font-second;
       }
     }
 
@@ -45,6 +45,18 @@
       text-align: left;
       font-size: 20px;
       font-weight: 500;
+
+      @media (max-width: 1300px) {
+        padding-inline: 40px;
+      }
+
+      @media (max-width: 460px) {
+        padding-inline: 20px;
+      }
+
+      @media (max-width: 400px) {
+        padding-inline: 10px;
+      }
     }
 
     .list {
@@ -58,13 +70,22 @@
         padding-inline: 40px;
       }
 
+      @media (max-width: 460px) {
+        padding-inline: 20px;
+      }
+
+      @media (max-width: 400px) {
+        padding-inline: 10px;
+      }
+
       .listItem {
         padding-left: 10px;
         @include mixins.flex($items: flex-start, $gap: 10px);
 
         .listMarker {
-          margin-top: 8px;
+          margin-top: 10px;
           @include mixins.size(5px);
+          min-width: 5px;
           border-radius: 50%;
           background: variables.$black;
         }
@@ -112,7 +133,11 @@
     }
 
     @media (max-width: 460px) {
-      top: 222px;
+      top: 216px;
+    }
+
+    @media (max-width: 370px) {
+      top: 200px;
     }
 
     & > picture {

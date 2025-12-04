@@ -10,6 +10,11 @@
 
   .followUsTextContainer {
     @include mixins.flex($direction: column, $gap: 32px);
+    
+    @media (max-width: 960px) {
+      width: 100%;
+      align-items: center;
+    }
 
     .followUsTitle {
       font-size: 44px;
@@ -17,6 +22,10 @@
       line-height: 1;
       text-align: left;
       white-space: pre-line;
+
+      @media (max-width: 960px) {
+        text-align: center;
+      }
     }
 
     .followUsDescription {

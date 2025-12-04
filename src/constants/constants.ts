@@ -268,8 +268,22 @@ export const footerData: IFooterDataType = {
   },
   siteInfo: {
     socialsLabel: 'в социальных сетях',
-    socials: [ { iconName: 'instagram', link: 'https://www.instagram.com/techoutlet.minsk?igsh=MXUyZ20yeDc3bmc0bQ==' }, { iconName: 'telegram', link: 'https://t.me/techoutlet' } ],
-    copyright: `© TechOutlet ${new Date().getFullYear()}`,
-    text: 'Сайт носит сугубо информационный характер и\nне является публичной офертой, '
+    socials: [
+      { iconName: 'instagram', link: 'https://www.instagram.com/techoutlet.minsk?igsh=MXUyZ20yeDc3bmc0bQ==' },
+      { iconName: 'telegram', link: 'https://t.me/techoutlet' },
+      { iconName: 'vk', link: 'https://www.vk.com/wall-211893815?own=1' },
+      { iconName: 'tiktok', link: 'https://www.tiktok.com/@techoutlet.minsk' },
+    ],
+    reviewsLabel: 'отзывы о нас',
+    reviews: [
+      { iconName: 'yandex', link: 'https://yandex.by/maps/org/techoutlet/168800590756/reviews/?ll=27.562523%2C53.923689&z=14' },
+      { iconName: 'google', link: 'https://www.google.com/search?q=techoutlet&oq=tec&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhMIARAuGIMBGMcBGLEDGNEDGIAEMgYIAhBFGDwyBggDEEUYPDIGCAQQRRg8MgYIBRBFGEEyBggGEEUYQTIGCAcQRRg80gEIMzA2M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x46dbcfc31247d371:0xa5256b47101ebffb,1' },
+    ],
+    kufarLabel: 'мы на Kufar',
+  },
+  copyright: {
+    label: `© TechOutlet ${new Date().getFullYear()}`,
+    text: 'Сайт носит сугубо информационный характер и не является публичной офертой.'
   }
+
 }

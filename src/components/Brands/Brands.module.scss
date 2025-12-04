@@ -20,5 +20,15 @@
     grid-template-rows: repeat(2, auto);
     gap: 40px 0;
     color: variables.$grey-color;
+
+    @media (max-width: 1100px) {
+      @include mixins.flex($gap: 0);
+    }
+
+    .brandContainer {
+      @media (max-width: 1100px) {
+        width: 200px;
+      }
+    }
   }
 }

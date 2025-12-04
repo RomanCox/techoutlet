@@ -33,10 +33,10 @@ export default function Home() {
         <main className={styles.main}>
           <HeroSlider mounted={mounted}/>
           <CompanyDescription mounted={mounted}/>
-          <MarketingCards />
+          <MarketingCards mounted={mounted}/>
           <ProductTrip />
-          <Brands />
-          <FollowUs />
+          <Brands mounted={mounted}/>
+          <FollowUs mounted={mounted}/>
         </main>
         <Footer />
       </div>
