@@ -5,6 +5,8 @@ export const GoogleColor = memo((props: SVGProps<SVGSVGElement>) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
+      width="35px"
+      height="35px"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >

@@ -78,6 +78,12 @@
       .title {
         height: 32px;
         display: flex;
+
+        & > picture {
+          & > img {
+            width: auto;
+          }
+        }
       }
 
       .socialsContainer {
