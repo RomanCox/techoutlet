@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://your-domain.com',    // <- поменяй на свой домен
+  siteUrl: 'https://techoutlet.by',    // <- поменяй на свой домен
   generateRobotsTxt: true,               // создает robots.txt
   changefreq: 'weekly',
   priority: 0.7,
