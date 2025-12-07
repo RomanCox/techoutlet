@@ -68,7 +68,7 @@ export const Footer = memo(() => {
           <Text as='h4'>{footerData.services.label}</Text>
           {footerData.services.servicesList.map(({ id, label }) => (
             <Button theme={ButtonTheme.CLEAR} key={id} onClick={() => openModal(id)}>
-              <Text>{label}</Text>
+              <Text as="span">{label}</Text>
             </Button>
           ))}
         </div>
@@ -138,7 +138,7 @@ export const Footer = memo(() => {
             <div className={cls.kufarContainer}>
               <Text className={cls.kufarLabel}>{footerData.siteInfo.kufarLabel}</Text>
               <a
-                href={footerData.siteInfo.kufarLabel}
+                href={footerData.siteInfo.kufarLink}
                 className={cls.link}
                 target="_blank"
                 rel="noopener noreferrer"
