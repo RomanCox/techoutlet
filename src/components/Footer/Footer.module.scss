@@ -24,8 +24,6 @@
       grid-template-columns: 1fr;
     }
 
-
-
     .shop,
     .contacts,
     .shopInfo,
@@ -37,7 +35,8 @@
         text-align: left;
       }
 
-      & > p {
+      & > p,
+      & > button{
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
