@@ -22,7 +22,10 @@ export default function Home() {
     <>
       <Head>
         <title>Techoutlet</title>
-        <meta name="description" content="Большой выбор витринной, выставочной и open-box техники. Все устройства проходят диагностику и продаются с гарантией. Качество нового — цена ниже." />
+        <meta
+          name="description"
+          content="Большой выбор витринной, выставочной и open-box техники. Все устройства проходят диагностику и продаются с гарантией. Качество нового — цена ниже."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-title" content="TechOutlet" />
         <meta name="google-site-verification" content="8WNyalJiWpHAhLjPllIa8jKus5kerEtsCPnSotRy4Fk" />
@@ -31,6 +34,15 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/favicons/logo_blue.png" />
         <meta property="og:url" content="https://techoutlet.by/" />
+        <meta property="og:site_name" content="TechOutlet" />
+        <meta name="twitter:title" content="TechOutlet" />
+        <meta
+          name="twitter:description"
+          content="Большой выбор витринной, выставочной и open-box техники."
+        />
+        <meta name="twitter:image" content="/favicons/logo_blue.png" />
+        <meta name="twitter:site" content="https://techoutlet.by/" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
         <link rel="shortcut icon" href="/favicons/favicon.ico" />
