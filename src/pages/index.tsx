@@ -25,6 +25,12 @@ export default function Home() {
         <meta name="description" content="Большой выбор витринной, выставочной и open-box техники. Все устройства проходят диагностику и продаются с гарантией. Качество нового — цена ниже." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-title" content="TechOutlet" />
+        <meta name="google-site-verification" content="8WNyalJiWpHAhLjPllIa8jKus5kerEtsCPnSotRy4Fk" />
+        <meta property="og:title" content="TechOutlet" />
+        <meta property="og:description" content="Большой выбор витринной, выставочной и open-box техники." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/favicons/logo_blue.png" />
+        <meta property="og:url" content="https://techoutlet.by/" />
         <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
         <link rel="shortcut icon" href="/favicons/favicon.ico" />
