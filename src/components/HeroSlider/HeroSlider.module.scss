@@ -120,6 +120,11 @@
           width: 35%;
           left: 5%;
         }
+
+        @media (max-width: 450px) {
+          width: 45%;
+          left: 0;
+        }
       }
 
       .cameraImage {
@@ -147,6 +152,11 @@
           width: 35vw;
           right: -5%;
         }
+
+        @media (max-width: 450px) {
+          width: 45vw;
+          right: -10%;
+        }
       }
 
       .iphonesImage {
@@ -173,6 +183,11 @@
         @media (max-width: 705px) {
           height: 35vw;
           left: 5%;
+        }
+
+        @media (max-width: 450px) {
+          height: 45vw;
+          left: 0;
         }
       }
 
@@ -230,6 +245,10 @@
         @media (max-width: 900px) {
           @include mixins.size(40vw);
           right: -7%;
+        }
+
+        @media (max-width: 450px) {
+          @include mixins.size(45vw);
         }
       }
     }
