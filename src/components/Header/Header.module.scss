@@ -47,7 +47,6 @@
     @include mixins.flex($items: center, $gap: 20px);
 
     & > a {
-      color: variables.$color-text;
       font-weight: bold;
 
       @media (max-width: 705px) {

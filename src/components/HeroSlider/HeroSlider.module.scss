@@ -31,10 +31,11 @@
 
     .textContainer {
       padding: 60px 20px;
-      @include mixins.flex($direction: column, $items: center, $gap: 30px);
+      @include mixins.flex($direction: column, $gap: 30px);
 
       @media (max-width: 1380px) {
         padding-bottom: 0;
+        align-items: center;
       }
 
       & > h1 {

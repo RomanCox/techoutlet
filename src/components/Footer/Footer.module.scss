@@ -102,12 +102,14 @@
             @include mixins.flex($items: center, $content: center);
             border-radius: 16px;
             background: variables.$white;
-            filter: grayscale(100%) contrast(95%);
-            transition: filter 300ms ease;
-            will-change: filter;
 
             &:hover {
-              filter: none;
+              .instagramIconContainer,
+              .tgIconContainer,
+              .vkIconContainer,
+              .tiktokIconContainer {
+                filter: none;
+              }
             }
 
             .instagramIconContainer,
@@ -117,6 +119,9 @@
               @include mixins.size(40px);
               @include mixins.flex($items: center, $content: center);
               color: variables.$white;
+              filter: grayscale(100%) contrast(95%);
+              transition: filter 300ms ease;
+              will-change: filter;
             }
 
             .tgIconContainer {
@@ -136,7 +141,7 @@
         @include mixins.flex($gap: 20px);
 
         .reviewsSites {
-          @include mixins.flex($direction: column, $gap: 8px);
+          @include mixins.flex($direction: column);
 
           .reviewsLabel {
             font-size: 16px;
@@ -153,12 +158,12 @@
               @include mixins.flex($items: center, $content: center);
               border-radius: 16px;
               background: variables.$white;
-              filter: grayscale(100%) contrast(95%);
-              transition: filter 300ms ease;
-              will-change: filter;
 
               &:hover {
-                filter: none;
+                .yandexIconContainer,
+                .googleIconContainer {
+                  filter: none;
+                }
               }
 
               .yandexIconContainer,
@@ -166,13 +171,16 @@
                 @include mixins.size(40px);
                 @include mixins.flex($items: center, $content: center);
                 color: variables.$white;
+                filter: grayscale(100%) contrast(95%);
+                transition: filter 300ms ease;
+                will-change: filter;
               }
             }
           }
         }
 
         .kufarContainer {
-          @include mixins.flex($direction: column, $gap: 8px);
+          @include mixins.flex($direction: column);
 
           .kufarLabel {
             font-size: 16px;
