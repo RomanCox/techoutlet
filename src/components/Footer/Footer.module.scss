@@ -95,7 +95,7 @@
         }
 
         .socials {
-          @include mixins.flex($gap: 8px);
+          @include mixins.flex($content: space-between, $gap: 8px);
 
           .social {
             @include mixins.size(56px);
