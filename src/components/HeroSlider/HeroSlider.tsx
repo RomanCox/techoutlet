@@ -63,7 +63,7 @@ export const HeroSlider = memo(({ mounted }: IMounted) => {
 						className={cls.catalogButton}
 					>
 						Каталог
-						<TgIcon />
+						<TgIcon className={cls.tgIcon}/>
 					</Button>
         </div>
 				<div className={cls.imagesContainer}>

@@ -52,18 +52,14 @@
       @media (max-width: 705px) {
         font-size: 20px;
       }
-    }
-
-    .tgIconContainer {
-      @include mixins.size(32px);
-      @include mixins.flex($items: center, $content: center);
-      border-radius: 50%;
-      background: variables.$blue;
-      color: variables.$white;
 
       .tgIcon {
-        @include mixins.size(18px);
-        transform: translateX(-1px);
+        @include mixins.size(32px);
+
+        svg {
+          @include mixins.size(18px);
+          transform: translateX(-1px);
+        }
       }
     }
   }

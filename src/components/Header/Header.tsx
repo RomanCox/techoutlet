@@ -31,7 +31,6 @@ export const Header = memo(() => {
         </a>
         <a
           href={headerData.telegramLink}
-          className={cls.tgIconContainer}
           target="_blank"
           rel="noopener noreferrer"
         >

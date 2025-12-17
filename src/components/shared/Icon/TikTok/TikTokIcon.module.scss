@@ -1,0 +1,80 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.tikTokIcon {
+  @include mixins.size(40px);
+  @include mixins.flex($items: center, $content: center);
+
+  svg {
+    g {
+      stroke: none;
+      stroke-width: 0;
+      stroke-dasharray: none;
+      stroke-linecap: butt;
+      stroke-linejoin: miter;
+      stroke-miterlimit: 10;
+      fill: none;
+      fill-rule: nonzero;
+      opacity: 1;
+
+      .red,
+      .turquoise,
+      .black,
+      .lightGray,
+      .gray {
+        stroke: none;
+        stroke-width: 1;
+        stroke-dasharray: none;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+        stroke-miterlimit: 10;
+        fill-rule: nonzero;
+        opacity: 1;
+        transition: opacity 300ms ease;
+      }
+
+      .red {
+        fill: variables.$tiktok-red;
+      }
+
+      .turquoise {
+        fill: variables.$tiktok-turquoise;
+      }
+
+      .black {
+        fill: variables.$black;
+      }
+
+      .lightGray {
+        fill: variables.$grey-color;
+      }
+
+      .gray {
+        fill: variables.$gray-icon-color;
+      }
+
+      .red,
+      .turquoise,
+      .black {
+        opacity: 0;
+      }
+    }
+  }
+
+  &:hover {
+    svg {
+      g {
+        .lightGray,
+        .gray {
+          opacity: 0;
+        }
+
+        .red,
+        .turquoise,
+        .black {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

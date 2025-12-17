@@ -38,7 +38,7 @@ export const FollowUs = memo(({ mounted }: IMounted) => {
             className={cls.catalogButton}
           >
             Каталог
-            <TgIcon />
+            <TgIcon className={cls.tgIcon}/>
           </Button>
         </div>
       </div>
@@ -58,7 +58,7 @@ export const FollowUs = memo(({ mounted }: IMounted) => {
           className={cls.catalogButton}
         >
           Каталог
-          <TgIcon />
+          <TgIcon className={cls.tgIcon}/>
         </Button>
       </div>
       <Picture className={cls.followUsImage} png={ManyIphonesPNG} webp={ManyIphonesWEBP} alt={'phones picture'} />

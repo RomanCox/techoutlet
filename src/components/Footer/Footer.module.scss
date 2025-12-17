@@ -103,35 +103,10 @@
             border-radius: 16px;
             background: variables.$white;
 
-            &:hover {
-              .instagramIconContainer,
-              .tgIconContainer,
-              .vkIconContainer,
-              .tiktokIconContainer {
-                filter: none;
-              }
-            }
-
-            .instagramIconContainer,
-            .tgIconContainer,
-            .vkIconContainer,
             .tiktokIconContainer {
               @include mixins.size(40px);
               @include mixins.flex($items: center, $content: center);
               color: variables.$white;
-              filter: grayscale(100%) contrast(95%);
-              transition: filter 300ms ease;
-              will-change: filter;
-            }
-
-            .tgIconContainer {
-              border-radius: 50%;
-              background: variables.$blue;
-
-              .tgIcon {
-                @include mixins.size(24px);
-                transform: translateX(-1px);
-              }
             }
           }
         }

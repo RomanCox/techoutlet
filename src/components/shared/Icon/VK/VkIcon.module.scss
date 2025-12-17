@@ -1,0 +1,14 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.vkIcon {
+  @include mixins.size(40px);
+  border-radius: 8px;
+  background: variables.$gray-icon-color;
+  color: variables.$white;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: variables.$blue;
+  }
+}

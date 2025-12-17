@@ -1,0 +1,29 @@
+@use '@/styles/mixins';
+
+.icon {
+  @include mixins.size(40px);
+  @include mixins.flex($items: center, $content: center);
+
+  svg {
+    .gray,
+    .color {
+      transition: opacity 300ms ease;
+    }
+
+    .color {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    svg {
+      .gray {
+        opacity: 0;
+      }
+
+      .color {
+        opacity: 1;
+      }
+    }
+  }
+}

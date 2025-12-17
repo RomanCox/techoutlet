@@ -86,24 +86,25 @@ export const Footer = memo(() => {
                   rel="noopener noreferrer"
                 >
                   {social.iconName === 'instagram' && (
-                    <div className={cls.instagramIconContainer}>
-                      <Instagram />
-                    </div>
+                    <Instagram />
                   )}
                   {social.iconName === 'telegram' && (
-                    <div className={cls.tgIconContainer}>
-                      <TgIcon className={cls.tgIcon}/>
-                    </div>
+                    <TgIcon withHoverActivity />
                   )}
                   {social.iconName === 'vk' && (
-                    <div className={cls.vkIconContainer}>
-                      <VK />
-                    </div>
+                    <VK />
                   )}
                   {social.iconName === 'tiktok' && (
-                    <div className={cls.tiktokIconContainer}>
-                      <TikTok />
-                    </div>
+                    <TikTok />
+                    // <div
+                    //   className={cls.tiktokIconContainer}
+                    //   onMouseEnter={() => onHoverStart(social.iconName)}
+                    //   onMouseLeave={() => onHoverEnd()}
+                    //   onTouchStart={() => onHoverStart(social.iconName)}
+                    //   onTouchEnd={() => onHoverEnd()}
+                    // >
+                    //   <TikTok />
+                    // </div>
                   )}
                 </a>
               ))}

@@ -1,0 +1,22 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.tgIcon {
+  border-radius: 50%;
+  background: variables.$blue;
+  color: variables.$white;
+  transition: background 0.3s ease;
+
+  &.gray {
+    background: variables.$gray-icon-color;
+  }
+
+  svg {
+    @include mixins.size(24px);
+    transform: translateX(-1px);
+  }
+
+  &:hover {
+    background: variables.$blue;
+  }
+}

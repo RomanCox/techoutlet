@@ -74,7 +74,13 @@
 
       .catalogButton {
         width: fit-content;
+        padding-block: 4px;
         @include mixins.flex($items: center, $gap: 10px);
+        font-size: 24px;
+
+        .tgIcon {
+          @include mixins.size(24px);
+        }
       }
     }
 
