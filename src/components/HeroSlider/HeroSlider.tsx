@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState, useEffect } from 'react'
+import { memo } from 'react'
 
 import { useViewportParallax } from '@/hooks/useViewportParallax'
 import { MAX_MOBILE_WIDTH, useWindowSize } from '@/hooks/useWindowSize'
