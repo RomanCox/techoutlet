@@ -23,11 +23,16 @@
       white-space: pre-line;
 
       @media (max-width: 1300px) {
-        margin-bottom: 240px;
+        margin-bottom: 260px;
         text-align: center;
       }
 
+      @media (max-width: 705px) {
+        margin-bottom: 260px;
+      }
+
       @media (max-width: 460px) {
+        margin-bottom: 240px;
         font-size: 32px;
       }
 
@@ -122,22 +127,22 @@
     @media (max-width: 1300px) {
       align-items: flex-start;
       bottom: auto;
-      top: 130px;
+      top: 120px;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
     }
 
     @media (max-width: 705px) {
-      top: 177px;
+      top: 160px;
     }
 
     @media (max-width: 460px) {
-      top: 216px;
+      top: 176px;
     }
 
     @media (max-width: 370px) {
-      top: 200px;
+      top: 170px;
     }
 
     & > picture {
