@@ -38,7 +38,7 @@
       @include mixins.flex($items: center, $content: center);
       color: variables.$white;
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 700;
 
       & > svg {
         @include mixins.size(100%);
