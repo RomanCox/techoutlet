@@ -96,15 +96,6 @@ export const Footer = memo(() => {
                   )}
                   {social.iconName === 'tiktok' && (
                     <TikTok />
-                    // <div
-                    //   className={cls.tiktokIconContainer}
-                    //   onMouseEnter={() => onHoverStart(social.iconName)}
-                    //   onMouseLeave={() => onHoverEnd()}
-                    //   onTouchStart={() => onHoverStart(social.iconName)}
-                    //   onTouchEnd={() => onHoverEnd()}
-                    // >
-                    //   <TikTok />
-                    // </div>
                   )}
                 </a>
               ))}

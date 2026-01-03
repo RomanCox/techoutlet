@@ -44,7 +44,6 @@ export const Picture = memo((props: PictureProps) => {
 		isCover,
 	} = props as PictureProps
 
-    // Фолбэк — отдаем предпочтение PNG, если он есть (прозрачность), иначе JPG
 	const fallback: ImgLike | undefined = png ?? jpg
 	if (!fallback) {
 		if (process.env.NODE_ENV !== 'production') {
@@ -53,7 +52,6 @@ export const Picture = memo((props: PictureProps) => {
 		return null
 	}
 
-  // width/height: если не переданы руками — попробуем взять из StaticImageData фолбэка
 	const dim =
 		width && height
 			? { width, height }

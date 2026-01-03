@@ -112,21 +112,18 @@ export const marketingCards: IMarketingCards[] = [
 export const directions: IDirection[] = [
   {
     title: 'Товары из США с\nзакрытых аукционов электроники',
-    // imagePNG: USAFlagPNG,
     imageJPG: USAFlagJPG,
     imageWEBP: USAFlagWEBP,
     alt: 'USA Flag',
   },
   {
     title: 'Товары из Европы с\nсудебных складов и аукционов',
-    // imagePNG: EuropeFlagPNG,
     imageJPG: EuropeFlagJPG,
     imageWEBP: EuropeFlagWEBP,
     alt: 'Europe Flag',
   },
   {
     title: 'Товары из Dubai с\nоптовых складов в Deira',
-    // imagePNG: UAEFlagPNG,
     imageJPG: UAEFlagJPG,
     imageWEBP: UAEFlagWEBP,
     alt: 'UAE Flag',

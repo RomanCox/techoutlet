@@ -49,7 +49,6 @@ export interface IMarketingCards {
 
 export interface IDirection {
   title: string
-  // imagePNG: StaticImageData
   imageJPG: StaticImageData
   imageWEBP: StaticImageData
   alt: string

@@ -57,10 +57,8 @@ export function useWindowSize({
       }
     };
 
-    // passive listener for better scrolling/resize perf
     window.addEventListener("resize", handler, { passive: true })
 
-    // update once on mount in case initialSize was different
     handler()
 
     return () => {
@@ -68,8 +66,7 @@ export function useWindowSize({
       if (rafId.current) cancelAnimationFrame(rafId.current)
       if (timeoutId.current) window.clearTimeout(timeoutId.current)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debounceMs, useRaf]) // only reattach if options change
+  }, [debounceMs, useRaf])
 
   return size
 }

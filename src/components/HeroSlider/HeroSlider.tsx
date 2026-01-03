@@ -33,15 +33,15 @@ export const HeroSlider = memo(({ mounted }: IMounted) => {
 
 	const { register } = useViewportParallax(
 		{
-			notebook: 36,   // ближе — больше коэффициент
+			notebook: 36,
 			camera: 44,
 			iphones: 22,
 			headphones: 28,
 			actionCam: 40,
 		},
 		{
-			maxFraction: 0.9, // ограничение амплитуды
-			lerp: 0.12,       // плавность
+			maxFraction: 0.9,
+			lerp: 0.12,
 		}
 	)
 

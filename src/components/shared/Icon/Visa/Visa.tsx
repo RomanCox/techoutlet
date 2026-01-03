@@ -4,9 +4,6 @@ export const Visa = memo((props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="730 720 1920 640"
-      // width="100%"
-      // height="100%"
-      // preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

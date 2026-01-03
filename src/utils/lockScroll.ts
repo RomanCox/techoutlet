@@ -18,12 +18,11 @@ export const lockScroll = (): void => {
   if (typeof window === 'undefined') return
 
   lockCount += 1
-  if (lockCount > 1) return // уже заблокировано
+  if (lockCount > 1) return
 
   const body = document.body
   const html = document.documentElement
 
-  // сохраняем inline-стили
   prevBodyStyle = {
     overflow: body.style.overflow,
     paddingRight: body.style.paddingRight,
@@ -39,7 +38,6 @@ export const lockScroll = (): void => {
   }
 
   if (isIOS()) {
-    // iOS: фиксируем body и сохраняем позицию
     savedScrollY = window.scrollY || window.pageYOffset || 0
     body.style.position = 'fixed'
     body.style.top = `-${savedScrollY}px`
@@ -47,33 +45,25 @@ export const lockScroll = (): void => {
     body.style.right = '0'
     body.style.width = '100%'
     body.style.overflow = 'hidden'
-    // на iOS скроллбар ширина не важна
     html.style.setProperty('--scrollbar-comp', '0px')
     return
   }
 
-  // Desktop / Chrome и т.п.
   const scrollBarWidth = getScrollbarWidth()
 
-  // применяем overflow:hidden к html (documentElement) — это гарантирует блокировку прокрутки в Chrome
   html.style.overflow = 'hidden'
-  // на всякий случай ставим и на body — это не повредит, но padding мы будем применять только к html
   body.style.overflow = 'hidden'
 
-  // компенсируем ширину скроллбара — ТОЛЬКО на html, чтобы не удваивать
   if (scrollBarWidth > 0) {
     const currentHtmlPad = parseFloat(getComputedStyle(html).paddingRight || '0')
     html.style.paddingRight = `${currentHtmlPad + scrollBarWidth}px`
-    // выставляем CSS var для fixed/header элементов
     html.style.setProperty('--scrollbar-comp', `${scrollBarWidth}px`)
   } else {
     html.style.setProperty('--scrollbar-comp', '0px')
   }
 
-  // если окно изменится — пересчитаем компенсацию
   resizeHandler = () => {
     const newScrollBarWidth = getScrollbarWidth()
-    // откатим paddingRight html к исходному inline-значению, затем добавим новую компенсацию
     html.style.paddingRight = prevHtmlStyle.paddingRight ?? ''
     if (newScrollBarWidth > 0) {
       const basePad = parseFloat(getComputedStyle(html).paddingRight || '0')
@@ -92,12 +82,11 @@ export const unlockScroll = (): void => {
   if (lockCount === 0) return
 
   lockCount -= 1
-  if (lockCount > 0) return // ещё есть активные блокировки
+  if (lockCount > 0) return
 
   const body = document.body
   const html = document.documentElement
 
-  // восстановим inline-стили
   body.style.overflow = prevBodyStyle.overflow ?? ''
   body.style.paddingRight = prevBodyStyle.paddingRight ?? ''
   body.style.position = prevBodyStyle.position ?? ''
@@ -110,7 +99,6 @@ export const unlockScroll = (): void => {
   html.style.paddingRight = prevHtmlStyle.paddingRight ?? ''
   html.style.removeProperty('--scrollbar-comp')
 
-  // для iOS вернём scroll pos
   if (isIOS() && savedScrollY) {
     window.scrollTo(0, savedScrollY)
     savedScrollY = 0
