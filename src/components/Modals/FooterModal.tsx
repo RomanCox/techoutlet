@@ -88,7 +88,7 @@ export const FooterModal = memo(({ id }: FooterModalsProps) => {
           </a>
           <iframe
             src="https://yandex.by/map-widget/v1/?ll=27.562601%2C53.923696&mode=search&oid=168800590756&ol=biz&z=14.92"
-            width="560" height="400" frameBorder="1" allowFullScreen="true" style={{position: "relative"}}
+            width="560" height="400" frameBorder="1" allowFullScreen style={{position: "relative"}}
           />
         </div>
       )}
