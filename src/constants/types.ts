@@ -43,8 +43,8 @@ export interface IMarketingCards {
   id: number
   mobileId: number
   text: string
-  imagePNG: StaticImageData
-  imageWEBP: StaticImageData
+  backgroundType: "dark" | "light"
+  icon: string
 }
 
 export interface IDirection {

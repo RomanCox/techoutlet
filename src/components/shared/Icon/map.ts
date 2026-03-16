@@ -16,4 +16,10 @@ export const iconComponents: Record<string, FC<any>> = {
   samsung: Icons.Samsung,
   sony: Icons.Sony,
   close: Icons.CloseIcon,
+  calendar: Icons.Calendar,
+  delivery: Icons.Delivery,
+  location: Icons.Location,
+  payment: Icons.Payment,
+  security: Icons.Security,
+  warranty: Icons.Warranty,
 }

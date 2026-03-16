@@ -59,7 +59,7 @@ export default function Home() {
           <HeroSlider mounted={mounted}/>
           <CompanyDescription mounted={mounted}/>
           <MarketingCards mounted={mounted}/>
-          <ProductTrip />
+          {/*<ProductTrip />*/}
           <Brands mounted={mounted}/>
           <FollowUs mounted={mounted}/>
         </main>

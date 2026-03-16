@@ -1,16 +1,14 @@
 "use client"
 
-import { memo } from 'react'
-import { classNames } from '@/helpers'
+import { memo, SVGProps } from 'react'
 import { iconComponents } from './map'
 
-interface IIcon {
+interface IIcon extends SVGProps<SVGSVGElement> {
   name?: string
-  className?: string
   alt?: string
 }
 
-export const Icon = memo(({ name, className, alt }: IIcon) => {
+export const Icon = memo(({ name, alt, ...props }: IIcon) => {
   if (!name) return null;
 
   const Component = iconComponents[name]
@@ -20,7 +18,7 @@ export const Icon = memo(({ name, className, alt }: IIcon) => {
   return (
     <Component
       aria-label={alt}
-      className={classNames("", {}, [className])}
+      {...props}
     />
   )
 })
