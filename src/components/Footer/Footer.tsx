@@ -33,15 +33,13 @@ export const Footer = memo(() => {
       <div className={cls.footerContent}>
         <div className={cls.shop}>
           <Text as='h4'>{footerData.shop.label}</Text>
-          <Text className={cls.text}>{footerData.shop.address.text}</Text>
-          <Text className={cls.postText}>{footerData.shop.address.postText}</Text>
+          <Text className={cls.text}>{footerData.shop.address}</Text>
           <Text className={cls.text}>
-            {footerData.shop.workingTime.text.split('\n').map((line, idx) => {
+            {footerData.shop.workingTime.split('\n').map((line, idx) => {
               const [label, ...rest] = line.split(':');
-              if (idx === 0) return <span key={idx}>{line}<br /></span>; // "Время работы:" оставляем обычным
               return (
                 <span key={idx}>
-                  <span style={{ textDecoration: 'underline' }}>{label}:</span>
+                  <span>{label}:</span>
                   {rest.join(':')}
                   <br />
                 </span>

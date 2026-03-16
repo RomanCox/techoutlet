@@ -197,13 +197,8 @@ export const brands: IBrand[] = [
 export const footerData: IFooterDataType = {
   shop: {
     label: 'Магазин',
-    address: {
-      text: 'г. Минск\nул. Хоружей д.32а/4, оф.12',
-      postText: 'магазин',
-    },
-    workingTime: {
-      text: 'Время работы:\nПн - Пт: 11:00 — 19:00\nОбед: 14:00 — 15:00\nСб: 11:00 — 16:00\nВс: выходной',
-    },
+    address: 'г. Минск\nул. Хоружей д.32а/4, оф.12',
+    workingTime: 'Пн - Пт: 11:00 — 19:00\nОбед: 14:00 — 15:00\nСб: 11:00 — 16:00\nВс: выходной',
   },
   contacts: {
     label: 'Контакты',

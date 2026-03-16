@@ -48,18 +48,10 @@
       .text {
         & > span {
           display: block;
+          font-weight: 500;
 
-          &:first-child {
-            font-weight: 700;
-          }
-
-          &:not(:first-child) {
-            font-weight: 500;
-
-            & > span {
-              text-decoration: underline;
-              font-weight: 400;
-            }
+          & > span {
+            font-weight: 400;
           }
 
           &:last-child {
@@ -220,10 +212,6 @@
       text-align: left;
       white-space: nowrap;
     }
-
-    .postText {
-      text-align: left;
-    }
   }
 }
 
@@ -249,8 +237,4 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-}
-
-.postText {
-  color: variables.$black-50;
 }
