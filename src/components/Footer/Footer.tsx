@@ -28,6 +28,9 @@ import cls from './Footer.module.scss'
 export const Footer = memo(() => {
   const { openModal } = useModal()
 
+  const timeLines = footerData.shop.workingTime.text.split('\n');
+
+
   return (
     <footer className={cls.footer}>
       <div className={cls.footerContent}>
@@ -35,8 +38,19 @@ export const Footer = memo(() => {
           <Text as='h4'>{footerData.shop.label}</Text>
           <Text className={cls.text}>{footerData.shop.address.text}</Text>
           <Text className={cls.postText}>{footerData.shop.address.postText}</Text>
-          <Text className={cls.text}>{footerData.shop.workingTime.text}</Text>
-          <Text className={cls.postText}>{footerData.shop.workingTime.postText}</Text>
+          <Text className={cls.text}>
+            {footerData.shop.workingTime.text.split('\n').map((line, idx) => {
+              const [label, ...rest] = line.split(':');
+              if (idx === 0) return <span key={idx}>{line}<br /></span>; // "Время работы:" оставляем обычным
+              return (
+                <span key={idx}>
+                  <span style={{ textDecoration: 'underline' }}>{label}:</span>
+                  {rest.join(':')}
+                  <br />
+                </span>
+              );
+            })}
+          </Text>
         </div>
         <div className={cls.contacts}>
           <Text as='h4'>{footerData.contacts.label}</Text>

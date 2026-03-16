@@ -44,6 +44,27 @@
       }
     }
 
+    .shop {
+      .text {
+        & > span {
+          display: block;
+
+          &:first-child {
+            font-weight: 700;
+          }
+
+          &:not(:first-child) {
+            font-weight: 500;
+
+            & > span {
+              text-decoration: underline;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
     .contacts {
       .payments {
         height: 20px;

@@ -202,8 +202,7 @@ export const footerData: IFooterDataType = {
       postText: 'магазин',
     },
     workingTime: {
-      text: 'Время работы:\n11:00 — 19:00',
-      postText: 'Пн - Пт',
+      text: 'Время работы:\nПн - Пт: 11:00 — 19:00\nОбед: 14:00 — 15:00\nСб: 11:00 — 16:00\nВс: выходной',
     },
   },
   contacts: {

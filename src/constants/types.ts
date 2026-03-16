@@ -70,7 +70,6 @@ export interface FooterShopType {
   }
   workingTime: {
     text: string
-    postText: string
   }
 }
 

@@ -46,6 +46,13 @@
         inset: 0;
         z-index: 0;
 
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+
         picture {
           width: 100%;
           height: 100%;
@@ -65,12 +72,24 @@
       }
     }
 
-    .card:nth-child(odd) .cardText {
-      color: variables.$white;
+    .card:nth-child(odd) {
+      .cardText {
+        color: variables.$white;
+      }
+
+      .cardImage::after {
+        background-color: variables.$black-70;
+      }
     }
 
-    .card:nth-child(even) .cardText {
-      color: variables.$black;
+    .card:nth-child(even) {
+      .cardText {
+        color: variables.$black;
+      }
+
+      .cardImage::after {
+        background-color: variables.$white-50;
+      }
     }
   }
 }
