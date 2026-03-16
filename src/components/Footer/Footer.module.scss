@@ -61,6 +61,10 @@
               font-weight: 400;
             }
           }
+
+          &:last-child {
+            color: variables.$red;
+          }
         }
       }
     }
