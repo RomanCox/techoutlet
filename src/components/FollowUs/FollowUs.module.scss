@@ -42,7 +42,8 @@
       font-size: 24px;
 
       .tgIcon {
-        @include mixins.size(24px);
+        @include mixins.size(20px);
+        background: transparent;
       }
     }
   }

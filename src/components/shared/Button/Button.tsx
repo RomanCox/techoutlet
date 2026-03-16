@@ -7,7 +7,7 @@ import {
 	ReactElement,
 	forwardRef,
 } from 'react'
-import {classNames, Mods} from '@/helpers'
+import { classNames, Mods } from '@/helpers'
 
 import cls from './Button.module.scss'
 
