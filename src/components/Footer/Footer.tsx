@@ -28,9 +28,6 @@ import cls from './Footer.module.scss'
 export const Footer = memo(() => {
   const { openModal } = useModal()
 
-  const timeLines = footerData.shop.workingTime.text.split('\n');
-
-
   return (
     <footer className={cls.footer}>
       <div className={cls.footerContent}>
