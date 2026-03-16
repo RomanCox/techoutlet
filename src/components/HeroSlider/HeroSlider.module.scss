@@ -11,6 +11,7 @@
     padding: 20px 20px;
     @include mixins.flex($gap: 80px);
     background: variables.$dark-bg;
+    position: relative;
 
     @media (max-width: 1380px) {
       height: calc(100vh - 240px);
@@ -25,13 +26,11 @@
       max-height: calc(100vh - 240px);
     }
 
-    @media (max-width: 475px) {
-
-    }
-
     .textContainer {
       padding: 60px 20px;
       @include mixins.flex($direction: column, $gap: 30px);
+      position: relative;
+      z-index: 1;
 
       @media (max-width: 1380px) {
         padding-bottom: 0;
@@ -90,6 +89,7 @@
       flex: 1;
       display: flex;
       position: relative;
+      z-index: 1;
 
       .notebookImage,
       .cameraImage,
@@ -257,6 +257,21 @@
         @media (max-width: 450px) {
           @include mixins.size(45vw);
         }
+      }
+    }
+
+    .slideImage {
+      position: absolute;
+      inset: 0;
+      border-radius: 40px;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: variables.$black-70;
+        pointer-events: none;
       }
     }
   }

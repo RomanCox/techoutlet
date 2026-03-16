@@ -10,6 +10,8 @@ import { Button } from '@/components/shared/Button/Button'
 
 import ManyIphonesPNG from '@/assets/images/devices/many_iphones.png'
 import ManyIphonesWEBP from '@/assets/images/devices/many_iphones.webp'
+import LightBackgroundJPG from'@/assets/images/other/light_card_background.jpg'
+import LightBackgroundWEBP from'@/assets/images/other/light_card_background.webp'
 
 import { IMounted } from '@/constants'
 import cls from './FollowUs.module.scss'
@@ -62,6 +64,13 @@ export const FollowUs = memo(({ mounted }: IMounted) => {
         </Button>
       </div>
       <Picture className={cls.followUsImage} png={ManyIphonesPNG} webp={ManyIphonesWEBP} alt={'phones picture'} />
+      <Picture
+        jpg={LightBackgroundJPG}
+        webp={LightBackgroundWEBP}
+        alt={'background image'}
+        className={cls.slideImage}
+        isCover={mounted}
+      />
     </div>
   )
 })

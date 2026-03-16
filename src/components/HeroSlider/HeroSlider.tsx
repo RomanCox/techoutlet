@@ -10,7 +10,8 @@ import { Text } from '@/components/shared/Text/Text'
 import { Button } from '@/components/shared/Button/Button'
 import { TgIcon } from '@/components/shared/Icon/TgIcon/TgIcon'
 
-
+import DarkBackgroundJPG from'@/assets/images/other/dark_card_background.jpg'
+import DarkBackgroundWEBP from'@/assets/images/other/dark_card_background.webp'
 import NotebookPNG from '@/assets/images/devices/notebook.png'
 import NotebookWEBP from '@/assets/images/devices/notebook.webp'
 import CameraPNG from '@/assets/images/devices/camera.png'
@@ -87,6 +88,13 @@ export const HeroSlider = memo(({ mounted }: IMounted) => {
 						<Picture png={ActionCameraPNG} webp={ActionCameraWEBP} alt="action camera" />
 					</div>
 				</div>
+        <Picture
+          jpg={DarkBackgroundJPG}
+          webp={DarkBackgroundWEBP}
+          alt={'background image'}
+          className={cls.slideImage}
+          isCover={mounted}
+        />
       </div>
     </div>
   )
