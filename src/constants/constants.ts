@@ -198,7 +198,7 @@ export const footerData: IFooterDataType = {
   shop: {
     label: 'Магазин',
     address: 'г. Минск\nул. Хоружей д.32а/4, оф.12',
-    workingTime: 'Пн - Пт: 11:00 — 19:00\nОбед: 14:00 — 15:00\nСб: 11:00 — 16:00\nВс: выходной',
+    workingTime: 'Пн-Пт: 11:00 — 19:00\nОбед: 14:00 — 15:00\nСб: 11:00 — 16:00\nВс: выходной',
   },
   contacts: {
     label: 'Контакты',
