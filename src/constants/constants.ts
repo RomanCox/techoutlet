@@ -11,9 +11,20 @@ import {
   IBrand,
   IDirection,
   IMarketingCards,
-  ICompanyDescription
+  ICompanyDescription,
+  ItemImage,
 } from '@/constants'
 import { MODAL } from '@/constants/modal'
+import NotebookPNG from "@/assets/images/devices/notebook.png";
+import NotebookWEBP from "@/assets/images/devices/notebook.webp";
+import CameraPNG from "@/assets/images/devices/camera.png";
+import CameraWEBP from "@/assets/images/devices/camera.webp";
+import IphonesPNG from "@/assets/images/devices/iphones.png";
+import IphonesWEBP from "@/assets/images/devices/iphones.webp";
+import HeadphonesPNG from "@/assets/images/devices/headphones.png";
+import HeadphonesWEBP from "@/assets/images/devices/headphones.webp";
+import ActionCameraPNG from "@/assets/images/devices/action_camera.png";
+import ActionCameraWEBP from "@/assets/images/devices/action_camera.webp";
 
 export const headerData: IHeaderDataType = {
   phoneNumber: {
@@ -30,13 +41,51 @@ export const heroSlide: IHeroSlide = {
   brandsMobile: 'APPLE, DJI, MICROSOFT,\nSONY, GOPRO и другие.\nДо 50% дешевле.',
 }
 
+export const heroImages: ItemImage[] = [
+  {
+    id: 0,
+    name: 'notebook',
+    PNG: NotebookPNG,
+    WEBP: NotebookWEBP,
+    alt: 'notebook image',
+  },
+  {
+    id: 1,
+    name: 'camera',
+    PNG: CameraPNG,
+    WEBP: CameraWEBP,
+    alt: 'camera image',
+  },
+  {
+    id: 2,
+    name: 'iphones',
+    PNG: IphonesPNG,
+    WEBP: IphonesWEBP,
+    alt: 'iphones image',
+  },
+  {
+    id: 3,
+    name: 'headphones',
+    PNG: HeadphonesPNG,
+    WEBP: HeadphonesWEBP,
+    alt: 'headphones image',
+  },
+  {
+    id: 4,
+    name: 'actionCamera',
+    PNG: ActionCameraPNG,
+    WEBP: ActionCameraWEBP,
+    alt: 'action camera image',
+  },
+]
+
 export const companyDescription: ICompanyDescription = {
   highlightTitle: 'TechOutlet',
   restTitle: ' - надёжный поставщик уценённой техники с 2018 года',
   restTitleBigTablet: ' - надёжный поставщик\nуценённой техники с 2018 года',
   restTitleSmallTablet: ' - надёжный\nпоставщик уценённой\nтехники с 2018 года',
   restTitleMobile: '\nнадёжный поставщик\nуценённой техники\nс 2018 года',
-  subTitle: 'Наша компания  занимается продажей уценённой техники из США и Европы различных категорий:',
+  subTitle: 'Наша компания занимается продажей уценённой техники из США и Европы различных категорий:',
   variants: [
     'Витринные (товары с витрин магазинов)',
     'Выставочные (товары после выставки)',

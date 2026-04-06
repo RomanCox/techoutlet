@@ -6,12 +6,20 @@
   padding-top: 20px;
 
   .slide {
-    @include mixins.size(100%, 420px);
+    @include mixins.size(100%, 70vh);
     border-radius: 40px;
     padding: 20px 20px;
-    @include mixins.flex($gap: 80px);
+    @include mixins.flex($items: center, $gap: 80px);
     background: variables.$dark-bg;
     position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08), transparent 60%);
+      pointer-events: none;
+    }
 
     @media (max-width: 1380px) {
       height: calc(100vh - 240px);
@@ -28,7 +36,7 @@
 
     .textContainer {
       padding: 60px 20px;
-      @include mixins.flex($direction: column, $gap: 30px);
+      @include mixins.flex($direction: column, $gap: 80px);
       position: relative;
       z-index: 1;
 
@@ -37,13 +45,16 @@
         align-items: center;
       }
 
-      & > h1 {
+      .title {
         color: variables.$blue;
         font-size: 42px;
         font-weight: 700;
         line-height: 120%;
         text-align: left;
         white-space: pre-line;
+        opacity: 0;
+        transform: translateY(20px);
+        will-change: opacity, transform;
 
         @media (max-width: 1380px) {
           text-align: center;
@@ -54,13 +65,16 @@
         }
       }
 
-      & > p {
+      .subTitle {
         color: variables.$white-bg;
         font-size: 24px;
         font-weight: 700;
         line-height: 120%;
         text-align: left;
         white-space: pre-line;
+        opacity: 0;
+        transform: translateY(20px);
+        will-change: opacity, transform;
 
         @media (max-width: 1380px) {
           text-align: center;
@@ -76,8 +90,21 @@
         padding-block: 4px;
         @include mixins.flex($items: center, $gap: 10px);
         font-size: 24px;
+        opacity: 0;
+        transform: scale(0.95) translateY(0);
+        will-change: opacity, transform;
+
+        &:hover {
+          transform: scale(1) translateY(-2px) !important;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+          .tgIcon {
+            transform: translateX(4px);
+          }
+        }
 
         .tgIcon {
+          transition: all 0.3s ease;
           @include mixins.size(20px);
           background: transparent;
         }
@@ -106,7 +133,7 @@
         width: 294px;
         position: absolute;
         top: 0;
-        left: 0;
+        left: -40px;
         transform: rotate(15deg) translate3d(var(--tx), var(--ty), 0);
 
         picture {
@@ -137,8 +164,8 @@
       .cameraImage {
         width: 250px;
         position: absolute;
-        top: 0;
-        right: -40px;
+        top: 20px;
+        right: -20px;
         transform: rotate(-30deg) translate3d(var(--tx), var(--ty), 0);
 
         picture {
@@ -201,9 +228,9 @@
       .headphonesImage {
         @include mixins.size(200px);
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) translate3d(var(--tx), var(--ty), 0);
+        top: 55%;
+        left: 55%;
+        transform: translate(-50%, -50%) translate3d(var(--tx), var(--ty), 0);
 
         picture {
           width: 100%;

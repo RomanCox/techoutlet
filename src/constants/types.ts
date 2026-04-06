@@ -20,6 +20,16 @@ export interface IHeroSlide {
   brandsMobile: string
 }
 
+export type ImageKey = 'notebook' | 'camera' | 'iphones' | 'headphones' | 'actionCamera'
+
+export interface ItemImage {
+  id: number,
+  name: ImageKey,
+  PNG: StaticImageData,
+  WEBP: StaticImageData,
+  alt: string,
+}
+
 export interface ITopGadgetsText {
   beforeBrands: string
   brands: string
