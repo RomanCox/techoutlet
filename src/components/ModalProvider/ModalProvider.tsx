@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import { ModalShell, FooterModal } from '@/components/Modals'
 import { MODAL } from '@/constants/modal'
 import { lockScroll, unlockScroll } from '@/utils/lockScroll'
-
+import { useLenis } from '@/providers/LenisProvider'
 
 type ModalConfig = {
   type: MODAL
@@ -45,6 +45,9 @@ const ModalRoot: FC = () => {
   let content: ReactNode = null
 
   switch (modal.type) {
+    case MODAL.PERSONAL_DATA:
+      content = <FooterModal id={MODAL.PERSONAL_DATA}/>
+      break
     case MODAL.TRADE_IN:
       content = <FooterModal id={MODAL.TRADE_IN}/>
       break
@@ -65,20 +68,28 @@ const ModalRoot: FC = () => {
   if (!content) return null
 
   return createPortal(
-    <ModalShell onClose={closeModal}>{content}</ModalShell>,
+    <ModalShell onClose={closeModal}>
+      {/*<div data-lenis-prevent>*/}
+      {/*  {content}*/}
+      {/*</div>*/}
+      {content}
+    </ModalShell>,
     modalRoot,
   )
 }
 
 export const ModalProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [modal, setModal] = useState<ModalConfig | null>(null)
+  const lenis = useLenis()
 
   const openModal: ModalContextValue['openModal'] = (type) => {
+    lenis?.stop()
     lockScroll()
     setModal({type})
   }
 
   const closeModal = () => {
+    lenis?.start()
     unlockScroll()
     setModal(null)
   }

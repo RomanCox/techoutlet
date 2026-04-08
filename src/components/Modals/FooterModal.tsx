@@ -11,12 +11,17 @@ import { Delivery } from '@/components/shared/Icon/Delivery/Delivery';
 import { Map } from '@/components/shared/Icon/Map/Map'
 import { Location } from '@/components/shared/Icon/Location/Location'
 import { Info } from '@/components/shared/Icon/Info/Info'
+import { PersonalData } from '@/components/Modals/PersonalData/PersonalData'
 
 import { MODAL } from '@/constants/modal'
 import { footerData } from '@/constants'
 import cls from './FooterModal.module.scss'
 
 export const FooterModal = memo(({ id }: FooterModalsProps) => {
+  if (id === MODAL.PERSONAL_DATA) {
+    return <PersonalData />
+  }
+
   const item = footerData.services.servicesList.find(({id: serviceId} ) => serviceId === id)
 
   if (!item) return null
@@ -32,6 +37,8 @@ export const FooterModal = memo(({ id }: FooterModalsProps) => {
 
   const icon = (id: string) => {
     switch (id) {
+      case (MODAL.PERSONAL_DATA):
+        return <TradeIn />
       case (MODAL.TRADE_IN):
         return <TradeIn />
       case (MODAL.GUARANTEE):

@@ -88,6 +88,10 @@ export interface FooterContactType {
     link: string
     postText: string
   }
+  personalData: {
+    id: MODAL
+    label: string
+  }
 }
 
 export interface FooterServiceType {
@@ -125,4 +129,36 @@ export interface IFooterDataType {
   services: FooterServicesType
   siteInfo: FooterSiteInfoType
   copyright: FooterCopyrightType
+}
+
+type TableColumns = "Право" | "Последствия"
+
+interface IRow {
+  title: string
+  cells: Record<TableColumns, string>
+}
+
+export interface IITem {
+  number: string
+  title: string
+  text?: string
+  items?: IITem[]
+  list?: string[]
+  afterText?: string[]
+  table?: {
+    columns: TableColumns[]
+    rows: IRow[]
+  }
+}
+
+interface ISection {
+  title: string
+  text?: string
+  items?: IITem[]
+}
+
+export interface IPersonalData {
+  title: string,
+  updatedAt: string,
+  sections: ISection[]
 }

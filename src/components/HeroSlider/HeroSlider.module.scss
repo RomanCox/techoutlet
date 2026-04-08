@@ -43,6 +43,7 @@
       @media (max-width: 1380px) {
         padding-bottom: 0;
         align-items: center;
+        gap: 30px;
       }
 
       .title {
@@ -118,6 +119,10 @@
       position: relative;
       z-index: 1;
 
+      @media (max-width: 1380px) {
+        width: 100%;
+      }
+
       .notebookImage,
       .cameraImage,
       .iphonesImage,
@@ -146,8 +151,13 @@
           }
         }
 
-        @media (max-width: 1380px) and (min-width: 981px) {
+        @media (max-width: 1380px) {
           left: 10%;
+        }
+
+        @media (max-width: 980px) {
+          width: 35%;
+          left: 5%;
         }
 
         @media (max-width: 705px) {
@@ -179,7 +189,7 @@
         }
 
         @media (max-width: 1380px) and (min-width: 981px) {
-          right: 10%;
+          right: 5%;
         }
 
         @media (max-width: 705px) {
@@ -243,7 +253,7 @@
         }
 
         @media (max-width: 1380px) {
-          bottom: 20%;
+          bottom: 40%;
           left: 55%;
         }
 
@@ -273,7 +283,7 @@
         @media (max-width: 1380px) {
           @include mixins.size(30vw);
           right: 0;
-          bottom: -20px;
+          bottom: -60px;
         }
 
         @media (max-width: 900px) {
@@ -283,6 +293,7 @@
 
         @media (max-width: 450px) {
           @include mixins.size(45vw);
+          bottom: -20px;
         }
       }
     }
