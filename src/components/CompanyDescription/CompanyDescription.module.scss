@@ -4,11 +4,28 @@
 .companyDescriptionContainer {
   width: 100%;
   padding-inline: 40px;
-  @include mixins.flex($gap: 10px);
+  @include mixins.flex($direction: column, $gap: 10px);
   position: relative;
+  overflow: hidden;
 
   @media (max-width: 1300px) {
     padding-inline: 0;
+  }
+
+  .brand {
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    will-change: transform, top, left;
+
+    display: inline-block;
+    color: variables.$blue;
+    font-family: variables.$font-main;
+    font-size: 108px;
+    white-space: nowrap;
   }
 
   .textContainer {
@@ -21,6 +38,7 @@
       font-size: 36px;
       font-weight: 700;
       white-space: pre-line;
+      position: relative;
 
       @media (max-width: 1300px) {
         margin-bottom: 260px;
@@ -40,9 +58,12 @@
         font-size: 30px;
       }
 
-      span {
-        color: variables.$blue;
-        font-family: variables.$font-second;
+      .fakeBrand {
+        opacity: 0;
+      }
+
+      .rest {
+        opacity: 0;
       }
     }
 
@@ -50,6 +71,7 @@
       text-align: left;
       font-size: 20px;
       font-weight: 500;
+      opacity: 0;
 
       @media (max-width: 1300px) {
         padding-inline: 40px;
@@ -70,6 +92,7 @@
       gap: 10px;
       list-style: none;
       padding: 0;
+      opacity: 0;
 
       @media (max-width: 1300px) {
         padding-inline: 40px;
@@ -124,6 +147,8 @@
     right: 40px;
     bottom: 20px;
 
+    opacity: 0;
+
     @media (max-width: 1300px) {
       align-items: flex-start;
       bottom: auto;
@@ -145,11 +170,11 @@
       top: 170px;
     }
 
-    & > picture {
+    picture {
       width: 100%;
       height: auto;
 
-      & > img {
+      img {
         width: 100%;
         height: auto;
       }
