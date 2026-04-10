@@ -13,13 +13,13 @@
   }
 
   .brand {
-    width: fit-content;
+    //width: fit-content;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    will-change: transform, top, left;
+    will-change: transform;
 
     display: inline-block;
     color: variables.$blue;
