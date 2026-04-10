@@ -1,22 +1,32 @@
 'use client'
 
-import { ReactNode, useEffect } from 'react'
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const LenisContext = createContext<Lenis | null>(null)
+export const  useLenis = () => useContext(LenisContext)
+
 type Props = {
   children: ReactNode
 }
 
 export default function LenisProvider({ children }: Props) {
+  const [lenis, setLenis] = useState<Lenis | null>(null)
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
+      prevent: (node) => {
+        return !!node.closest('[data-lenis-prevent]')
+      },
     })
+
+    setLenis(lenis)
 
     // синхронизация с GSAP
     const onScroll = () => ScrollTrigger.update()
@@ -30,10 +40,6 @@ export default function LenisProvider({ children }: Props) {
     gsap.ticker.add(update)
     gsap.ticker.lagSmoothing(0)
 
-    // (опционально) доступ из window
-    // @ts-ignore
-    window.lenis = lenis
-
     return () => {
       lenis.off('scroll', onScroll)
       gsap.ticker.remove(update)
@@ -41,5 +47,7 @@ export default function LenisProvider({ children }: Props) {
     }
   }, [])
 
-  return <>{children}</>
+  return <LenisContext.Provider value={lenis}>
+    {children}
+  </LenisContext.Provider>
 }

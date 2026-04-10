@@ -33,11 +33,8 @@ export const MarketingCards = memo(({ mounted }: IMounted) => {
 
     // Устанавливаем начальное состояние: карточки повернуты "внутрь" относительно верхней грани
     gsap.set(cards, {
-      // opacity: 0,
       rotationX: -90,
       transformOrigin: "top center",
-      // y: -30,
-      // scale: 0.95
     })
 
     const tl = gsap.timeline({
@@ -46,22 +43,19 @@ export const MarketingCards = memo(({ mounted }: IMounted) => {
         start: 'top 80%',
         end: 'top 30%',
         scrub: false,
-        markers: true,
         once: true,
       }
     })
 
     // Каскадное появление карточек с вращением и раскачиванием
     cards.forEach((card, index) => {
+      const startTime = index === 0 ? 0 : index * 0.3;
+
       tl.to(card, {
-        // opacity: 1,
         rotationX: 0,
-        // y: 0,
-        // scale: 1,
-        duration: 3,
-        ease: "elastic.out(1, 0.5)", // Пружинящий эффект с раскачиванием
-        delay: index * 0.15
-      }, "<")
+        duration: 1.5,
+        ease: "elastic.out(0.8, 0.4)", // Пружинящий эффект с раскачиванием
+      }, startTime)
 
       // Дополнительная анимация для иконки
       const icon = card.querySelector(`.${cls.cardIcon}`)
@@ -77,7 +71,7 @@ export const MarketingCards = memo(({ mounted }: IMounted) => {
             duration: 0.6,
             ease: "elastic.out(1, 0.6)"
           },
-          "-=0.4" // Начинается чуть раньше окончания основной анимации
+          startTime + 0.8 // 👈 до конца анимации карточки
         )
       }
     })

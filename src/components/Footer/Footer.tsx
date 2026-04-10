@@ -72,6 +72,9 @@ export const Footer = memo(() => {
             <Maestro />
             <Mir />
           </div>
+          <Button theme={ButtonTheme.CLEAR} onClick={() => openModal(footerData.contacts.personalData.id)}>
+            <Text as="span">{footerData.contacts.personalData.label}</Text>
+          </Button>
         </div>
         <div className={cls.shopInfo}>
           <Text as='h4'>{footerData.services.label}</Text>

@@ -51,7 +51,11 @@
       height: 100%;
       max-height: calc(60vh - 46px);
       padding-inline: 24px;
-      overflow-y: auto;
+      overflow: auto;
+
+      & > div {
+        min-height: 100%;
+      }
 
       @media (max-width: 1024px) {
         max-height: calc(80vh - 46px);
