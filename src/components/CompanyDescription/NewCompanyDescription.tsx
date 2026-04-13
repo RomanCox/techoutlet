@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
+import { useLenis } from '@/providers/LenisProvider'
 
 import { Text } from '@/components/shared/Text/Text'
 import { Picture } from '@/components/shared/Picture/Picture'
@@ -14,15 +15,31 @@ import { companyDescription, IMounted } from '@/constants'
 import cls from './NewCompanyDescription.module.scss'
 
 export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
-  const [animationIndex, setAnimationIndex] = useState<number>(-1)
+  const [animationIndex, setAnimationIndex] = useState(0)
   const [restTitle, setRestTitle] = useState<string>('')
-  const [targetRect, setTargetRect] = useState<DOMRect| null>(null)
+  const [targetRect, setTargetRect] = useState<DOMRect | null>(null)
 
   const { width } = useWindowSize()
 
   const isDesktop = mounted ? width > 1300 : false
   const isBigTablet = mounted ? (width > 705 && width <= 1300) : false
   const isSmallTablet = mounted ? (width > 460 && width <= 705) : false
+
+  useEffect(() => {
+    const next =
+      isDesktop
+        ? companyDescription.restTitle
+        : isBigTablet
+          ? companyDescription.restTitleBigTablet
+          : isSmallTablet
+            ? companyDescription.restTitleSmallTablet
+            : companyDescription.restTitleMobile
+
+    setRestTitle(prev => (prev === next ? prev : next))
+  }, [isDesktop, isBigTablet, isSmallTablet])
+
+  const animationIndexRef = useRef(0)
+  const lockedRef = useRef(false)
 
   const sectionRef = useRef<HTMLDivElement>(null)
   const brandRef = useRef<HTMLSpanElement>(null)
@@ -31,15 +48,19 @@ export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
   const textRef = useRef<HTMLParagraphElement>(null)
   const lastTextRef = useRef<HTMLParagraphElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+  const brandCompletedRef = useRef<boolean>(false)
+
+  const lenis = useLenis()
 
   const totalCharacters = companyDescription.restTitle.length
 
   const handleBrandMeasure = useCallback((rect: DOMRect) => {
-    if (!rect) return
-
     setTargetRect(rect)
   }, [])
 
+  // =========================
+  // GSAP ONLY FOR BRAND (ONE TIME CONTROLLED)
+  // =========================
   useGSAP(() => {
     if (
       !sectionRef.current ||
@@ -48,12 +69,10 @@ export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
       !listRef.current ||
       !textRef.current ||
       !lastTextRef.current ||
-      !imageRef.current
+      !imageRef.current ||
+      !targetRect
     ) return
 
-    if (!targetRect) return
-
-    const section = sectionRef.current
     const brand = brandRef.current
 
     const subTitle = subTitleRef.current
@@ -83,84 +102,114 @@ export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
     const scaleY = toRect.height / fromRect.height
 
     // =========================
-    // TIMELINE (ОДИН И ЕДИНСТВЕННЫЙ)
+    // BRAND TIMELINE (CONTROLLED)
     // =========================
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'center+=20% bottom',
-        end: 'top 15%',
-        scrub: true,
-        invalidateOnRefresh: true,
-      }
-    })
+    const brandTL = gsap.timeline({ paused: true })
 
-    // =========================
-    // BRAND PHASE
-    // =========================
-    tl.to(brand, {
+    brandTL.to(brand, {
       x: dx,
       y: dy,
-      // scale: 0.33,
       scaleX,
       scaleY,
-      // ease: 'none',
       ease: 'power2.out',
-      duration: 0.4,
+      duration: 1,
     })
 
-    tl.to({}, { duration: 0.6 })
-
     // =========================
-    // CONTENT PHASE
+    // CONTENT TIMELINE
     // =========================
-    tl.to(subTitle, { opacity: 1 }, '<')
-    tl.to(list, { opacity: 1 }, '<')
-    tl.to(text, { opacity: 1 }, '<')
-    tl.to(lastText, { opacity: 1 }, '<')
-    tl.to(image, { opacity: 1 }, '<')
+    const contentTL = gsap.timeline({ paused: true, progress: 0 })
 
-    // =========================
-    // TEXT ANIMATION
-    // =========================
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'center+=20% bottom',
-      end: 'top 15%',
-      scrub: true,
-      invalidateOnRefresh: true,
+    contentTL
+      .to(subTitle, { opacity: 1, duration: 0.3 })
+      .to(list, { opacity: 1, duration: 0.3 }, '<')
+      .to(text, { opacity: 1, duration: 0.3 }, '<')
+      .to(lastText, { opacity: 1, duration: 0.3 }, '<')
+      .to(image, { opacity: 1, duration: 0.3 }, '<')
 
-      onUpdate: (self) => {
-        const progress = self.progress
-
-        if (progress < 0.4) {
-          setAnimationIndex(0)
-          return
-        }
-
-        const p = (progress - 0.4) / 0.6
-        const index = Math.floor(p * totalCharacters)
-
-        setAnimationIndex(
-          Math.max(0, Math.min(totalCharacters, index))
-        )
-      }
-    })
-
+    // expose
+    ;(window as any).__brandTL = brandTL
+    ;(window as any).__contentTL = contentTL
   }, {
     scope: sectionRef,
     dependencies: [targetRect],
   })
 
   useEffect(() => {
-    setRestTitle(isDesktop ? companyDescription.restTitle :
-      isBigTablet ? companyDescription.restTitleBigTablet :
-        isSmallTablet ? companyDescription.restTitleSmallTablet : companyDescription.restTitleMobile)
-  }, [isDesktop, isBigTablet, isSmallTablet])
+    if (!sectionRef.current) return
 
+    const section = sectionRef.current
+
+    // =========================
+    // 1. BRAND RANGE
+    // =========================
+    const brandTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: 'center+=20% bottom',
+      end: 'top 50%',
+    })
+
+    // =========================
+    // 2. TEXT RANGE (SEPARATE)
+    // =========================
+    const textTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: 'top 50%',
+      end: 'top 10%',
+    })
+
+    const update = () => {
+
+      // =========================
+      // BRAND
+      // =========================
+      const brandProgress = brandTrigger.progress
+
+      if (!lockedRef.current) {
+        ;(window as any).__brandTL?.progress(brandProgress)
+      }
+
+      if (brandProgress >= 0.98) {
+        lockedRef.current = true
+        brandCompletedRef.current = true
+      }
+
+      // =========================
+      // CONTENT (after brand)
+      // =========================
+      if (brandCompletedRef.current) {
+        ;(window as any).__contentTL?.progress(brandProgress)
+      }
+
+      // =========================
+      // TEXT (SEPARATE TIMELINE → FIX SPEED)
+      // =========================
+      const textProgress = textTrigger.progress
+
+      const index = Math.floor(textProgress * totalCharacters)
+
+      if (index !== animationIndexRef.current) {
+        animationIndexRef.current = index
+        setAnimationIndex(index)
+      }
+    }
+
+    gsap.ticker.add(update)
+
+    return () => {
+      gsap.ticker.remove(update)
+      brandTrigger.kill()
+      textTrigger.kill()
+    }
+  }, [lenis, totalCharacters])
+
+  // =========================
+  // RENDER
+  // =========================
   return (
     <div ref={sectionRef} className={cls.companyDescriptionContainer}>
-      <Text ref={brandRef} as={'h2'} className={cls.brand}>
+
+      <Text ref={brandRef} as="h2" className={cls.brand}>
         {companyDescription.highlightTitle}
       </Text>
 
@@ -170,29 +219,41 @@ export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
           animationIndex={animationIndex}
           onBrandMeasure={handleBrandMeasure}
         />
-        <Text ref={subTitleRef} as={'p'}>{companyDescription.subTitle}</Text>
+
+        <Text ref={subTitleRef} as="p">
+          {companyDescription.subTitle}
+        </Text>
+
         <ul ref={listRef} className={cls.list}>
           {companyDescription.variants.map(item => {
             const [title, rest] = item.split(' (')
             return (
               <li key={item} className={cls.listItem}>
                 <div className={cls.listMarker} />
-                <Text className={cls.text}><span>{title}</span>{` (${rest}`}</Text>
+                <Text className={cls.text}>
+                  <span>{title}</span>{` (${rest}`}
+                </Text>
               </li>
             )
           })}
         </ul>
-        <Text ref={textRef} as={'p'}>{companyDescription.productsDescription}</Text>
-        <Text ref={lastTextRef} as={'p'} className={cls.lastText}>
+
+        <Text ref={textRef} as="p">
+          {companyDescription.productsDescription}
+        </Text>
+
+        <Text ref={lastTextRef} as="p" className={cls.lastText}>
           {companyDescription.topGadgets.beforeBrands}
           <span>{companyDescription.topGadgets.brands}</span>
           {companyDescription.topGadgets.afterBrands}
           {companyDescription.topGadgets.secondLine}
         </Text>
       </div>
+
       <div ref={imageRef} className={cls.originalImage}>
         <Picture png={OriginalPNG} webp={OriginalWEBP} alt={'image with text original'}/>
       </div>
+
     </div>
   )
 })

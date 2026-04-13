@@ -13,70 +13,51 @@ export const Row = memo(({
   animationIndex: number
   onBrandMeasure: (rect: DOMRect) => void
 }) => {
-  const fakeBrandRef = useRef<HTMLDivElement | null>(null)
 
-  const normalizeText = (text: string) =>
-    text.replace(/ /g, '\u00A0')
+  const fakeBrandRef = useRef<HTMLSpanElement | null>(null)
 
-  let globalIndex = 0
+  const lines = useMemo(() => {
+    return text.replace(/ /g, '\u00A0').split('\n')
+  }, [text])
 
   useLayoutEffect(() => {
     if (!fakeBrandRef.current) return
+    onBrandMeasure(fakeBrandRef.current.getBoundingClientRect())
+  }, [lines])
 
-    const rect = fakeBrandRef.current.getBoundingClientRect()
-
-    onBrandMeasure?.(rect)
-  }, [fakeBrandRef, text])
+  let index = 0
 
   return (
     <h2 className={cls.rowText}>
-      {normalizeText(text).split('\n').map((line, lineIndex) => {
-        if (lineIndex === 0) {
-          const [brand, ...rest] = line.split('\u00A0')
-          const restOfLine = rest.join('\u00A0')
+      {lines.map((line, lineIndex) => {
+        const parts = line.split('\u00A0')
+        const brand = parts[0]
+        const rest = parts.slice(1).join('\u00A0')
 
-          return (
-            <div key={lineIndex}>
-              <span
-                ref={fakeBrandRef}
-                className={cls.fakeBrand}
-              >
-                {brand}
-              </span>
-
-              {restOfLine && '\u00A0'}
-
-              {restOfLine.split('').map((symbol, index) => {
-                const currentIndex = globalIndex++
-
-                return (
-                  <span
-                    key={index}
-                    className={classNames(cls.symbol, {
-                      [cls.coloredSymbol]: currentIndex < animationIndex
-                    })}
-                  >
-                    {symbol}
-                  </span>
-                )
-              })}
-            </div>
-          )
-        }
+        const content = lineIndex === 0 ? rest : line
 
         return (
           <div key={lineIndex}>
-            {line.split('').map((symbol, index) => {
-              const currentIndex = globalIndex++
+
+            {lineIndex === 0 && (
+              <span ref={fakeBrandRef} className={cls.fakeBrand}>
+                {brand}
+              </span>
+            )}
+
+            {lineIndex === 0 && rest && '\u00A0'}
+
+            {content.split('').map((s, i) => {
+              const iGlobal = index++
 
               return (
                 <span
-                  key={index}
+                  key={`${lineIndex}-${i}`}
                   className={classNames(cls.symbol, {
-                    [cls.coloredSymbol]: currentIndex < animationIndex
+                    [cls.coloredSymbol]: iGlobal < animationIndex,
                   })}
                 >
-                  {symbol}
+                  {s}
                 </span>
               )
             })}

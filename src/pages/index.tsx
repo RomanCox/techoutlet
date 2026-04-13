@@ -3,8 +3,8 @@ import Head from 'next/head'
 
 import { Header } from '@/components/Header/Header'
 import { HeroSlider} from '@/components/HeroSlider/HeroSlider'
-import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescription'
-// import { NewCompanyDescription } from '@/components/CompanyDescription/NewCompanyDescription'
+// import { CompanyDescription } from '@/components/CompanyDescription/CompanyDescription'
+import { NewCompanyDescription } from '@/components/CompanyDescription/NewCompanyDescription'
 import { MarketingCards } from '@/components/MarketingCards/MarketingCards'
 // import { ProductTrip } from '@/components/ProductTrip/ProductTrip'
 import { Brands } from '@/components/Brands/Brands'
@@ -58,8 +58,8 @@ export default function Home() {
         <Header />
         <main className={styles.main}>
           <HeroSlider mounted={mounted}/>
-          <CompanyDescription mounted={mounted}/>
-          {/*<NewCompanyDescription mounted={mounted}/>*/}
+          {/*<CompanyDescription mounted={mounted}/>*/}
+          <NewCompanyDescription mounted={mounted}/>
           <MarketingCards mounted={mounted}/>
           {/*<ProductTrip />*/}
           <Brands mounted={mounted}/>
