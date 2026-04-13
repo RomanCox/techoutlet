@@ -1,4 +1,4 @@
-import { memo, useRef, useLayoutEffect, useMemo, useCallback } from 'react'
+import { memo, useRef, useLayoutEffect, useMemo } from 'react'
 
 import { classNames } from '@/helpers'
 

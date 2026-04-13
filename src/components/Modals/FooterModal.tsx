@@ -74,28 +74,29 @@ export const FooterModal = memo(({ id }: FooterModalsProps) => {
     <div className={cls.footerModal}>
       <Text as="h4">{item.label}</Text>
       {id === MODAL.MAP && (
-        <div style={{position: "relative", overflow: "hidden"}}>
+        <div className={cls.mapContainer}>
           <a
             href="https://yandex.by/maps/org/techoutlet/168800590756/?utm_medium=mapframe&utm_source=maps"
-            style={{color: "#eee", fontSize: "12px", position: "absolute", top: "0px"}}
+            className={cls.mapLink}
           >
             TechOutlet
           </a>
           <a
             href="https://yandex.by/maps/157/minsk/category/electronics_store/184107835/?utm_medium=mapframe&utm_source=maps"
-            style={{color: "#eee", fontSize: "12px", position: "absolute", top: "14px"}}
+            className={cls.mapLink}
           >
             Магазин электроники в Минске
           </a>
           <a
             href="https://yandex.by/maps/157/minsk/category/computer_store/184105760/?utm_medium=mapframe&utm_source=maps"
-            style={{color: "#eee", fontSize: "12px", position: "absolute", top: "28px"}}
+            className={cls.mapLink}
           >
             Компьютерный магазин в Минске
           </a>
           <iframe
             src="https://yandex.by/map-widget/v1/?ll=27.562601%2C53.923696&mode=search&oid=168800590756&ol=biz&z=14.92"
-            width="560" height="400" frameBorder="1" allowFullScreen style={{position: "relative"}}
+            className={cls.mapIframe}
+            width="560" height="400" allowFullScreen
           />
         </div>
       )}

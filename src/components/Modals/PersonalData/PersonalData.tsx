@@ -46,9 +46,6 @@ export const PersonalData = () => {
           <div className={cls.tableContainer}>
             <table
               className={cls.table}
-              style={{
-
-              }}
             >
               <thead>
               <tr>

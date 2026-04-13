@@ -1,5 +1,4 @@
-import { FC, ReactNode, useEffect, useRef } from 'react'
-import Lenis from 'lenis'
+import { FC, ReactNode } from 'react'
 import { CloseIcon } from '@/components/shared/Icon'
 import cls from './ModalShell.module.scss'
 
@@ -22,11 +21,6 @@ export const ModalShell: FC<ModalShellProps> = ({ onClose, children }) => (
       >
         <CloseIcon size={30} strokeWidth={3} className={cls.closeIcon}/>
       </button>
-      {/*<div ref={wrapperRef} className={cls.windowContent}>*/}
-      {/*  <div ref={contentRef}>*/}
-      {/*    {children}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className={cls.windowContent}>
         {children}
       </div>
