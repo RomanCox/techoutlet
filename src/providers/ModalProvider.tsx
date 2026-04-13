@@ -69,10 +69,9 @@ const ModalRoot: FC = () => {
 
   return createPortal(
     <ModalShell onClose={closeModal}>
-      {/*<div data-lenis-prevent>*/}
-      {/*  {content}*/}
-      {/*</div>*/}
-      {content}
+      <div data-lenis-prevent>
+        {content}
+      </div>
     </ModalShell>,
     modalRoot,
   )

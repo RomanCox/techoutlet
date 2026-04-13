@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
 import { extractTelegramUsername } from '@/helpers'
-import { useModal } from '@/components/ModalProvider/ModalProvider'
+import { useModal } from '@/providers/ModalProvider'
 
 import { Button, ButtonTheme } from '@/components/shared/Button/Button'
 import { Picture } from '@/components/shared/Picture/Picture'

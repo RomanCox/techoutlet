@@ -209,7 +209,7 @@ export const HeroSlider = memo(({ mounted }: IMounted) => {
         </div>
 				<div className={cls.imagesContainer}>
           {heroImages.map(item => (
-            <div ref={register(item.name)} className={cls[`${item.name}Image`]}>
+            <div key={item.id} ref={register(item.name)} className={cls[`${item.name}Image`]}>
               <Picture
                 key={item.id}
                 png={item.PNG}

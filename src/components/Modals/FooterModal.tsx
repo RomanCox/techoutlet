@@ -3,7 +3,7 @@ import { memo } from 'react'
 import { classNames, Mods } from '@/helpers'
 
 import { Text } from '@/components/shared/Text/Text'
-import { FooterModalsProps } from '@/components/ModalProvider/ModalProvider'
+import { FooterModalsProps } from '@/providers/ModalProvider'
 import { TradeIn } from '@/components/shared/Icon/TradeIn/TradeIn'
 import { Confirm } from '@/components/shared/Icon/Confirm/Confirm'
 import { Guarantee } from '@/components/shared/Icon/Guarantee/Guarantee'

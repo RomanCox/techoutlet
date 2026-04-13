@@ -11,9 +11,9 @@ import OriginalWEBP from '@/assets/images/other/original.webp'
 
 import { companyDescription, IMounted } from '@/constants'
 
-import cls from './CompanyDescription.module.scss'
+import cls from './NewCompanyDescription.module.scss'
 
-export const CompanyDescription = memo(({ mounted }: IMounted) => {
+export const NewCompanyDescription = memo(({ mounted }: IMounted) => {
   const [animationIndex, setAnimationIndex] = useState<number>(-1)
   const [restTitle, setRestTitle] = useState<string>('')
   const [targetRect, setTargetRect] = useState<DOMRect| null>(null)

@@ -81,10 +81,10 @@ export const heroImages: ItemImage[] = [
 
 export const companyDescription: ICompanyDescription = {
   highlightTitle: 'TechOutlet',
-  restTitle: ' - надёжный поставщик уценённой техники с 2018 года',
-  restTitleBigTablet: ' - надёжный поставщик\nуценённой техники с 2018 года',
-  restTitleSmallTablet: ' - надёжный\nпоставщик уценённой\nтехники с 2018 года',
-  restTitleMobile: '\nнадёжный поставщик\nуценённой техники\nс 2018 года',
+  restTitle: 'TechOutlet - надёжный поставщик уценённой техники с 2018 года',
+  restTitleBigTablet: 'TechOutlet - надёжный поставщик\nуценённой техники с 2018 года',
+  restTitleSmallTablet: 'TechOutlet - надёжный\nпоставщик уценённой\nтехники с 2018 года',
+  restTitleMobile: 'TechOutlet\nнадёжный поставщик\nуценённой техники\nс 2018 года',
   subTitle: 'Наша компания занимается продажей уценённой техники из США и Европы различных категорий:',
   variants: [
     'Витринные (товары с витрин магазинов)',
