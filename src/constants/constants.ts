@@ -101,6 +101,28 @@ export const companyDescription: ICompanyDescription = {
   }
 }
 
+export const oldCompanyDescription: ICompanyDescription = {
+  highlightTitle: 'TechOutlet',
+  restTitle: ' - надёжный поставщик уценённой техники с 2018 года',
+  restTitleBigTablet: ' - надёжный поставщик\nуценённой техники с 2018 года',
+  restTitleSmallTablet: ' - надёжный\nпоставщик уценённой\nтехники с 2018 года',
+  restTitleMobile: '\nнадёжный поставщик\nуценённой техники\nс 2018 года',
+  subTitle: 'Наша компания  занимается продажей уценённой техники из США и Европы различных категорий:',
+  variants: [
+    'Витринные (товары с витрин магазинов)',
+    'Выставочные (товары после выставки)',
+    'Trade in (б/у товары по системе обмена старого на новый)',
+    'Open Box (новые товары в открытых или поврежденных коробках)',
+  ],
+  productsDescription: 'Все товары 100% оригинальные, никаких копий, подделок и фейков.',
+  topGadgets: {
+    beforeBrands: 'Только топовые гаджеты ',
+    brands: 'Apple, Microsoft, DJI, Sony, Google',
+    afterBrands: ' и.т.д.',
+    secondLine: '\nОтличная возможность сэкономить до 50% от цены нового!',
+  }
+}
+
 export const marketingCards: IMarketingCards[] = [
   {
     id: 1,

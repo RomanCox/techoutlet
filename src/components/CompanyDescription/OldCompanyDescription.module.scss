@@ -1,0 +1,158 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
+.companyDescriptionContainer {
+  width: 100%;
+  padding-inline: 40px;
+  @include mixins.flex($gap: 10px);
+  position: relative;
+
+  @media (max-width: 1300px) {
+    padding-inline: 0;
+  }
+
+  .textContainer {
+    width: 100%;
+    @include mixins.flex($direction: column, $gap: 10px);
+
+    .title {
+      text-align: left;
+      color: variables.$dark-grey;
+      font-size: 36px;
+      font-weight: 700;
+      white-space: pre-line;
+
+      @media (max-width: 1300px) {
+        margin-bottom: 260px;
+        text-align: center;
+      }
+
+      @media (max-width: 705px) {
+        margin-bottom: 260px;
+      }
+
+      @media (max-width: 460px) {
+        margin-bottom: 240px;
+        font-size: 32px;
+      }
+
+      @media (max-width: 370px) {
+        font-size: 30px;
+      }
+
+      span {
+        color: variables.$blue;
+        font-family: variables.$font-second;
+      }
+    }
+
+    & > p {
+      text-align: left;
+      font-size: 20px;
+      font-weight: 500;
+
+      @media (max-width: 1300px) {
+        padding-inline: 40px;
+      }
+
+      @media (max-width: 460px) {
+        padding-inline: 20px;
+      }
+
+      @media (max-width: 400px) {
+        padding-inline: 10px;
+      }
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+
+      @media (max-width: 1300px) {
+        padding-inline: 40px;
+      }
+
+      @media (max-width: 460px) {
+        padding-inline: 20px;
+      }
+
+      @media (max-width: 400px) {
+        padding-inline: 10px;
+      }
+
+      .listItem {
+        padding-left: 10px;
+        @include mixins.flex($items: flex-start, $gap: 10px);
+
+        .listMarker {
+          margin-top: 10px;
+          @include mixins.size(5px);
+          min-width: 5px;
+          border-radius: 50%;
+          background: variables.$black;
+        }
+
+        .text {
+          text-align: left;
+          font-size: 20px;
+          line-height: 1;
+          font-weight: 400;
+
+          & > span {
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+    .lastText {
+      white-space: pre-line;
+
+      & > span {
+        font-weight: 900;
+      }
+    }
+  }
+
+  .originalImage {
+    width: 300px;
+    @include mixins.flex($items: flex-end);
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+
+    @media (max-width: 1300px) {
+      align-items: flex-start;
+      bottom: auto;
+      top: 120px;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 705px) {
+      top: 160px;
+    }
+
+    @media (max-width: 460px) {
+      top: 176px;
+    }
+
+    @media (max-width: 370px) {
+      top: 170px;
+    }
+
+    & > picture {
+      width: 100%;
+      height: auto;
+
+      & > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
