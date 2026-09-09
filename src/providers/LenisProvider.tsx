@@ -26,6 +26,10 @@ export default function LenisProvider({ children }: Props) {
 
     setLenis(instance)
 
+    // Keep Lenis in sync with the native scroll reset done in _document.tsx
+    // (scroll-driven animations rely on starting from position 0).
+    instance.scrollTo(0, { immediate: true })
+
     gsap.ticker.add((time) => {
       instance.raf(time * 1000)
     })

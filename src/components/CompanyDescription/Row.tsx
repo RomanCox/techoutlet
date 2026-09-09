@@ -1,4 +1,4 @@
-import { memo, useRef, useLayoutEffect, useMemo } from 'react'
+import { memo, useMemo } from 'react'
 
 import { classNames } from '@/helpers'
 
@@ -7,23 +7,16 @@ import cls from './Row.module.scss'
 export const Row = memo(({
                            text,
                            animationIndex,
-                           onBrandMeasure,
+                           onBrandRef,
                          }: {
   text: string
   animationIndex: number
-  onBrandMeasure: (rect: DOMRect) => void
+  onBrandRef: (el: HTMLSpanElement | null) => void
 }) => {
-
-  const fakeBrandRef = useRef<HTMLSpanElement | null>(null)
 
   const lines = useMemo(() => {
     return text.replace(/ /g, '\u00A0').split('\n')
   }, [text])
-
-  useLayoutEffect(() => {
-    if (!fakeBrandRef.current) return
-    onBrandMeasure(fakeBrandRef.current.getBoundingClientRect())
-  }, [lines])
 
   let index = 0
 
@@ -40,7 +33,11 @@ export const Row = memo(({
           <div key={lineIndex}>
 
             {lineIndex === 0 && (
-              <span ref={fakeBrandRef} className={cls.fakeBrand}>
+              // Kept as a live DOM ref (not a one-off measurement) so the
+              // parent can always read its *current* position/size - that's
+              // what keeps the brand title landing correctly at any desktop
+              // resolution, including after a resize.
+              <span ref={onBrandRef} className={cls.fakeBrand}>
                 {brand}
               </span>
             )}

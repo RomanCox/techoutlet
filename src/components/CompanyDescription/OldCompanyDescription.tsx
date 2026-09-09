@@ -6,7 +6,6 @@ import { Picture } from '@/components/shared/Picture/Picture'
 import OriginalPNG from '@/assets/images/other/original.png'
 import OriginalWEBP from '@/assets/images/other/original.webp'
 
-// import { companyDescription, IMounted } from '@/constants'
 import { oldCompanyDescription, IMounted } from '@/constants'
 
 import cls from './OldCompanyDescription.module.scss'

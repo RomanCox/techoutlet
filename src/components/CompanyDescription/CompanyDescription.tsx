@@ -16,7 +16,8 @@ import cls from './CompanyDescription.module.scss'
 export const CompanyDescription = memo(({ mounted }: IMounted) => {
   const [animationIndex, setAnimationIndex] = useState<number>(-1)
   const [restTitle, setRestTitle] = useState<string>('')
-  const [targetRect, setTargetRect] = useState<DOMRect| null>(null)
+
+  const fakeBrandRef = useRef<HTMLSpanElement | null>(null)
 
   const { width } = useWindowSize()
 
@@ -34,10 +35,8 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
 
   const totalCharacters = companyDescription.restTitle.length
 
-  const handleBrandMeasure = useCallback((rect: DOMRect) => {
-    if (!rect) return
-
-    setTargetRect(rect)
+  const handleBrandRef = useCallback((el: HTMLSpanElement | null) => {
+    fakeBrandRef.current = el
   }, [])
 
   useGSAP(() => {
@@ -48,10 +47,9 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
       !listRef.current ||
       !textRef.current ||
       !lastTextRef.current ||
-      !imageRef.current
+      !imageRef.current ||
+      !fakeBrandRef.current
     ) return
-
-    if (!targetRect) return
 
     const section = sectionRef.current
     const brand = brandRef.current
@@ -69,7 +67,7 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
     })
 
     const fromRect = brand.getBoundingClientRect()
-    const toRect = targetRect
+    const toRect = fakeBrandRef.current.getBoundingClientRect()
 
     const dx =
       (toRect.left + toRect.width / 2) -
@@ -149,7 +147,7 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
 
   }, {
     scope: sectionRef,
-    dependencies: [targetRect],
+    dependencies: [restTitle],
   })
 
   useEffect(() => {
@@ -168,7 +166,7 @@ export const CompanyDescription = memo(({ mounted }: IMounted) => {
         <Row
           text={restTitle}
           animationIndex={animationIndex}
-          onBrandMeasure={handleBrandMeasure}
+          onBrandRef={handleBrandRef}
         />
         <Text ref={subTitleRef} as={'p'}>{companyDescription.subTitle}</Text>
         <ul ref={listRef} className={cls.list}>
